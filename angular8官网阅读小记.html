@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>angular8官网阅读小记 | TurlingXian Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="TurlingXian Blog">
+    <meta name="author" content="TurlingXian">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="TurlingXian Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<!-- 页面点击小红心 -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/实践教程/" class="animsition-link">实践教程<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/常用记录/" class="animsition-link">常用记录<small>(0)</small></a></li>
+				    
+				    <li><a href="/categories/阅读笔记/" class="animsition-link">阅读笔记<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+            
+            <!-- <li><a href="/tags" class="animsition-link" title="tag">标签</a></li> -->
+            
+                <li>
+                    <a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+                    <ul class="sb-submenu">
+                          
+                        <li><a href="/tags/Jasmine/" class="animsition-link">Jasmine<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/Karma/" class="animsition-link">Karma<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/angular/" class="animsition-link">angular<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/segment/" class="animsition-link">segment<small>(0)</small></a></li>
+                        
+                        <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(0)</small></a></li>
+                        
+                    </ul>
+                </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="https://yuexine.github.io/" class="animsition-link">yuexine&#39;s blog</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/pkq.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">TurlingXian Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-05-07T07:18:27.000Z" itemprop="datePublished">
+          2019-05-07
+      </time>
+    
+    
+    | 
+    <a href='/tags/angular/'>angular</a>
+    
+    
+</span>
+                <h1>angular8官网阅读小记</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+              <blockquote>
+<p>最近angular刚刚升上8.0版本，寻思着仔细阅读一下官网，查漏补缺。</p>
+</blockquote>
+<ul>
+<li>阅读资料： <a href="https://angular.cn/docs" target="_blank" rel="noopener">angular v8 官网</a></li>
+</ul>
+<h2 id="官网教程——英雄指南实践"><a href="#官网教程——英雄指南实践" class="headerlink" title="官网教程——英雄指南实践"></a>官网教程——英雄指南实践</h2><p><a href="https://stackblitz.com/github/TurlingXian/stackblitz-project/tree/master/angular-tour-of-heroes" target="_blank" rel="noopener">官网例子实践</a></p>
+<h4 id="使用In-memory-Web-API模拟数据服务器"><a href="#使用In-memory-Web-API模拟数据服务器" class="headerlink" title="使用In-memory Web API模拟数据服务器"></a>使用In-memory Web API模拟数据服务器</h4><ol>
+<li><p>从 npm 中安装这个内存 Web API 包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install angular-in-memory-web-api --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导入 HttpClientInMemoryWebApiModule 和 InMemoryDataService 类（你很快就要创建它）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">HttpClientModule,</span><br><span class="line"></span><br><span class="line">// The HttpClientInMemoryWebApiModule module intercepts HTTP requests</span><br><span class="line">// and returns simulated server responses.</span><br><span class="line">// Remove it when a real server is ready to receive requests.</span><br><span class="line">HttpClientInMemoryWebApiModule.forRoot(</span><br><span class="line">  InMemoryDataService, &#123; dataEncapsulation: false &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>src/app/in-memory-data.service.ts 类是通过下列命令生成的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng generate service InMemoryData</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>内容如下：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; InMemoryDbService &#125; <span class="keyword">from</span> <span class="string">'angular-in-memory-web-api'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Injectable</span>(&#123;</span><br><span class="line">  providedIn: <span class="string">'root'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> InMemoryDataService <span class="keyword">implements</span> InMemoryDbService &#123;</span><br><span class="line">  createDb() &#123;</span><br><span class="line">    <span class="keyword">const</span> heroes = [</span><br><span class="line">      &#123; id: <span class="number">11</span>, name: <span class="string">'Mr. Nice'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">12</span>, name: <span class="string">'Narco'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">13</span>, name: <span class="string">'Bombasto'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">14</span>, name: <span class="string">'Celeritas'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">15</span>, name: <span class="string">'Magneta'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">16</span>, name: <span class="string">'RubberMan'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">17</span>, name: <span class="string">'Dynama'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">18</span>, name: <span class="string">'Dr IQ'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">19</span>, name: <span class="string">'Magma'</span> &#125;,</span><br><span class="line">      &#123; id: <span class="number">20</span>, name: <span class="string">'Tornado'</span> &#125;</span><br><span class="line">    ];</span><br><span class="line">    <span class="keyword">return</span> &#123;heroes&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Overrides the genId method to ensure that a hero always has an id.</span></span><br><span class="line">  <span class="comment">// If the heroes array is empty,</span></span><br><span class="line">  <span class="comment">// the method below returns the initial number (11).</span></span><br><span class="line">  <span class="comment">// if the heroes array is not empty, the method below returns the highest</span></span><br><span class="line">  <span class="comment">// hero id + 1.</span></span><br><span class="line">  genId(heroes: Hero[]): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> heroes.length &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.max(...heroes.map(<span class="function"><span class="params">hero</span> =&gt;</span> hero.id)) + <span class="number">1</span> : <span class="number">11</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="AsyncPipe"><a href="#AsyncPipe" class="headerlink" title="AsyncPipe"></a>AsyncPipe</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let hero of heroes$ | async"</span> &gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>$ 是一个命名惯例，用来表明 heroes$ 是一个 Observable，而不是数组。</li>
+<li><code>| async</code>表示 Angular 的 AsyncPipe, 会自动订阅到 Observable，这样你就不用再在组件类中订阅了。</li>
+</ul>
+<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><h4 id="NgModule-简介"><a href="#NgModule-简介" class="headerlink" title="NgModule 简介"></a>NgModule 简介</h4><blockquote>
+<p>NgModule 是一个带有 @NgModule() 装饰器的类。@NgModule() 装饰器是一个函数，它接受一个元数据对象，该对象的属性用来描述这个模块。其中最重要的属性如下。</p>
+<ul>
+<li>declarations（可声明对象表） —— 那些属于本 NgModule 的组件、指令、管道。</li>
+<li>exports（导出表） —— 那些能在其它模块的组件模板中使用的可声明对象的子集。</li>
+<li>imports（导入表） —— 那些导出了本模块中的组件模板所需的类的其它模块。</li>
+<li>providers —— 本模块向全局服务中贡献的那些服务的创建器。 这些服务能被本应用中的任何部分使用。（你也可以在组件级别指定服务提供商，这通常是首选方式。）</li>
+<li>bootstrap —— 应用的主视图，称为根组件。它是应用中所有其它视图的宿主。只有根模块才应该设置这个 bootstrap 属性。</li>
+</ul>
+</blockquote>
+<h4 id="NgModule-和-JavaScript-的模块"><a href="#NgModule-和-JavaScript-的模块" class="headerlink" title="NgModule 和 JavaScript 的模块"></a>NgModule 和 JavaScript 的模块</h4><p>NgModule 系统与 JavaScript（ES2015）用来管理 JavaScript 对象的模块系统，两者不同但互补。你可以使用它们来共同编写你的应用。</p>
+<p>在JavaScript中，每个文件是一个模块，文件中定义的所有对象都从属于那个模块。通过export关键字，模块可以把它的某些对象声明为公共的。其它JavaScript模块可以使用import语句来访问这些公共对象。</p>
+<h4 id="服务与依赖注入简介"><a href="#服务与依赖注入简介" class="headerlink" title="服务与依赖注入简介"></a>服务与依赖注入简介</h4><p>服务是一个广义的概念，它包括应用所需的任何值、函数或特性。狭义的服务是一个明确定义了用途的类。</p>
+<h3 id="组件与模板"><a href="#组件与模板" class="headerlink" title="组件与模板"></a>组件与模板</h3><h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h4><p>HTML是Angular 模板的语言。几乎所有的 HTML 语法都是有效的模板语法。 但值得注意的例外是 <code>&lt;script&gt;</code> 元素，它被禁用了，以阻止脚本注入攻击的风险。</p>
+<h4 id="NgModel-使用-ngModel-双向绑定到表单元素"><a href="#NgModel-使用-ngModel-双向绑定到表单元素" class="headerlink" title="NgModel - 使用[(ngModel)]双向绑定到表单元素"></a>NgModel - 使用[(ngModel)]双向绑定到表单元素</h4><p><em>ngModel展开形式用法</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.标准</span></span><br><span class="line">&lt;input [(ngModel)]=<span class="string">"currentHero.name"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.展开</span></span><br><span class="line">&lt;input</span><br><span class="line">  [ngModel]=<span class="string">"currentHero.name"</span></span><br><span class="line">  (ngModelChange)=<span class="string">"currentHero.name=$event"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.</span></span><br><span class="line"><span class="comment">// 下面这个生造的例子强制输入框的内容变成大写：</span></span><br><span class="line">&lt;input</span><br><span class="line">  [ngModel]=<span class="string">"currentHero.name"</span></span><br><span class="line">  (ngModelChange)=<span class="string">"setUppercaseName($event)"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="带-trackBy-的-ngFor"><a href="#带-trackBy-的-ngFor" class="headerlink" title="带 trackBy 的 ngFor"></a>带 trackBy 的 <em>ngFor</em></h4><p><em>避免ngFor刷新整个列表</em></p>
+<p>ngFor指令有时候会性能较差，特别是在大型列表中。对一个条目的一丁点改动、移除或添加，都会导致级联的 DOM 操作。在 Angular 看来，它只是一个由新的对象引用构成的新列表。<br>如果给它指定一个 trackBy，Angular就可以避免这种折腾。往组件中添加一个方法，它会返回 NgFor应该追踪的值。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ts</span></span><br><span class="line">trackByHeroes(index: <span class="built_in">number</span>, hero: Hero): <span class="built_in">number</span> &#123; <span class="keyword">return</span> hero.id; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// html</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngFor</span>=<span class="string">"let hero of heroes; trackBy: trackByHeroes"</span>&gt;</span></span><br><span class="line">  (&#123;&#123;hero.id&#125;&#125;) &#123;&#123;hero.name&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果没有 trackBy，这些按钮都会触发完全的 DOM 元素替换。有了 trackBy，则只有修改了 id 的按钮才会触发元素替换。</li>
+</ul>
+<h4 id="非空断言操作符（-）"><a href="#非空断言操作符（-）" class="headerlink" title="非空断言操作符（!）"></a>非空断言操作符（!）</h4><p>如果类型检查器在运行期间无法确定一个变量是 null 或 undefined，那么它也会抛出一个错误。 你自己可能知道它不会为空，但类型检查器不知道。 所以你要告诉类型检查器，它不会为空，这时就要用到非空断言操作符。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 与安全导航操作符不同的是，非空断言操作符不会防止出现 null 或 undefined。 它只是告诉 TypeScript 的类型检查器对特定的属性表达式，不做 "严格空值检测"。</span><br><span class="line"><span class="comment">&lt;!--No hero, no text --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">"hero"</span>&gt;</span></span><br><span class="line">  The hero's name is &#123;&#123;hero!.name&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="类型转换函数-any-（-any-lt-表达式-gt-）"><a href="#类型转换函数-any-（-any-lt-表达式-gt-）" class="headerlink" title="类型转换函数 $any （$any( &lt;表达式&gt; )）"></a>类型转换函数 $any （$any( &lt;表达式&gt; )）</h4><p>有时候，绑定表达式可能会报类型错误，并且它不能或很难指定类型。要消除这种报错，你可以使用 $any 转换函数来把表达式转换成 any 类型。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Accessing an undeclared member --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  The hero's marker is &#123;&#123;$any(hero).marker&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// $any 转换函数可以和 this 联合使用，以便访问组件中未声明过的成员。</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Accessing an undeclared member --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  Undeclared members is &#123;&#123;$any(this).member&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="用户输入"><a href="#用户输入" class="headerlink" title="用户输入"></a>用户输入</h4><p>传入 $event 把整个 DOM 事件传到方法中，因为这样组件会知道太多模板的信息。这就违反了模板（用户看到的）和组件（应用如何处理用户数据）之间的分离关注原则。我们用模板引用变量来解决这个问题。</p>
+<p><em>从一个模板引用变量中获得用户输入</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-loop-back'</span>,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;input #box (keyup)="0"&gt;</span></span><br><span class="line"><span class="string">    &lt;p&gt;&#123;&#123;box.value&#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> LoopbackComponent &#123; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只有在应用做了些异步事件（如击键），Angular 才更新绑定（并最终影响到屏幕）。除非你绑定一个事件，否则这将完全无法工作。</li>
+</ul>
+<h4 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h4><p><img src="http://images.turlingxian.com/blog%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E9%A1%BA%E5%BA%8F.png" alt="生命周期钩子"></p>
+<h4 id="通过-setter-截听输入属性值的变化"><a href="#通过-setter-截听输入属性值的变化" class="headerlink" title="通过 setter 截听输入属性值的变化"></a>通过 setter 截听输入属性值的变化</h4><p>使用一个输入属性的 setter，以拦截父组件中值的变化，并采取行动。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// trim掉名字中的空格</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, Input &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-name-child'</span>,</span><br><span class="line">  template: <span class="string">'&lt;h3&gt;"&#123;&#123;name&#125;&#125;"&lt;/h3&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> NameChildComponent &#123;</span><br><span class="line">  <span class="keyword">private</span> _name = <span class="string">''</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="meta">@Input</span>()</span><br><span class="line">  <span class="keyword">set</span> name(name: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>._name = (name &amp;&amp; name.trim()) || <span class="string">'&lt;no name set&gt;'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">get</span> name(): <span class="built_in">string</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>._name; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="通过ngOnChanges-来截听输入属性值的变化"><a href="#通过ngOnChanges-来截听输入属性值的变化" class="headerlink" title="通过ngOnChanges()来截听输入属性值的变化"></a>通过ngOnChanges()来截听输入属性值的变化</h4><p>当需要监视多个、交互式输入属性的时候，本方法比用属性的 setter 更合适。</p>
+<h4 id="父组件与子组件通过本地变量互动"><a href="#父组件与子组件通过本地变量互动" class="headerlink" title="父组件与子组件通过本地变量互动"></a>父组件与子组件通过本地变量互动</h4><p>父组件不能使用数据绑定来读取子组件的属性或调用子组件的方法。但可以在父组件模板里，新建一个本地变量来代表子组件，然后利用这个变量来读取子组件的属性和调用子组件的方法。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CountdownTimerComponent是子组件</span></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-countdown-parent-lv'</span>,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;h3&gt;Countdown to Liftoff (via local variable)&lt;/h3&gt;</span></span><br><span class="line"><span class="string">  &lt;button (click)="timer.start()"&gt;Start&lt;/button&gt;</span></span><br><span class="line"><span class="string">  &lt;button (click)="timer.stop()"&gt;Stop&lt;/button&gt;</span></span><br><span class="line"><span class="string">  &lt;div class="seconds"&gt;&#123;&#123;timer.seconds&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">  //  #timer代表子组件。这样父组件的模板就得到了子组件的引用，于是可以在父组件的模板中访问子组件的所有属性和方法。</span></span><br><span class="line"><span class="string">  &lt;app-countdown-timer #timer&gt;&lt;/app-countdown-timer&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">  styleUrls: [<span class="string">'../assets/demo.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CountdownLocalVarParentComponent &#123; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="父组件调用-ViewChild"><a href="#父组件调用-ViewChild" class="headerlink" title="父组件调用@ViewChild()"></a>父组件调用@ViewChild()</h4><p>这个本地变量方法是个简单便利的方法。但是它也有局限性，因为父组件-子组件的连接必须全部在父组件的模板中进行。父组件本身的代码对子组件没有访问权。<br>如果父组件的类需要读取子组件的属性值或调用子组件的方法，就不能使用本地变量方法。<br>当父组件类需要这种访问时，可以把子组件作为ViewChild，注入到父组件里面。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CountdownViewChildParentComponent <span class="keyword">implements</span> AfterViewInit &#123;</span><br><span class="line"> </span><br><span class="line">  <span class="meta">@ViewChild</span>(CountdownTimerComponent)</span><br><span class="line">  <span class="keyword">private</span> timerComponent: CountdownTimerComponent;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="父组件和子组件通过服务来通讯"><a href="#父组件和子组件通过服务来通讯" class="headerlink" title="父组件和子组件通过服务来通讯"></a>父组件和子组件通过服务来通讯</h4><p>父组件和它的子组件共享同一个服务，利用该服务在组件家族内部实现双向通讯。<br>该服务实例的作用域被限制在父组件和其子组件内。这个组件子树之外的组件将无法访问该服务或者与它们通讯。</p>
+<h4 id="组件样式"><a href="#组件样式" class="headerlink" title="组件样式"></a>组件样式</h4><p><em>特殊的选择器</em></p>
+<ul>
+<li>:host —— 用来选择组件宿主元素中的元素（相对于组件模板内部的元素）。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 要把宿主样式作为条件，就要像函数一样把其它选择器放在 :host 后面的括号中。</span><br><span class="line"><span class="selector-pseudo">:host(.active)</span> &#123;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>:host-context —— 它在当前组件宿主元素的祖先节点中查找 CSS 类， 直到文档的根节点为止。它也以类似 :host() 形式使用。</p>
+</li>
+<li><p>已废弃 /deep/、&gt;&gt;&gt; 和 ::ng-deep</p>
+</li>
+</ul>
+<h4 id="视图封装模式"><a href="#视图封装模式" class="headerlink" title="视图封装模式"></a>视图封装模式</h4><blockquote>
+<p>通过在组件的元数据上设置视图封装模式，你可以分别控制每个组件的封装模式。 可选的封装模式一共有如下几种：ShadowDom、Native、Emulated、None。</p>
+</blockquote>
+<h4 id="Angular-元素（Elements）概览"><a href="#Angular-元素（Elements）概览" class="headerlink" title="Angular 元素（Elements）概览"></a>Angular 元素（Elements）概览</h4><blockquote>
+<p>Angular 元素就是打包成自定义元素的 Angular 组件。所谓自定义元素就是一套与具体框架无关的用于定义新 HTML 元素的 Web 标准。<br>自定义元素扩展了 HTML，它允许你定义一个由 JavaScript 代码创建和控制的标签。 浏览器会维护一个自定义元素（也叫 Web Components）的注册表 CustomElementRegistry，它把一个可实例化的 JavaScript 类映射到 HTML 标签上。</p>
+</blockquote>
+<p>// todo: 这一部分可以做一个实例验证之后再写。</p>
+<h4 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4><p>// todo: 这一章是动态广告 组件的实例。可以写一下验证之后再来补充。</p>
+<h4 id="属性型指令"><a href="#属性型指令" class="headerlink" title="属性型指令"></a>属性型指令</h4><blockquote>
+<p>在 Angular 中有三种类型的指令：</p>
+<ul>
+<li>组件 — 拥有模板的指令</li>
+<li>结构型指令 — 通过添加和移除 DOM 元素改变 DOM 布局的指令。（NgIf）</li>
+<li>属性型指令 — 改变元素、组件或其它指令的外观和行为的指令。（ngStyle）</li>
+</ul>
+</blockquote>
+<h4 id="编写属性型指令"><a href="#编写属性型指令" class="headerlink" title="编写属性型指令"></a>编写属性型指令</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Directive, ElementRef, HostListener, Input &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 属性型指令至少需要一个带有 @Directive 装饰器的控制器类。该装饰器指定了一个用于标识属性的选择器。 控制器类实现了指令需要的指令行为。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Directive</span>(&#123;</span><br><span class="line">  <span class="comment">// 这里的方括号([])表示它的属性型选择器。 Angular 会在模板中定位每个拥有名叫 appHighlight 属性的元素，并且为这些元素加上本指令的逻辑。</span></span><br><span class="line">  selector: <span class="string">'[appHighlight]'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> HighlightDirective &#123;</span><br><span class="line">  <span class="comment">// 你可以在指令的构造函数中使用 ElementRef 来注入宿主 DOM 元素的引用。</span></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> el: ElementRef</span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 绑定到 @Input 别名</span></span><br><span class="line">  <span class="meta">@Input</span>(<span class="string">'appHighlight'</span>) highlightColor: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 响应用户引发的事件</span></span><br><span class="line">  <span class="meta">@HostListener</span>(<span class="string">'mouseenter'</span>) onMouseEnter() &#123;</span><br><span class="line">    <span class="keyword">this</span>.highlight(<span class="keyword">this</span>.highlightColor || <span class="string">'red'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> highlight(color: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.el.nativeElement.style.backgroundColor = color;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 使用属性型指令</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">appHighlight</span>&gt;</span>Highlight me!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="结构型指令"><a href="#结构型指令" class="headerlink" title="结构型指令"></a>结构型指令</h4><blockquote>
+<p>结构型指令的职责是 HTML 布局。 它们塑造或重塑 DOM 的结构，比如添加、移除或维护这些元素。结构型指令非常容易识别，星号（*）被放在指令的属性名之前。<br>可以在一个宿主元素上应用多个属性型指令，但只能应用一个结构型指令。</p>
+</blockquote>
+<h4 id="NgIf"><a href="#NgIf" class="headerlink" title="NgIf"></a>NgIf</h4><p>NgIf 会从 DOM 中移除它的宿主元素，而不是隐藏。</p>
+<h4 id="星号（-）前缀"><a href="#星号（-）前缀" class="headerlink" title="星号（*）前缀"></a>星号（*）前缀</h4><blockquote>
+<p>星号是一个用来简化更复杂语法的“语法糖”。 从内部实现来说，Angular 把 *ngIf 属性 翻译成一个 <ng-template> 元素 并用它来包裹宿主元素，代码如下：</ng-template></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">"hero"</span> <span class="attr">class</span>=<span class="string">"name"</span>&gt;</span>&#123;&#123;hero.name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">// 转化后</span><br><span class="line"><span class="tag">&lt;<span class="name">ng-template</span> [<span class="attr">ngIf</span>]=<span class="string">"hero"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"name"</span>&gt;</span>&#123;&#123;hero.name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ng-template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="微语法"><a href="#微语法" class="headerlink" title="微语法"></a>微语法</h4><blockquote>
+<p>Angular 微语法能让你通过简短的、友好的字符串来配置一个指令。 微语法解析器把这个字符串翻译成 <ng-template> 上的属性。</ng-template></p>
+</blockquote>
+<p>// todo: 详细理解一下微语法</p>
+<h4 id="lt-ng-container-gt-的应用"><a href="#lt-ng-container-gt-的应用" class="headerlink" title="&lt;ng-container&gt;的应用"></a><code>&lt;ng-container&gt;</code>的应用</h4><blockquote>
+<p>Angular 的 <ng-container> 是一个分组元素，但它不会污染样式或元素布局，因为 Angular 压根不会把它放进 DOM 中。</ng-container></p>
+</blockquote>
+<p><em><code>&lt;ng-container&gt;</code>的使用场景</em></p>
+<p>有些 HTML 元素需要所有的直属下级都具有特定的类型。 比如，<code>&lt;select&gt;</code> 元素要求直属下级必须为 <code>&lt;option&gt;</code>，那就没办法把这些选项包装进 <code>&lt;div&gt;</code> 或 <code>&lt;span&gt;</code> 中。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 下拉列表为空</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  Pick your favorite hero</span><br><span class="line">  (<span class="tag">&lt;<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span> (<span class="attr">change</span>)=<span class="string">"showSad = !showSad"</span>&gt;</span>show sad<span class="tag">&lt;/<span class="name">label</span>&gt;</span>)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> [(<span class="attr">ngModel</span>)]=<span class="string">"hero"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> *<span class="attr">ngFor</span>=<span class="string">"let h of heroes"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> *<span class="attr">ngIf</span>=<span class="string">"showSad || h.emotion !== 'sad'"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> [<span class="attr">ngValue</span>]=<span class="string">"h"</span>&gt;</span>&#123;&#123;h.name&#125;&#125; (&#123;&#123;h.emotion&#125;&#125;)<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 下拉框工作正常</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  Pick your favorite hero</span><br><span class="line">  (<span class="tag">&lt;<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span> (<span class="attr">change</span>)=<span class="string">"showSad = !showSad"</span>&gt;</span>show sad<span class="tag">&lt;/<span class="name">label</span>&gt;</span>)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> [(<span class="attr">ngModel</span>)]=<span class="string">"hero"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ng-container</span> *<span class="attr">ngFor</span>=<span class="string">"let h of heroes"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ng-container</span> *<span class="attr">ngIf</span>=<span class="string">"showSad || h.emotion !== 'sad'"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> [<span class="attr">ngValue</span>]=<span class="string">"h"</span>&gt;</span>&#123;&#123;h.name&#125;&#125; (&#123;&#123;h.emotion&#125;&#125;)<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ng-container</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ng-container</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h4><ul>
+<li><p>你使用自定义管道的方式和内置管道完全相同。</p>
+</li>
+<li><p>你必须在 AppModule 的 declarations 数组中包含这个管道。</p>
+</li>
+<li><p>当使用管道时，Angular 会选用一种更简单、更快速的变更检测算法。</p>
+</li>
+</ul>
+<h4 id="纯-pure-管道与非纯-impure-管道"><a href="#纯-pure-管道与非纯-impure-管道" class="headerlink" title="纯(pure)管道与非纯(impure)管道"></a>纯(pure)管道与非纯(impure)管道</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  默认情况下，管道都是纯的。以前见到的每个管道都是纯的。 通过把它的 pure 标志设置为 false，你可以制作一个非纯管道。</span></span><br><span class="line"><span class="meta">@Pipe</span>(&#123;</span><br><span class="line">  name: <span class="string">'flyingHeroesImpure'</span>,</span><br><span class="line">  pure: <span class="literal">false</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>纯管道 —— Angular只有在它检测到输入值发生了纯变更时才会执行纯管道。 纯变更是指对原始类型值(String、Number、Boolean、Symbol)的更改，或者对对象引用(Date、Array、Function、Object)的更改。会忽略(复合)对象内部的更改。（它保证了速度）</p>
+</li>
+<li><p>非纯管道 —— Angular会在每个组件的变更检测周期中执行非纯管道。非纯管道可能会被调用很多次，和每个按键或每次鼠标移动一样频繁。</p>
+</li>
+</ul>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><h4 id="Angular-表单检测"><a href="#Angular-表单检测" class="headerlink" title="Angular 表单检测"></a>Angular 表单检测</h4><blockquote>
+<p>一般来说：</p>
+<ul>
+<li>响应式表单更健壮：它们的可扩展性、可复用性和可测试性更强。 如果表单是应用中的关键部分，或者你已经准备使用响应式编程模式来构建应用，请使用响应式表单。</li>
+<li>模板驱动表单在往应用中添加简单的表单时非常有用，比如邮件列表的登记表单。它们很容易添加到应用中，但是不像响应式表单那么容易扩展。如果你有非常基本的表单需求和简单到能用模板管理的逻辑，请使用模板驱动表单。</li>
+</ul>
+</blockquote>
+<h4 id="响应式表单"><a href="#响应式表单" class="headerlink" title="响应式表单"></a>响应式表单</h4><h4 id="部分模型更新"><a href="#部分模型更新" class="headerlink" title="部分模型更新"></a>部分模型更新</h4><blockquote>
+<p>有两种更新模型值的方式：</p>
+<ul>
+<li>使用 setValue() 方法来为单个控件设置新值。 setValue() 方法会严格遵循表单组的结构，并整体性替换控件的值。</li>
+<li>使用 patchValue() 方法可以用对象中所定义的任何属性为表单模型进行替换。</li>
+</ul>
+</blockquote>
+<p><em>修补（Patching）模型值</em></p>
+<p>setValue() 方法的严格检查可以帮助你捕获复杂表单嵌套中的错误，而 patchValue() 在遇到那些错误时可能会默默的失败。</p>
+<h4 id="简单的表单验证"><a href="#简单的表单验证" class="headerlink" title="简单的表单验证"></a>简单的表单验证</h4><p><em>显示表单状态</em></p>
+<p>你可以通过该 FormGroup 实例的 status 属性来访问其当前状态。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 表单无效（验证不通过），值为INVALID</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  Form Status: &#123;&#123; profileForm.status &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用表单数组管理动态控件"><a href="#使用表单数组管理动态控件" class="headerlink" title="使用表单数组管理动态控件"></a>使用表单数组管理动态控件</h4><blockquote>
+<p>FormArray 是 FormGroup 之外的另一个选择，用于管理任意数量的匿名控件。像 FormGroup 实例一样，你也可以往 FormArray 中动态插入和移除控件，并且 FormArray 实例的值和验证状态也是根据它的子控件计算得来的。 不过，你不需要为每个控件定义一个名字作为 key，因此，如果你事先不知道子控件的数量，这就是一个很好的选择。</p>
+</blockquote>
+<p>下面的例子展示了如何在 ProfileEditor 中管理一组绰号（aliases）。</p>
+<ol>
+<li>定义</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FormArray &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">profileForm = <span class="keyword">this</span>.fb.group(&#123;</span><br><span class="line">  firstName: [<span class="string">''</span>, Validators.required],</span><br><span class="line">  lastName: [<span class="string">''</span>],</span><br><span class="line">  address: <span class="keyword">this</span>.fb.group(&#123;</span><br><span class="line">    street: [<span class="string">''</span>],</span><br><span class="line">    city: [<span class="string">''</span>],</span><br><span class="line">    state: [<span class="string">''</span>],</span><br><span class="line">    zip: [<span class="string">''</span>]</span><br><span class="line">  &#125;),</span><br><span class="line">  aliases: <span class="keyword">this</span>.fb.array([</span><br><span class="line">    <span class="keyword">this</span>.fb.control(<span class="string">''</span>)</span><br><span class="line">  ])</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>访问</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 别名</span></span><br><span class="line"><span class="comment">// 相对于重复使用 profileForm.get() 方法获取每个实例的方式，getter 可以让你轻松访问表单数组各个实例中的别名。 </span></span><br><span class="line"><span class="keyword">get</span> aliases() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.profileForm.get(<span class="string">'aliases'</span>) <span class="keyword">as</span> FormArray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addAlias() &#123;</span><br><span class="line">  <span class="keyword">this</span>.aliases.push(<span class="keyword">this</span>.fb.control(<span class="string">''</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在模板中显示表单数组</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">formArrayName</span>=<span class="string">"aliases"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Aliases<span class="tag">&lt;/<span class="name">h3</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"addAlias()"</span>&gt;</span>Add Alias<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngFor</span>=<span class="string">"let address of aliases.controls; let i=index"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- The repeated alias template --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">      Alias:</span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> [<span class="attr">formControlName</span>]=<span class="string">"i"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="模板驱动表单"><a href="#模板驱动表单" class="headerlink" title="模板驱动表单"></a>模板驱动表单</h4><h4 id="创建表单组件"><a href="#创建表单组件" class="headerlink" title="创建表单组件"></a>创建表单组件</h4><p><em>调试技巧，通过getter属性</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 你添加一个 diagnostic 属性，以返回这个模型的 JSON 形式。在开发过程中，它用于调试，最后清理时会丢弃它。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-hero-form'</span>,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> HeroFormComponent &#123;</span><br><span class="line"></span><br><span class="line">  powers = [<span class="string">'Really Smart'</span>, <span class="string">'Super Flexible'</span>,</span><br><span class="line">            <span class="string">'Super Hot'</span>, <span class="string">'Weather Changer'</span>];</span><br><span class="line"></span><br><span class="line">  model = <span class="keyword">new</span> Hero(<span class="number">18</span>, <span class="string">'Dr IQ'</span>, <span class="keyword">this</span>.powers[<span class="number">0</span>], <span class="string">'Chuck Overstreet'</span>);</span><br><span class="line"></span><br><span class="line">  submitted = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">  onSubmit() &#123; <span class="keyword">this</span>.submitted = <span class="literal">true</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// <span class="doctag">TODO:</span> Remove this when we're done</span></span><br><span class="line">  <span class="keyword">get</span> diagnostic() &#123; <span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.model); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="通过-ngModel-跟踪修改状态与有效性验证"><a href="#通过-ngModel-跟踪修改状态与有效性验证" class="headerlink" title="通过 ngModel 跟踪修改状态与有效性验证"></a>通过 ngModel 跟踪修改状态与有效性验证</h4><blockquote>
+<p>NgModel 指令不仅仅跟踪状态。它还使用特定的 Angular CSS 类来更新控件，以反映当前状态。 可以利用这些 CSS 类来修改控件的外观，显示或隐藏消息。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>为真时的 CSS 类</th>
+<th>为假时的 CSS 类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>控件被访问过。</td>
+<td>ng-touched</td>
+<td>ng-untouched</td>
+</tr>
+<tr>
+<td>控件的值变化了。</td>
+<td>ng-dirty</td>
+<td>ng-pristine</td>
+</tr>
+<tr>
+<td>控件的值有效。</td>
+<td>ng-valid</td>
+<td>ng-invalid</td>
+</tr>
+</tbody>
+</table>
+<p><em>css例子</em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ng-valid</span><span class="selector-attr">[required]</span>, <span class="selector-class">.ng-valid</span><span class="selector-class">.required</span>  &#123;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">5px</span> solid <span class="number">#42A948</span>; <span class="comment">/* green */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ng-invalid</span><span class="selector-pseudo">:not(form)</span>  &#123;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">5px</span> solid <span class="number">#a94442</span>; <span class="comment">/* red */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>调试技巧，spy.className</em></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 往姓名 <span class="tag">&lt;<span class="name">input</span>&gt;</span> 标签上添加名叫 spy 的临时模板引用变量， 然后用这个 spy 来显示它上面的所有 CSS 类。</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"name"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">required</span></span></span><br><span class="line"><span class="tag">  [(<span class="attr">ngModel</span>)]=<span class="string">"model.name"</span> <span class="attr">name</span>=<span class="string">"name"</span></span></span><br><span class="line"><span class="tag">  #<span class="attr">spy</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>TODO: remove this: &#123;&#123;spy.className&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="验证器函数添加到模板驱动表单"><a href="#验证器函数添加到模板驱动表单" class="headerlink" title="验证器函数添加到模板驱动表单"></a>验证器函数添加到模板驱动表单</h4><p>在模板驱动表单中，你不用直接访问 FormControl 实例。所以不能像响应式表单中那样把验证器传进去，而应该在模板中添加一个指令。</p>
+<ol>
+<li><p>自定义验证函数（略）</p>
+</li>
+<li><p>指令</p>
+</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Directive</span>(&#123;</span><br><span class="line">  selector: <span class="string">'[appForbiddenName]'</span>,</span><br><span class="line">  providers: [&#123;provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: <span class="literal">true</span>&#125;]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ForbiddenValidatorDirective <span class="keyword">implements</span> Validator &#123;</span><br><span class="line">  <span class="meta">@Input</span>(<span class="string">'appForbiddenName'</span>) forbiddenName: <span class="built_in">string</span>;</span><br><span class="line"> </span><br><span class="line">  validate(control: AbstractControl): &#123;[key: <span class="built_in">string</span>]: <span class="built_in">any</span>&#125; | <span class="literal">null</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.forbiddenName ? forbiddenNameValidator(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="keyword">this</span>.forbiddenName, <span class="string">'i'</span>))(control)</span><br><span class="line">                              : <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>模板中使用</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"name"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"4"</span> <span class="attr">appForbiddenName</span>=<span class="string">"bob"</span></span></span><br><span class="line"><span class="tag">      [(<span class="attr">ngModel</span>)]=<span class="string">"hero.name"</span> #<span class="attr">name</span>=<span class="string">"ngModel"</span> &gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="异步验证"><a href="#异步验证" class="headerlink" title="异步验证"></a>异步验证</h4><p>异步验证总是会在同步验证之后执行，并且只有当同步验证成功了之后才会执行。如果更基本的验证方法已经失败了，那么这能让表单避免进行可能会很昂贵的异步验证过程，比如 HTTP 请求。</p>
+<p><em>例子： 在异步验证结束前会pending</em></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">"name"</span> #<span class="attr">model</span>=<span class="string">"ngModel"</span> <span class="attr">appSomeAsyncValidator</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-spinner</span> *<span class="attr">ngIf</span>=<span class="string">"model.pending"</span>&gt;</span><span class="tag">&lt;/<span class="name">app-spinner</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Injectable</span>(&#123; providedIn: <span class="string">'root'</span> &#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> UniqueAlterEgoValidator <span class="keyword">implements</span> AsyncValidator &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> heroesService: HeroesService</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  validate(</span><br><span class="line">    ctrl: AbstractControl</span><br><span class="line">  ): <span class="built_in">Promise</span>&lt;ValidationErrors | <span class="literal">null</span>&gt; | Observable&lt;ValidationErrors | <span class="literal">null</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.heroesService.isAlterEgoTaken(ctrl.value).pipe(</span><br><span class="line">      map(<span class="function"><span class="params">isTaken</span> =&gt;</span> (isTaken ? &#123; uniqueAlterEgo: <span class="literal">true</span> &#125; : <span class="literal">null</span>)),</span><br><span class="line">      catchError(<span class="function"><span class="params">()</span> =&gt;</span> <span class="literal">null</span>)</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> HeroesService &#123;</span><br><span class="line">  isAlterEgoTaken: <span class="function">(<span class="params">alterEgo: <span class="built_in">string</span></span>) =&gt;</span> Observable&lt;<span class="built_in">boolean</span>&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="性能问题"><a href="#性能问题" class="headerlink" title="性能问题"></a>性能问题</h4><p>默认情况下，每当表单值变化之后，都会执行所有验证器。对于同步验证器，没有什么会显著影响应用性能的地方。不过，异步验证器通常会执行某种 HTTP 请求来对控件进行验证。如果在每次按键之后都发出 HTTP 请求会给后端 API 带来沉重的负担，应该尽量避免。</p>
+<p>我们可以把 updateOn 属性从 change（默认值）改成 submit 或 blur 来推迟表单验证的更新时机。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 对于模板驱动表单：</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">"name"</span> [<span class="attr">ngModelOptions</span>]=<span class="string">"&#123;updateOn: 'blur'&#125;"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// 对于响应式表单：</span><br><span class="line"></span><br><span class="line">new FormControl('', &#123;updateOn: 'blur'&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="NgModule"><a href="#NgModule" class="headerlink" title="NgModule"></a>NgModule</h3><h4 id="服务提供商"><a href="#服务提供商" class="headerlink" title="服务提供商"></a>服务提供商</h4><h4 id="服务提供商作用域"><a href="#服务提供商作用域" class="headerlink" title="服务提供商作用域"></a>服务提供商作用域</h4><p><em>providedIn 与 NgModule</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 也可以规定某个服务只有在特定的 @NgModule 中提供。比如，如果你你希望只有当消费方导入了你创建的 UserModule 时才让 UserService 在应用中生效，那就可以指定该服务要在该模块中提供：</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UserModule &#125; <span class="keyword">from</span> <span class="string">'./user.module'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Injectable</span>(&#123;</span><br><span class="line">  providedIn: UserModule,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> UserService &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的例子展示的就是在模块中提供服务的首选方式。之所以推荐该方式，是因为当没有人注入它时，该服务就可以被摇树优化掉。<br>如果没办法指定哪个模块该提供这个服务，你也可以在那个模块中为该服务声明一个提供商：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; UserService &#125; <span class="keyword">from</span> <span class="string">'./user.service'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  providers: [UserService],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> UserModule &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="单例服务"><a href="#单例服务" class="headerlink" title="单例服务"></a>单例服务</h4><h4 id="提供单例服务"><a href="#提供单例服务" class="headerlink" title="提供单例服务"></a>提供单例服务</h4><blockquote>
+<p>在 Angular 中有两种方式来生成单例服务：</p>
+<ul>
+<li>声明该服务应该在应用的根上提供。</li>
+<li>把该服务包含在 AppModule 或某个只会被 AppModule 导入的模块中。</li>
+</ul>
+</blockquote>
+<h4 id="forRoot"><a href="#forRoot" class="headerlink" title="forRoot()"></a>forRoot()</h4><p>如果某个模块同时提供了服务提供商和可声明对象（组件、指令、管道），那么当在某个子注入器中加载它的时候（比如路由），就会生成多个该服务提供商的实例。 而存在多个实例会导致一些问题，因为这些实例会屏蔽掉根注入器中该服务提供商的实例，而它的本意可能是作为单例对象使用的。 </p>
+<p>因此，Angular 提供了一种方式来把服务提供商从该模块中分离出来，以便该模块既可以带着 providers 被根模块导入，也可以不带 providers 被子模块导入。</p>
+<p>在该模块上创建一个静态方法 forRoot()（习惯名称）。</p>
+<p>把那些服务提供商放进 forRoot 方法中，参见下面的例子。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// service</span></span><br><span class="line"><span class="keyword">constructor</span>(<span class="params"><span class="meta">@Optional</span>() config: UserServiceConfig</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (config) &#123; <span class="keyword">this</span>._userName = config.userName; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// coremodule</span></span><br><span class="line"><span class="keyword">static</span> forRoot(config: UserServiceConfig): ModuleWithProviders &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ngModule: CoreModule,</span><br><span class="line">    providers: [</span><br><span class="line">      &#123;provide: UserServiceConfig, useValue: config &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// app.module</span></span><br><span class="line"><span class="keyword">import</span> &#123; CoreModule &#125; <span class="keyword">from</span> <span class="string">'./core/core.module'</span>;</span><br><span class="line"><span class="comment">/* . . . */</span></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    ...</span><br><span class="line">    CoreModule.forRoot(&#123;userName: <span class="string">'Miss Marple'</span>&#125;),</span><br><span class="line">  ],</span><br><span class="line"><span class="comment">/* . . . */</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="防止重复导入-CoreModule"><a href="#防止重复导入-CoreModule" class="headerlink" title="防止重复导入 CoreModule"></a>防止重复导入 CoreModule</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// coremodule</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个构造函数要求 Angular 把 CoreModule 注入到它自己。 如果 Angular 在当前注入器中查找 CoreModule，这个注入过程就会陷入死循环。 而 @SkipSelf 装饰器表示 “在注入器树中那些高于我的祖先注入器中查找 CoreModule”。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">constructor</span> (<span class="params"><span class="meta">@Optional</span>() <span class="meta">@SkipSelf</span>() parentModule: CoreModule</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (parentModule) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(</span><br><span class="line">      <span class="string">'CoreModule is already loaded. Import it in the AppModule only'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><h4 id="Angular注入依赖"><a href="#Angular注入依赖" class="headerlink" title="Angular注入依赖"></a>Angular注入依赖</h4><h4 id="那些需要其它服务的服务"><a href="#那些需要其它服务的服务" class="headerlink" title="那些需要其它服务的服务"></a>那些需要其它服务的服务</h4><p><em>可选依赖，@Optional</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Optional &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">constructor</span>(<span class="params"><span class="meta">@Optional</span>() <span class="keyword">private</span> logger: Logger</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.logger) &#123;</span><br><span class="line">    <span class="keyword">this</span>.logger.log(some_message);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="依赖提供商"><a href="#依赖提供商" class="headerlink" title="依赖提供商"></a>依赖提供商</h4><h4 id="Provider-对象字面量"><a href="#Provider-对象字面量" class="headerlink" title="Provider 对象字面量"></a>Provider 对象字面量</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">providers: [Logger]</span><br><span class="line"><span class="comment">// &lt;=&gt;</span></span><br><span class="line"><span class="comment">// 第二个属性是一个提供商定义对象，它告诉注入器要如何创建依赖值。 提供商定义对象中的 key 可以是 useClass —— 就像这个例子中一样。 也可以是 useExisting、useValue 或 useFactory。</span></span><br><span class="line">[&#123; provide: Logger, useClass: Logger &#125;]</span><br></pre></td></tr></table></figure>
+<h4 id="代替类提供商"><a href="#代替类提供商" class="headerlink" title="代替类提供商"></a>代替类提供商</h4><p><em>带依赖的类提供商</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// service</span></span><br><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> EvenBetterLogger <span class="keyword">extends</span> Logger &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// module</span></span><br><span class="line">[ UserService,</span><br><span class="line">  &#123; provide: Logger, useClass: EvenBetterLogger &#125;]</span><br></pre></td></tr></table></figure>
+<p><em>别名类提供商</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果你试图用 useClass 为 OldLogger 指定一个别名 NewLogger，就会在应用中得到 NewLogger 的两个不同的实例。</span></span><br><span class="line"></span><br><span class="line">[ NewLogger,</span><br><span class="line">  <span class="comment">// Not aliased! Creates two instances of `NewLogger`</span></span><br><span class="line">  &#123; provide: OldLogger, useClass: NewLogger&#125;]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 要确保只有一个 NewLogger 实例，就要用 useExisting 来为 OldLogger 指定别名。</span></span><br><span class="line"></span><br><span class="line">[ NewLogger,</span><br><span class="line">  <span class="comment">// Alias OldLogger w/ reference to NewLogger</span></span><br><span class="line">  &#123; provide: OldLogger, useExisting: NewLogger&#125;]</span><br></pre></td></tr></table></figure>
+<h4 id="值提供商"><a href="#值提供商" class="headerlink" title="值提供商"></a>值提供商</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123; provide: Logger, useValue: silentLogger &#125;]</span><br></pre></td></tr></table></figure>
+<p><em>非类依赖</em></p>
+<ol>
+<li>注入字符串、函数或对象。</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123; provide: AppConfig, useValue: HERO_DI_CONFIG &#125;)]</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>另一个为非类依赖选择提供商令牌的解决方案是定义并使用 InjectionToken 对象。</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> APP_CONFIG = <span class="keyword">new</span> InjectionToken&lt;AppConfig&gt;(<span class="string">'app.config'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// </span></span><br><span class="line">providers: [&#123; provide: APP_CONFIG, useValue: HERO_DI_CONFIG &#125;]</span><br><span class="line"></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="keyword">constructor</span>(<span class="params"><span class="meta">@Inject</span>(APP_CONFIG) config: AppConfig</span>) &#123;</span><br><span class="line">  <span class="keyword">this</span>.title = config.title;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="工厂提供商"><a href="#工厂提供商" class="headerlink" title="工厂提供商"></a>工厂提供商</h4><p>有时候你需要动态创建依赖值，创建时需要的信息你要等运行期间才能拿到。 比如，你可能需要某个在浏览器会话过程中会被反复修改的信息，而且这个可注入服务还不能独立访问这个信息的源头。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> heroServiceProvider =</span><br><span class="line">  &#123; provide: HeroService,</span><br><span class="line">    useFactory: heroServiceFactory,</span><br><span class="line">    deps: [Logger, UserService]</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h3><h4 id="获取-JSON-数据"><a href="#获取-JSON-数据" class="headerlink" title="获取 JSON 数据"></a>获取 JSON 数据</h4><ul>
+<li>带类型检查的响应</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getConfig() &#123;</span><br><span class="line">  <span class="comment">// now returns an Observable of Config</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.http.get&lt;Config&gt;(<span class="keyword">this</span>.configUrl);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>读取完整的响应体</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 你就要通过 observe 选项来告诉 HttpClient，你想要完整的响应信息，而不是只有响应体</span></span><br><span class="line">getConfigResponse(): Observable&lt;HttpResponse&lt;Config&gt;&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.http.get&lt;Config&gt;(</span><br><span class="line">    <span class="keyword">this</span>.configUrl, &#123; observe: <span class="string">'response'</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误处理器</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> handleError(error: HttpErrorResponse) &#123;</span><br><span class="line">  <span class="keyword">if</span> (error.error <span class="keyword">instanceof</span> ErrorEvent) &#123;</span><br><span class="line">    <span class="comment">// A client-side or network error occurred. Handle it accordingly.</span></span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'An error occurred:'</span>, error.error.message);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// The backend returned an unsuccessful response code.</span></span><br><span class="line">    <span class="comment">// The response body may contain clues as to what went wrong,</span></span><br><span class="line">    <span class="built_in">console</span>.error(</span><br><span class="line">      <span class="string">`Backend returned code <span class="subst">$&#123;error.status&#125;</span>, `</span> +</span><br><span class="line">      <span class="string">`body was: <span class="subst">$&#123;error.error&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// return an observable with a user-facing error message</span></span><br><span class="line">  <span class="keyword">return</span> throwError(</span><br><span class="line">    <span class="string">'Something bad happened; please try again later.'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getConfig() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.http.get&lt;Config&gt;(<span class="keyword">this</span>.configUrl)</span><br><span class="line">    .pipe(</span><br><span class="line">      catchError(<span class="keyword">this</span>.handleError)</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h4><p><em>请求的防抖（debounce）</em></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 如果每次击键都发送一次请求就太昂贵了。 最好能等到用户停止输入时才发送请求。</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> (<span class="attr">keyup</span>)=<span class="string">"search($event.target.value)"</span> <span class="attr">id</span>=<span class="string">"name"</span> <span class="attr">placeholder</span>=<span class="string">"Search"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let package of packages$ | async"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">b</span>&gt;</span>&#123;&#123;package.name&#125;&#125; v.&#123;&#123;package.version&#125;&#125;<span class="tag">&lt;/<span class="name">b</span>&gt;</span> -</span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span>&gt;</span>&#123;&#123;package.description&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">withRefresh = <span class="literal">false</span>;</span><br><span class="line">packages$: Observable&lt;NpmPackageInfo[]&gt;;</span><br><span class="line"><span class="keyword">private</span> searchText$ = <span class="keyword">new</span> Subject&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line"> </span><br><span class="line">search(packageName: <span class="built_in">string</span>) &#123;</span><br><span class="line">  <span class="keyword">this</span>.searchText$.next(packageName);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">ngOnInit() &#123;</span><br><span class="line">  <span class="keyword">this</span>.packages$ = <span class="keyword">this</span>.searchText$.pipe(</span><br><span class="line">    debounceTime(<span class="number">500</span>),</span><br><span class="line">    distinctUntilChanged(),</span><br><span class="line">    switchMap(<span class="function"><span class="params">packageName</span> =&gt;</span></span><br><span class="line">      <span class="keyword">this</span>.searchService.search(packageName, <span class="keyword">this</span>.withRefresh))</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> searchService: PackageSearchService</span>) &#123; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="拦截请求和响应"><a href="#拦截请求和响应" class="headerlink" title="拦截请求和响应"></a>拦截请求和响应</h4><ol>
+<li>编写拦截器</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  HttpEvent, HttpInterceptor, HttpHandler, HttpRequest</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'@angular/common/http'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** Pass untouched request through to the next request handler. */</span></span><br><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> NoopInterceptor <span class="keyword">implements</span> HttpInterceptor &#123;</span><br><span class="line"></span><br><span class="line">  intercept(req: HttpRequest&lt;<span class="built_in">any</span>&gt;, next: HttpHandler):</span><br><span class="line">    Observable&lt;HttpEvent&lt;<span class="built_in">any</span>&gt;&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> next.handle(req);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>提供拦截器</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单</span></span><br><span class="line">&#123; provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: <span class="literal">true</span> &#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可提供多个</span></span><br><span class="line"><span class="comment">/* "Barrel" of Http Interceptors */</span></span><br><span class="line"><span class="keyword">import</span> &#123; HTTP_INTERCEPTORS &#125; <span class="keyword">from</span> <span class="string">'@angular/common/http'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NoopInterceptor &#125; <span class="keyword">from</span> <span class="string">'./noop-interceptor'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** Http interceptor providers in outside-in order */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> httpInterceptorProviders = [</span><br><span class="line">  &#123; provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: <span class="literal">true</span> &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p><em>拦截器顺序</em></p>
+<p>Angular 会按照你提供它们的顺序应用这些拦截器。 如果你提供拦截器的顺序是先 A，再 B，再 C，那么请求阶段的执行顺序就是 A-&gt;B-&gt;C，而响应阶段的执行顺序则是 C-&gt;B-&gt;A。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>基本上比较细致的浏览了一遍angular官网上的内容，记录了一些在平时的运用中较少接触到的内容。至于RxJS，animation，i18n，库的开发，可以看作比较独立的内容，再此就不多赘述了。</p>
+
+              
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+            
+            <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzgzMy8yMDM2OA==">
+  <script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+            
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/Karma-Jasmine单元测试入门实践.html" style="float: left;">
+        ← Karma+Jasmine单元测试入门实践
+    </a>
+    
+    
+    <a class="pull-right" href="/hexo-github-io博客搭建.html">
+        hexo+github.io博客搭建 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By TurlingXian. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":1,"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/click.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
