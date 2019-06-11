@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://turlingxian.github.io/nodejs-Typescript%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</loc>
+    <lastmod>2019-06-11</lastmod>
+  </url>  <url>
     <loc>https://turlingxian.github.io/%E7%AE%80%E5%8D%95%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8.html</loc>
-    <lastmod>2019-06-06</lastmod>
+    <lastmod>2019-06-11</lastmod>
   </url>  <url>
     <loc>https://turlingxian.github.io/angular8%E5%AE%98%E7%BD%91%E9%98%85%E8%AF%BB%E5%B0%8F%E8%AE%B0.html</loc>
     <lastmod>2019-06-06</lastmod>
