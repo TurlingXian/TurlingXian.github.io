@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>《ECMAScript 6 入门》阅读笔记(上) | TurlingXian Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="TurlingXian Blog">
+    <meta name="author" content="TurlingXian">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="TurlingXian Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<!-- 页面点击小红心 -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/实践教程/" class="animsition-link">实践教程<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/阅读笔记/" class="animsition-link">阅读笔记<small>(3)</small></a></li>
+				    
+				</ul>
+        	</li>
+            
+            <!-- <li><a href="/tags" class="animsition-link" title="tag">标签</a></li> -->
+            
+                <li>
+                    <a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+                    <ul class="sb-submenu">
+                          
+                        <li><a href="/tags/Jasmine/" class="animsition-link">Jasmine<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/JavaScript/" class="animsition-link">JavaScript<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/Karma/" class="animsition-link">Karma<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/angular/" class="animsition-link">angular<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/nodejs/" class="animsition-link">nodejs<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/typescript/" class="animsition-link">typescript<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+                        
+                    </ul>
+                </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="https://yuexine.github.io/" class="animsition-link">yuexine&#39;s blog</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/pkq.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">TurlingXian Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-06-11T07:08:49.000Z" itemprop="datePublished">
+          2019-06-11
+      </time>
+    
+    
+    | 
+    <a href='/tags/JavaScript/'>JavaScript</a>
+    
+    
+</span>
+                <h1>《ECMAScript 6 入门》阅读笔记(上)</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+              <blockquote>
+<p>充值信仰，已买实体书。重温一下，顺便记录。这篇博客主要涉及0-11章的阅读记录。主要内容是在原有的基本数据类型的基础上新增的方法。主要的记录形式是整理成思维导图，方便复习，比较长的代码或者文字部分进行标注补充。</p>
+</blockquote>
+<h2 id="let-和-const-命令"><a href="#let-和-const-命令" class="headerlink" title="let 和 const 命令"></a>let 和 const 命令</h2><p><img src="http://images.turlingxian.com/blog/2019-06-11-%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%96%B9%E6%B3%95.png" alt="变量声明方法"></p>
+<h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><blockquote>
+<p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。<br>本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。</p>
+</blockquote>
+<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><p>简单实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo, [[bar], baz]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span>]];</span><br><span class="line">foo <span class="comment">// 1</span></span><br><span class="line">bar <span class="comment">// 2</span></span><br><span class="line">baz <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</span><br><span class="line">third <span class="comment">// "baz"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line">y <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">head <span class="comment">// 1</span></span><br><span class="line">tail <span class="comment">// [2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<p><em>解构不成功，变量的值就等于undefined</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y, ...z] = [<span class="string">'a'</span>];</span><br><span class="line">x <span class="comment">// "a"</span></span><br><span class="line">y <span class="comment">// undefined</span></span><br><span class="line">z <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<p><em>不完全解构，即等号左边的模式，只匹配一部分的等号右边的数组</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line">y <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p><em>报错， 右边不是数组（或者严格地说，不是可遍历的结构）</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p><em>数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y, z] = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]);</span><br><span class="line">x <span class="comment">// "a"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> a;</span><br><span class="line">    [a, b] = [b, a + b];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [first, second, third, fourth, fifth, sixth] = fibs();</span><br><span class="line">sixth <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<p><em>默认值(只有当一个数组成员严格等于undefined，默认值才会生效)</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo = <span class="literal">true</span>] = [];</span><br><span class="line">foo <span class="comment">// true</span></span><br><span class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>]; <span class="comment">// x='a', y='b'</span></span><br><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>] = [<span class="literal">undefined</span>];</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>] = [<span class="literal">null</span>];</span><br><span class="line">x <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+<p><em>其他</em></p>
+<ul>
+<li>如果默认值是一个表达式，那么这个表达式是惰性求值的，即只有在用到的时候，才会求值。</li>
+<li>默认值可以引用解构赋值的其他变量，但该变量必须已经声明。</li>
+</ul>
+<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><blockquote>
+<p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br>对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。</p>
+</blockquote>
+<p>简单实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; bar, foo &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;;</span><br><span class="line">foo <span class="comment">// "aaa"</span></span><br><span class="line">bar <span class="comment">// "bbb"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;=&gt;</span></span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解构失败</span></span><br><span class="line"><span class="keyword">let</span> &#123; baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;;</span><br><span class="line">baz <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p><em>对象的解构赋值，可以很方便地将现有对象的方法，赋值到某个变量</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;;</span><br><span class="line">baz <span class="comment">// "aaa"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">first</span>: <span class="string">'hello'</span>, <span class="attr">last</span>: <span class="string">'world'</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">first</span>: f, <span class="attr">last</span>: l &#125; = obj;</span><br><span class="line">f <span class="comment">// 'hello'</span></span><br><span class="line">l <span class="comment">// 'world'</span></span><br></pre></td></tr></table></figure>
+<p><em>如果变量名与属性名不一致，必须写成下面这样</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;;</span><br><span class="line">baz <span class="comment">// "aaa"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">first</span>: <span class="string">'hello'</span>, <span class="attr">last</span>: <span class="string">'world'</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">first</span>: f, <span class="attr">last</span>: l &#125; = obj;</span><br><span class="line">f <span class="comment">// 'hello'</span></span><br><span class="line">l <span class="comment">// 'world'</span></span><br></pre></td></tr></table></figure>
+<p><em>嵌套结构</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> node = &#123;</span><br><span class="line">  loc: &#123;</span><br><span class="line">    start: &#123;</span><br><span class="line">      line: <span class="number">1</span>,</span><br><span class="line">      column: <span class="number">5</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; loc, <span class="attr">loc</span>: &#123; start &#125;, <span class="attr">loc</span>: &#123; <span class="attr">start</span>: &#123; line &#125;&#125; &#125; = node;</span><br><span class="line">line <span class="comment">// 1</span></span><br><span class="line">loc  <span class="comment">// Object &#123;start: Object&#125;</span></span><br><span class="line">start <span class="comment">// Object &#123;line: 1, column: 5&#125;</span></span><br></pre></td></tr></table></figure>
+<p>上面代码有三次解构赋值，分别是对loc、start、line三个属性的解构赋值。注意，最后一次对line属性的解构赋值之中，只有line是变量，loc和start都是模式，不是变量。</p>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><ul>
+<li>如果要将一个已经声明的变量用于解构赋值，必须非常小心</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误的写法</span></span><br><span class="line"><span class="keyword">let</span> x;</span><br><span class="line">&#123;x&#125; = &#123;<span class="attr">x</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="comment">// SyntaxError: syntax error</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确的写法</span></span><br><span class="line"><span class="keyword">let</span> x;</span><br><span class="line">(&#123;x&#125; = &#123;<span class="attr">x</span>: <span class="number">1</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>JavaScript 引擎会将{x}理解成一个代码块，从而发生语法错误。只有不将大括号写在行首，避免 JavaScript 将其解释为代码块，才能解决这个问题。</p>
+<ul>
+<li><p>解构赋值允许等号左边的模式之中，不放置任何变量名。虽然毫无意义，但是语法是合法的。</p>
+</li>
+<li><p>由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="number">0</span> : first, [arr.length - <span class="number">1</span>] : last&#125; = arr;</span><br><span class="line">first <span class="comment">// 1</span></span><br><span class="line">last <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h3><blockquote>
+<p>字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</p>
+</blockquote>
+<p>简单实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [a, b, c, d, e] = <span class="string">'hello'</span>;</span><br><span class="line">a <span class="comment">// "h"</span></span><br><span class="line">b <span class="comment">// "e"</span></span><br><span class="line">c <span class="comment">// "l"</span></span><br><span class="line">d <span class="comment">// "l"</span></span><br><span class="line">e <span class="comment">// "o"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">length</span> : len&#125; = <span class="string">'hello'</span>;</span><br><span class="line">len <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="数值和布尔值的解构赋值"><a href="#数值和布尔值的解构赋值" class="headerlink" title="数值和布尔值的解构赋值"></a>数值和布尔值的解构赋值</h3><blockquote>
+<p>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;<span class="attr">toString</span>: s&#125; = <span class="number">123</span>;</span><br><span class="line">s === <span class="built_in">Number</span>.prototype.toString <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">toString</span>: s&#125; = <span class="literal">true</span>;</span><br><span class="line">s === <span class="built_in">Boolean</span>.prototype.toString <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="headerlink" title="函数参数的解构赋值"></a>函数参数的解构赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">&#123;x = <span class="number">0</span>, y = <span class="number">0</span>&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;); <span class="comment">// [3, 8]</span></span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;); <span class="comment">// [3, 0]</span></span><br><span class="line">move(&#123;&#125;); <span class="comment">// [0, 0]</span></span><br><span class="line">move(); <span class="comment">// [0, 0]</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">&#123;x, y&#125; = &#123; x: <span class="number">0</span>, y: <span class="number">0</span> &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;); <span class="comment">// [3, 8]</span></span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;); <span class="comment">// [3, undefined]</span></span><br><span class="line">move(&#123;&#125;); <span class="comment">// [undefined, undefined]</span></span><br><span class="line">move(); <span class="comment">// [0, 0]</span></span><br></pre></td></tr></table></figure>
+<h3 id="圆括号问题"><a href="#圆括号问题" class="headerlink" title="圆括号问题"></a>圆括号问题</h3><blockquote>
+<p>ES6 的规则是，只要有可能导致解构的歧义，就不得使用圆括号。</p>
+</blockquote>
+<p><em>可以使用圆括号的情况只有一种：赋值语句的非模式部分，可以使用圆括号。</em> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">&#123;x, y&#125; = &#123; x: <span class="number">0</span>, y: <span class="number">0</span> &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;); <span class="comment">// [3, 8]</span></span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;); <span class="comment">// [3, undefined]</span></span><br><span class="line">move(&#123;&#125;); <span class="comment">// [undefined, undefined]</span></span><br><span class="line">move(); <span class="comment">// [0, 0]</span></span><br></pre></td></tr></table></figure>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ol>
+<li>交换变量的值</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">[x, y] = [y, x];</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>从函数中返回多个值</li>
+</ol>
+<p>函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回。有了解构赋值，取出这些值就非常方便。</p>
+<ol start="3">
+<li>函数参数的定义</li>
+</ol>
+<p>解构赋值可以方便地将一组参数与变量名对应起来。</p>
+<ol start="4">
+<li>提取 JSON 数据</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jsonData = &#123;</span><br><span class="line">  id: <span class="number">42</span>,</span><br><span class="line">  status: <span class="string">"OK"</span>,</span><br><span class="line">  data: [<span class="number">867</span>, <span class="number">5309</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; id, status, <span class="attr">data</span>: number &#125; = jsonData;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(id, status, number);</span><br><span class="line"><span class="comment">// 42, "OK", [867, 5309]</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><p>函数参数的默认值</p>
+</li>
+<li><p>遍历 Map 结构</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'first'</span>, <span class="string">'hello'</span>);</span><br><span class="line">map.set(<span class="string">'second'</span>, <span class="string">'world'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [key, value] <span class="keyword">of</span> map) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key + <span class="string">" is "</span> + value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// first is hello</span></span><br><span class="line"><span class="comment">// second is world</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取键名</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [key] <span class="keyword">of</span> map) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取键值</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [,value] <span class="keyword">of</span> map) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>输入模块的指定方法</li>
+</ol>
+<h2 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h2><p><img src="http://images.turlingxian.com/blog/2019-06-12-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95.png" alt="字符串的扩展"></p>
+<h3 id="遍历字符串①"><a href="#遍历字符串①" class="headerlink" title="遍历字符串①"></a>遍历字符串①</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> codePoint <span class="keyword">of</span> <span class="string">'foo'</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(codePoint)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "f"</span></span><br><span class="line"><span class="comment">// "o"</span></span><br><span class="line"><span class="comment">// "o"</span></span><br></pre></td></tr></table></figure>
+<h3 id="这个遍历器最大的优点是可以识别大于0xFFFF的码点②"><a href="#这个遍历器最大的优点是可以识别大于0xFFFF的码点②" class="headerlink" title="这个遍历器最大的优点是可以识别大于0xFFFF的码点②"></a>这个遍历器最大的优点是可以识别大于0xFFFF的码点②</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = <span class="built_in">String</span>.fromCodePoint(<span class="number">0x20BB7</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; text.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(text[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// " "</span></span><br><span class="line"><span class="comment">// " "</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> text) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "𠮷"</span></span><br></pre></td></tr></table></figure>
+<h3 id="直接输入-U-2028-和-U-2029③"><a href="#直接输入-U-2028-和-U-2029③" class="headerlink" title="直接输入 U+2028 和 U+2029③"></a>直接输入 U+2028 和 U+2029③</h3><p>JavaScript 字符串允许直接输入字符，以及输入字符的转义形式。但是，JavaScript 规定有5个字符，不能在字符串里面直接使用，只能使用转义形式。</p>
+<ul>
+<li>U+005C：反斜杠（reverse solidus)</li>
+<li>U+000D：回车（carriage return）</li>
+<li>U+2028：行分隔符（line separator）</li>
+<li>U+2029：段分隔符（paragraph separator）</li>
+<li>U+000A：换行符（line feed）</li>
+</ul>
+<p>这个规定本身没有问题，麻烦在于 JSON 格式允许字符串里面直接使用 U+2028（行分隔符）和 U+2029（段分隔符）。这样一来，服务器输出的 JSON 被JSON.parse解析，就有可能直接报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> json = <span class="string">'"\u2028"'</span>;</span><br><span class="line"><span class="built_in">JSON</span>.parse(json); <span class="comment">// 可能报错</span></span><br></pre></td></tr></table></figure>
+<p>为了消除这个报错，ES2019 允许 JavaScript 字符串直接输入 U+2028（行分隔符）和 U+2029（段分隔符）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PS = <span class="built_in">eval</span>(<span class="string">"'\u2029'"</span>); <span class="comment">// 不会报错</span></span><br></pre></td></tr></table></figure>
+<p>注意，模板字符串现在就允许直接输入这两个字符。另外，正则表达式依然不允许直接输入这两个字符，这是没有问题的，因为 JSON 本来就不允许直接包含正则表达式。</p>
+<h3 id="JSON-stringify-的改造④"><a href="#JSON-stringify-的改造④" class="headerlink" title="JSON.stringify() 的改造④"></a>JSON.stringify() 的改造④</h3><p>为了确保返回的是合法的 UTF-8 字符，ES2019 改变了JSON.stringify()的行为。如果遇到0xD800到0xDFFF之间的单个码点，或者不存在的配对形式，它会返回转义字符串，留给应用自己决定下一步的处理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(<span class="string">'\u&#123;D834&#125;'</span>) <span class="comment">// ""\\uD834""</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify(<span class="string">'\uDF06\uD834'</span>) <span class="comment">// ""\\udf06\\ud834""</span></span><br></pre></td></tr></table></figure>
+<h3 id="标签模板⑤"><a href="#标签模板⑤" class="headerlink" title="标签模板⑤"></a>标签模板⑤</h3><blockquote>
+<p>模板字符串的功能，不仅仅是上面这些。它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。这被称为“标签模板”功能（tagged template）。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert<span class="string">`123`</span></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">alert(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+<p>如果模板字符里面有变量，会将模板字符串先处理成多个参数，再调用函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">tag<span class="string">`Hello <span class="subst">$&#123; a + b &#125;</span> world <span class="subst">$&#123; a * b &#125;</span>`</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line">tag([<span class="string">'Hello '</span>, <span class="string">' world '</span>, <span class="string">''</span>], <span class="number">15</span>, <span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">stringArr, value1, value2</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">stringArr, ...values</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>tag函数的第一个参数是一个数组，该数组的成员是模板字符串中那些没有变量替换的部分，也就是说，变量替换只发生在数组的第一个成员与第二个成员之间、第二个成员与第三个成员之间，以此类推。</p>
+<p>tag函数的其他参数，都是模板字符串各个变量被替换后的值。由于本例中，模板字符串含有两个变量，因此tag会接受到value1和value2两个参数。</p>
+<p><em>“标签模板”的一个重要应用，就是过滤 HTML 字符串，防止用户输入恶意内容。</em></p>
+<p><em>标签模板的另一个应用，就是多语言转换（国际化处理）</em></p>
+<p><em>你甚至可以使用标签模板，在 JavaScript 语言之中嵌入其他语言</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">jsx<span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;input</span></span><br><span class="line"><span class="string">      ref='input'</span></span><br><span class="line"><span class="string">      onChange='<span class="subst">$&#123;<span class="keyword">this</span>.handleChange&#125;</span>'</span></span><br><span class="line"><span class="string">      defaultValue='<span class="subst">$&#123;<span class="keyword">this</span>.state.value&#125;</span>' /&gt;</span></span><br><span class="line"><span class="string">      <span class="subst">$&#123;<span class="keyword">this</span>.state.value&#125;</span></span></span><br><span class="line"><span class="string">   &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="comment">// 上面的代码通过jsx函数，将一个 DOM 字符串转为 React 对象。你可以在 GitHub 找到jsx函数的具体实现。</span></span><br></pre></td></tr></table></figure>
+<p><em>模板字符串默认会将字符串转义，导致无法嵌入其他语言。(模板字符串的限制)</em></p>
+<p>ES2018 放松了对标签模板里面的字符串转义的限制。如果遇到不合法的字符串转义，就返回undefined，而不是报错，并且从raw属性上面可以得到原始字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">strs</span>) </span>&#123;</span><br><span class="line">  strs[<span class="number">0</span>] === <span class="literal">undefined</span></span><br><span class="line">  strs.raw[<span class="number">0</span>] === <span class="string">"\\unicode and \\u&#123;55&#125;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">tag<span class="string">`\unicode and \u&#123;55&#125;`</span></span><br></pre></td></tr></table></figure>
+<p>注意，这种对字符串转义的放松，只在标签模板解析字符串时生效，不是标签模板的场合，依然会报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bad = <span class="string">`bad escape sequence: \unicode`</span>; <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串的新增方法"><a href="#字符串的新增方法" class="headerlink" title="字符串的新增方法"></a>字符串的新增方法</h2><p><img src="http://images.turlingxian.com/blog/2019-06-12-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95.png" alt="字符串的新增方法"></p>
+<h3 id="String-fromCodePoint-①"><a href="#String-fromCodePoint-①" class="headerlink" title="String.fromCodePoint()①"></a>String.fromCodePoint()①</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x20BB7</span>)</span><br><span class="line"><span class="comment">// "𠮷"</span></span><br><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x78</span>, <span class="number">0x1f680</span>, <span class="number">0x79</span>) === <span class="string">'x\uD83D\uDE80y'</span></span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="String-raw-②"><a href="#String-raw-②" class="headerlink" title="String.raw()②"></a>String.raw()②</h3><p><em>作为处理模板字符串的基本方法，它会将所有变量替换，而且对斜杠进行转义(斜杠前面再加斜杠)，方便下一步作为字符串来使用。</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.raw<span class="string">`Hi\n<span class="subst">$&#123;<span class="number">2</span>+<span class="number">3</span>&#125;</span>!`</span>;</span><br><span class="line"><span class="comment">// 返回 "Hi\\n5!"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.raw<span class="string">`Hi\u000A!`</span>;</span><br><span class="line"><span class="comment">// 返回 "Hi\\u000A!"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.raw<span class="string">`Hi\\n`</span></span><br><span class="line"><span class="comment">// 返回 "Hi\\\\n"</span></span><br></pre></td></tr></table></figure>
+<p><em>可以作为正常的函数使用。第一个参数是一个具有raw属性的对象，且raw属性的值应该是一个数组。</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.raw(&#123; <span class="attr">raw</span>: <span class="string">'test'</span> &#125;, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="comment">// 't0e1s2t'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="built_in">String</span>.raw(&#123; <span class="attr">raw</span>: [<span class="string">'t'</span>,<span class="string">'e'</span>,<span class="string">'s'</span>,<span class="string">'t'</span>] &#125;, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="实例方法：codePointAt-③"><a href="#实例方法：codePointAt-③" class="headerlink" title="实例方法：codePointAt()③"></a>实例方法：codePointAt()③</h3><p><em>能够正确处理 4 个字节储存的字符，返回一个字符的码点。</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="string">'𠮷a'</span>;</span><br><span class="line"></span><br><span class="line">s.codePointAt(<span class="number">0</span>) <span class="comment">// 134071 𠮷</span></span><br><span class="line">s.codePointAt(<span class="number">1</span>) <span class="comment">// 57271 𠮷的后面2个字节</span></span><br><span class="line"></span><br><span class="line">s.codePointAt(<span class="number">2</span>) <span class="comment">// 97 a</span></span><br></pre></td></tr></table></figure>
+<p><em>codePointAt()方法返回的是码点的十进制值，如果想要十六进制的值，可以使用toString()方法转换一下。</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="string">'𠮷a'</span>;</span><br><span class="line"></span><br><span class="line">s.codePointAt(<span class="number">0</span>).toString(<span class="number">16</span>) <span class="comment">// "20bb7"</span></span><br><span class="line">s.codePointAt(<span class="number">2</span>).toString(<span class="number">16</span>) <span class="comment">// "61"</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，字符a在字符串s的正确位置序号应该是 1，但是必须向codePointAt()方法传入 2。解决方法有如下两种：</p>
+<ol>
+<li>for … of</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="string">'𠮷a'</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> ch <span class="keyword">of</span> s) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(ch.codePointAt(<span class="number">0</span>).toString(<span class="number">16</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 20bb7</span></span><br><span class="line"><span class="comment">// 61</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>扩展运算符（…）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [...<span class="string">'𠮷a'</span>]; <span class="comment">// arr.length === 2</span></span><br><span class="line">arr.forEach(</span><br><span class="line">  ch =&gt; <span class="built_in">console</span>.log(ch.codePointAt(<span class="number">0</span>).toString(<span class="number">16</span>))</span><br><span class="line">);</span><br><span class="line"><span class="comment">// 20bb7</span></span><br><span class="line"><span class="comment">// 61</span></span><br></pre></td></tr></table></figure>
+<p><em>codePointAt()方法是测试一个字符由两个字节还是由四个字节组成的最简单方法</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is32Bit</span>(<span class="params">c</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> c.codePointAt(<span class="number">0</span>) &gt; <span class="number">0xFFFF</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">is32Bit(<span class="string">"𠮷"</span>) <span class="comment">// true</span></span><br><span class="line">is32Bit(<span class="string">"a"</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="实例方法：normalize"><a href="#实例方法：normalize" class="headerlink" title="实例方法：normalize()"></a>实例方法：normalize()</h3><p>许多欧洲语言有语调符号和重音符号。为了表示它们，Unicode 提供了两种方法。一种是直接提供带重音符号的字符，比如Ǒ（\u01D1）。另一种是提供合成符号（combining character），即原字符与重音符号的合成，两个字符合成一个字符，比如O（\u004F）和ˇ（\u030C）合成Ǒ（\u004F\u030C）。</p>
+<p>这两种表示方法，在视觉和语义上都等价，但是 JavaScript 不能识别。</p>
+<p>normalize()方法，用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'\u01D1'</span>===<span class="string">'\u004F\u030C'</span> <span class="comment">//false</span></span><br><span class="line"><span class="string">'\u01D1'</span>.normalize() === <span class="string">'\u004F\u030C'</span>.normalize()</span><br></pre></td></tr></table></figure>
+<p><em>normalize方法可以接受一个参数来指定normalize的方式，参数的四个可选值如下(不赘述)</em></p>
+<p><em>normalize方法目前不能识别三个或三个以上字符的合成。</em></p>
+<h2 id="正则的扩展"><a href="#正则的扩展" class="headerlink" title="正则的扩展"></a>正则的扩展</h2><p><img src="http://images.turlingxian.com/blog/2019-06-12-%E6%AD%A3%E5%88%99%E7%9A%84%E6%89%A9%E5%B1%95.png" alt="正则的扩展"></p>
+<h3 id="u-修饰符①"><a href="#u-修饰符①" class="headerlink" title="u 修饰符①"></a>u 修饰符①</h3><blockquote>
+<p>ES6 对正则表达式添加了u修饰符，含义为“Unicode 模式”，用来正确处理大于\uFFFF的 Unicode 字符。也就是说，会正确处理四个字节的 UTF-16 编码。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/^\uD83D/u.test(<span class="string">'\uD83D\uDC2A'</span>) <span class="comment">// false，支持，会识别其为一个字符</span></span><br><span class="line">/^\uD83D/.test(<span class="string">'\uD83D\uDC2A'</span>) <span class="comment">// true, 不支持四个字节的 UTF-16 编码，会将其识别为两个字符</span></span><br></pre></td></tr></table></figure>
+<p><em>一旦加上u修饰符号，就会修改下面这些正则表达式的行为。</em></p>
+<ul>
+<li>点字符</li>
+</ul>
+<p>对于码点大于0xFFFF的 Unicode 字符，点字符不能识别，必须加上u修饰符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'𠮷'</span>;</span><br><span class="line"></span><br><span class="line">/^.$/.test(s) <span class="comment">// false</span></span><br><span class="line">/^.$/u.test(s) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Unicode 字符表示法</li>
+</ul>
+<p>ES6 新增了使用大括号表示 Unicode 字符，这种表示法在正则表达式中必须加上u修饰符，才能识别当中的大括号，否则会被解读为量词。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/\u&#123;<span class="number">61</span>&#125;/.test(<span class="string">'a'</span>) <span class="comment">// false</span></span><br><span class="line">/\u&#123;<span class="number">61</span>&#125;/u.test(<span class="string">'a'</span>) <span class="comment">// true</span></span><br><span class="line">/\u&#123;<span class="number">20</span>BB7&#125;/u.test(<span class="string">'𠮷'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>量词</li>
+</ul>
+<p>使用u修饰符后，所有量词都会正确识别码点大于0xFFFF的 Unicode 字符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/a&#123;<span class="number">2</span>&#125;/.test(<span class="string">'aa'</span>) <span class="comment">// true</span></span><br><span class="line">/a&#123;<span class="number">2</span>&#125;/u.test(<span class="string">'aa'</span>) <span class="comment">// true</span></span><br><span class="line">/𠮷&#123;<span class="number">2</span>&#125;/.test(<span class="string">'𠮷𠮷'</span>) <span class="comment">// false</span></span><br><span class="line">/𠮷&#123;<span class="number">2</span>&#125;/u.test(<span class="string">'𠮷𠮷'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>预定义模式</li>
+</ul>
+<p>\S是预定义模式，匹配所有非空白字符。只有加了u修饰符，它才能正确匹配码点大于0xFFFF的 Unicode 字符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/^\S$/.test(<span class="string">'𠮷'</span>) <span class="comment">// false</span></span><br><span class="line">/^\S$/u.test(<span class="string">'𠮷'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>i 修饰符</li>
+</ul>
+<p>有些 Unicode 字符的编码不同，但是字型很相近，比如，\u004B与\u212A都是大写的K。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/[a-z]/i.test(<span class="string">'\u212A'</span>) <span class="comment">// false</span></span><br><span class="line">/[a-z]/iu.test(<span class="string">'\u212A'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="s-修饰符：dotAll-模式②"><a href="#s-修饰符：dotAll-模式②" class="headerlink" title="s 修饰符：dotAll 模式②"></a>s 修饰符：dotAll 模式②</h3><p>正则表达式中，点（.）是一个特殊字符，代表任意的单个字符，但是有两个例外。一个是四个字节的 UTF-16 字符，这个可以用u修饰符解决；另一个是行终止符（line terminator character）。</p>
+<p>所谓行终止符，就是该字符表示一行的终结。以下四个字符属于“行终止符”。</p>
+<ul>
+<li>U+000A 换行符（\n）</li>
+<li>U+000D 回车符（\r）</li>
+<li>U+2028 行分隔符（line separator）</li>
+<li>U+2029 段分隔符（paragraph separator）</li>
+</ul>
+<p>很多时候我们希望匹配的是任意单个字符，这时有一种变通的写法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/foo[^]bar/.test(<span class="string">'foo\nbar'</span>)</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>这种解决方案毕竟不太符合直觉，ES2018 引入s修饰符，使得.可以匹配任意单个字符。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/foo.bar/s.test(<span class="string">'foo\nbar'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>这被称为dotAll模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个dotAll属性，返回一个布尔值，表示该正则表达式是否处在dotAll模式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> re = <span class="regexp">/foo.bar/</span>s;</span><br><span class="line"><span class="comment">// 另一种写法</span></span><br><span class="line"><span class="comment">// const re = new RegExp('foo.bar', 's');</span></span><br><span class="line"></span><br><span class="line">re.test(<span class="string">'foo\nbar'</span>) <span class="comment">// true</span></span><br><span class="line">re.dotAll <span class="comment">// true</span></span><br><span class="line">re.flags <span class="comment">// 's'</span></span><br></pre></td></tr></table></figure>
+<h3 id="后行断言③"><a href="#后行断言③" class="headerlink" title="后行断言③"></a>后行断言③</h3><p>“先行断言”指的是，x只有在y前面才匹配，必须写成/x(?=y)/。<br>“先行否定断言”指的是，x只有不在y前面才匹配，必须写成/x(?!y)/。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\d+(?=%)/.exec(<span class="string">'100% of US presidents have been male'</span>)  <span class="comment">// ["100"]</span></span><br><span class="line">/\d+(?!%)/.exec(<span class="string">'that’s all 44 of them'</span>)                 <span class="comment">// ["44"]</span></span><br></pre></td></tr></table></figure>
+<p>“后行断言”正好与“先行断言”相反，x只有在y后面才匹配，必须写成/(?&lt;=y)x/。<br>“后行否定断言”则与“先行否定断言”相反，x只有不在y后面才匹配，必须写成/(?&lt;!y)x/。</p>
+<p>“后行断言”的实现，需要先匹配/(?&lt;=y)x/的x，然后再回到左边，匹配y的部分。这种“先右后左”的执行顺序，与所有其他正则操作相反，导致了一些不符合预期的行为。</p>
+<p>其次，“后行断言”的反斜杠引用，也与通常的顺序相反，必须放在对应的那个括号之前。</p>
+<p>暂不赘述</p>
+<h3 id="Unicode-属性类④"><a href="#Unicode-属性类④" class="headerlink" title="Unicode 属性类④"></a>Unicode 属性类④</h3><p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配所有数字</span></span><br><span class="line"><span class="keyword">const</span> regex = <span class="regexp">/^\p&#123;Number&#125;+$/u</span>;</span><br><span class="line">regex.test(<span class="string">'²³¹¼½¾'</span>) <span class="comment">// true</span></span><br><span class="line">regex.test(<span class="string">'㉛㉜㉝'</span>) <span class="comment">// true</span></span><br><span class="line">regex.test(<span class="string">'ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ'</span>) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配所有空格</span></span><br><span class="line">\p&#123;White_Space&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配各种文字的所有字母，等同于 Unicode 版的 \w</span></span><br><span class="line">[\p&#123;Alphabetic&#125;\p&#123;Mark&#125;\p&#123;Decimal_Number&#125;\p&#123;Connector_Punctuation&#125;\p&#123;Join_Control&#125;]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配各种文字的所有非字母的字符，等同于 Unicode 版的 \W</span></span><br><span class="line">[^\p&#123;Alphabetic&#125;\p&#123;Mark&#125;\p&#123;Decimal_Number&#125;\p&#123;Connector_Punctuation&#125;\p&#123;Join_Control&#125;]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配 Emoji</span></span><br><span class="line">/\p&#123;Emoji_Modifier_Base&#125;\p&#123;Emoji_Modifier&#125;?|\p&#123;Emoji_Presentation&#125;|\p&#123;Emoji&#125;\uFE0F/gu</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配所有的箭头字符</span></span><br><span class="line"><span class="keyword">const</span> regexArrows = <span class="regexp">/^\p&#123;Block=Arrows&#125;+$/u</span>;</span><br><span class="line">regexArrows.test(<span class="string">'←↑→↓↔↕↖↗↘↙⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇧⇩'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="具名组匹配⑤"><a href="#具名组匹配⑤" class="headerlink" title="具名组匹配⑤"></a>具名组匹配⑤</h3><p>正则表达式使用圆括号进行组匹配。使用exec方法，就可以将这三组匹配结果提取出来。但每一组的匹配含义不容易看出来，而且只能用数字序号（比如matchObj[1]）引用，要是组的顺序变了，引用的时候就必须修改序号。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_DATE = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> matchObj = RE_DATE.exec(<span class="string">'1999-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj[<span class="number">1</span>]; <span class="comment">// 1999</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj[<span class="number">2</span>]; <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj[<span class="number">3</span>]; <span class="comment">// 31</span></span><br></pre></td></tr></table></figure>
+<p>具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_DATE = <span class="regexp">/(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;2&#125;)-(?&lt;day&gt;\d&#123;2&#125;)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> matchObj = RE_DATE.exec(<span class="string">'1999-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj.groups.year; <span class="comment">// 1999</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj.groups.month; <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj.groups.day; <span class="comment">// 31</span></span><br></pre></td></tr></table></figure>
+<p>如果具名组没有匹配，那么对应的groups对象属性会是undefined。</p>
+<p><em>有了具名组匹配以后，可以使用解构赋值直接从匹配结果上为变量赋值。</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;<span class="attr">groups</span>: &#123;one, two&#125;&#125; = <span class="regexp">/^(?&lt;one&gt;.*):(?&lt;two&gt;.*)$/u</span>.exec(<span class="string">'foo:bar'</span>);</span><br><span class="line">one  <span class="comment">// foo</span></span><br><span class="line">two  <span class="comment">// bar</span></span><br></pre></td></tr></table></figure>
+<p><em>字符串替换时，使用<code>$&lt;组名&gt;</code>引用具名组。</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// replace方法的第二个参数是一个字符串，而不是正则表达式</span></span><br><span class="line"><span class="keyword">let</span> re = <span class="regexp">/(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;2&#125;)-(?&lt;day&gt;\d&#123;2&#125;)/u</span>;</span><br><span class="line"></span><br><span class="line"><span class="string">'2015-01-02'</span>.replace(re, <span class="string">'$&lt;day&gt;/$&lt;month&gt;/$&lt;year&gt;'</span>)</span><br><span class="line"><span class="comment">// '02/01/2015'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// replace方法的第二个参数也可以是函数，该函数的参数序列如下</span></span><br><span class="line"><span class="string">'2015-01-02'</span>.replace(re, (</span><br><span class="line">   matched, <span class="comment">// 整个匹配结果 2015-01-02</span></span><br><span class="line">   capture1, <span class="comment">// 第一个组匹配 2015</span></span><br><span class="line">   capture2, <span class="comment">// 第二个组匹配 01</span></span><br><span class="line">   capture3, <span class="comment">// 第三个组匹配 02</span></span><br><span class="line">   position, <span class="comment">// 匹配开始的位置 0</span></span><br><span class="line">   S, <span class="comment">// 原字符串 2015-01-02</span></span><br><span class="line">   groups <span class="comment">// 具名组构成的一个对象 &#123;year, month, day&#125;</span></span><br><span class="line"> ) =&gt; &#123;</span><br><span class="line"> <span class="keyword">let</span> &#123;day, month, year&#125; = groups;</span><br><span class="line"> <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;day&#125;</span>/<span class="subst">$&#123;month&#125;</span>/<span class="subst">$&#123;year&#125;</span>`</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><em>如果要在正则表达式内部引用某个“具名组匹配”，可以使用<code>\k&lt;组名&gt;</code>的写法。</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RE_TWICE = <span class="regexp">/^(?&lt;word&gt;[a-z]+)!\k&lt;word&gt;$/</span>;</span><br><span class="line">RE_TWICE.test(<span class="string">'abc!abc'</span>) <span class="comment">// true</span></span><br><span class="line">RE_TWICE.test(<span class="string">'abc!ab'</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数字引用依然有效</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> RE_TWICE = <span class="regexp">/^(?&lt;word&gt;[a-z]+)!\1$/</span>;</span><br><span class="line">RE_TWICE.test(<span class="string">'abc!abc'</span>) <span class="comment">// true</span></span><br><span class="line">RE_TWICE.test(<span class="string">'abc!ab'</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h2 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h2><p><img src="http://images.turlingxian.com/blog/2019-06-14-%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95.png" alt="数值的扩展"></p>
+<h2 id="函数的扩展"><a href="#函数的扩展" class="headerlink" title="函数的扩展"></a>函数的扩展</h2><h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><blockquote>
+<p>ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y = <span class="string">'World'</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">'Hello'</span>) <span class="comment">// Hello World</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">'China'</span>) <span class="comment">// Hello China</span></span><br><span class="line">log(<span class="string">'Hello'</span>, <span class="string">''</span>) <span class="comment">// Hello</span></span><br></pre></td></tr></table></figure>
+<p>参数变量是默认声明的，所以不能用let或const再次声明，不能有同名参数。</p>
+<p>另外，一个容易忽略的地方是，参数默认值不是传值的，而是每次都重新计算默认值表达式的值。也就是说，参数默认值是惰性求值的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">99</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">p = x + <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() <span class="comment">// 100</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">100</span>;</span><br><span class="line">foo() <span class="comment">// 101</span></span><br></pre></td></tr></table></figure>
+<h4 id="与解构赋值默认值结合使用"><a href="#与解构赋值默认值结合使用" class="headerlink" title="与解构赋值默认值结合使用"></a>与解构赋值默认值结合使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">&#123;x, y = <span class="number">5</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(&#123;&#125;) <span class="comment">// undefined 5</span></span><br><span class="line">foo(&#123;<span class="attr">x</span>: <span class="number">1</span>&#125;) <span class="comment">// 1 5</span></span><br><span class="line">foo(&#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;) <span class="comment">// 1 2</span></span><br><span class="line">foo() <span class="comment">// TypeError: Cannot read property 'x' of undefined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetch</span>(<span class="params">url, &#123; body = <span class="string">''</span>, method = <span class="string">'GET'</span>, headers = &#123;&#125; &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(method);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fetch(<span class="string">'http://example.com'</span>, &#123;&#125;)</span><br><span class="line"><span class="comment">// "GET"</span></span><br><span class="line"></span><br><span class="line">fetch(<span class="string">'http://example.com'</span>)</span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetch</span>(<span class="params">url, &#123; body = <span class="string">''</span>, method = <span class="string">'GET'</span>, headers = &#123;&#125; &#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(method);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fetch(<span class="string">'http://example.com'</span>)</span><br><span class="line"><span class="comment">// "GET"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">m1</span>(<span class="params">&#123;x = <span class="number">0</span>, y = <span class="number">0</span>&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">m2</span>(<span class="params">&#123;x, y&#125; = &#123; x: <span class="number">0</span>, y: <span class="number">0</span> &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面两种写法都对函数的参数设定了默认值，区别是写法一函数参数的默认值是空对象，但是设置了对象解构赋值的默认值；写法二函数参数的默认值是一个有具体属性的对象，但是没有设置对象解构赋值的默认值。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数没有参数的情况</span></span><br><span class="line">m1() <span class="comment">// [0, 0]</span></span><br><span class="line">m2() <span class="comment">// [0, 0]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x 和 y 都有值的情况</span></span><br><span class="line">m1(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;) <span class="comment">// [3, 8]</span></span><br><span class="line">m2(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;) <span class="comment">// [3, 8]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x 有值，y 无值的情况</span></span><br><span class="line">m1(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;) <span class="comment">// [3, 0]</span></span><br><span class="line">m2(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;) <span class="comment">// [3, undefined]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// x 和 y 都无值的情况</span></span><br><span class="line">m1(&#123;&#125;) <span class="comment">// [0, 0];</span></span><br><span class="line">m2(&#123;&#125;) <span class="comment">// [undefined, undefined]</span></span><br><span class="line"></span><br><span class="line">m1(&#123;<span class="attr">z</span>: <span class="number">3</span>&#125;) <span class="comment">// [0, 0]</span></span><br><span class="line">m2(&#123;<span class="attr">z</span>: <span class="number">3</span>&#125;) <span class="comment">// [undefined, undefined]</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数默认值的位置"><a href="#参数默认值的位置" class="headerlink" title="参数默认值的位置"></a>参数默认值的位置</h4><blockquote>
+<p>通常情况下，定义了默认值的参数，应该是函数的尾参数。因为这样比较容易看出来，到底省略了哪些参数。如果非尾部的参数设置默认值，实际上这个参数是没法省略的。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例一</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x = <span class="number">1</span>, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() <span class="comment">// [1, undefined]</span></span><br><span class="line">f(<span class="number">2</span>) <span class="comment">// [2, undefined])</span></span><br><span class="line">f(, <span class="number">1</span>) <span class="comment">// 报错</span></span><br><span class="line">f(<span class="literal">undefined</span>, <span class="number">1</span>) <span class="comment">// [1, 1]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例二</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y = <span class="number">5</span>, z</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y, z];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() <span class="comment">// [undefined, 5, undefined]</span></span><br><span class="line">f(<span class="number">1</span>) <span class="comment">// [1, 5, undefined]</span></span><br><span class="line">f(<span class="number">1</span>, ,<span class="number">2</span>) <span class="comment">// 报错</span></span><br><span class="line">f(<span class="number">1</span>, <span class="literal">undefined</span>, <span class="number">2</span>) <span class="comment">// [1, 5, 2]</span></span><br></pre></td></tr></table></figure>
+<h4 id="函数的-length-属性"><a href="#函数的-length-属性" class="headerlink" title="函数的 length 属性"></a>函数的 length 属性</h4><p>指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。也就是说，指定了默认值后，length属性将失真。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;&#125;).length <span class="comment">// 1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a = <span class="number">5</span></span>) </span>&#123;&#125;).length <span class="comment">// 0</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a, b, c = <span class="number">5</span></span>) </span>&#123;&#125;).length <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>这是因为length属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。同理，后文的 rest 参数也不会计入length属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;&#125;).length <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<p>如果设置了默认值的参数不是尾参数，那么length属性也不再计入后面的参数了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a = <span class="number">0</span>, b, c</span>) </span>&#123;&#125;).length <span class="comment">// 0</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a, b = <span class="number">1</span>, c</span>) </span>&#123;&#125;).length <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><blockquote>
+<p>一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y = x</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="number">2</span>) <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">y = x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() <span class="comment">// 1，未定义，指向全局变量x</span></span><br></pre></td></tr></table></figure>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>利用参数默认值，可以指定某一个参数不得省略，如果省略就抛出一个错误。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throwIfMissing</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">mustBeProvided = throwIfMissing(</span>)) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> mustBeProvided;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()</span><br><span class="line"><span class="comment">// Error: Missing parameter</span></span><br></pre></td></tr></table></figure>
+<p>另外，可以将参数默认值设为undefined，表明这个参数是可以省略的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">optional = undefined</span>) </span>&#123; ··· &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="rest-参数"><a href="#rest-参数" class="headerlink" title="rest 参数"></a>rest 参数</h3><blockquote>
+<p>ES6 引入 rest 参数（形式为…变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">...values</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> val <span class="keyword">of</span> values) &#123;</span><br><span class="line">    sum += val;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p>arguments对象不是数组，而是一个类似数组的对象。所以为了使用数组的方法，必须使用Array.prototype.slice.call先将其转为数组。rest 参数就是一个真正的数组，数组特有的方法都可以使用。</p>
+<p>注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</p>
+<p>函数的length属性，不包括 rest 参数。 </p>
+<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>ES2016规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。</p>
+<p>这样规定的原因是，函数内部的严格模式，同时适用于函数体和函数参数。但是，函数执行的时候，先执行函数参数，然后再执行函数体。这样就有一个不合理的地方，只有从函数体之中，才能知道参数是否应该以严格模式执行，但是参数却应该先于函数体执行。</p>
+<p>两种方法可以规避这种限制。</p>
+<p>第一种是设定全局性的严格模式，这是合法的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params">a, b = a</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种是把函数包在一个无参数的立即执行函数里面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> doSomething = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">value = <span class="number">42</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h3 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h3><blockquote>
+<p>函数的name属性，返回该函数的函数名。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">foo.name <span class="comment">// "foo"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 匿名函数</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line">f.name <span class="comment">// "f"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果将一个具名函数赋值给一个变量，则 ES5 和 ES6 的name属性都返回这个具名函数原本的名字。</span></span><br><span class="line"><span class="keyword">const</span> bar = <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line">bar.name <span class="comment">// "baz"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Function构造函数返回的函数实例，name属性的值为anonymous。</span></span><br><span class="line">(<span class="keyword">new</span> <span class="built_in">Function</span>).name <span class="comment">// "anonymous"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bind返回的函数，name属性值会加上bound前缀。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">foo.bind(&#123;&#125;).name <span class="comment">// "bound foo"</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;).bind(&#123;&#125;).name <span class="comment">// "bound "</span></span><br></pre></td></tr></table></figure>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">5</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="number">5</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> getTempItem = <span class="function"><span class="params">id</span> =&gt;</span> (&#123; <span class="attr">id</span>: id, <span class="attr">name</span>: <span class="string">"Temp"</span> &#125;);</span><br></pre></td></tr></table></figure>
+<p><em>与变量解构结合使用</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> full = <span class="function">(<span class="params">&#123; first, last &#125;</span>) =&gt;</span> first + <span class="string">' '</span> + last;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">full</span>(<span class="params">person</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> person.first + <span class="string">' '</span> + person.last;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>rest 参数与箭头函数结合的例子</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = <span class="function">(<span class="params">...nums</span>) =&gt;</span> nums;</span><br><span class="line"></span><br><span class="line">numbers(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment">// [1,2,3,4,5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> headAndTail = <span class="function">(<span class="params">head, ...tail</span>) =&gt;</span> [head, tail];</span><br><span class="line"></span><br><span class="line">headAndTail(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment">// [1,[2,3,4,5]]</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用注意点"><a href="#使用注意点" class="headerlink" title="使用注意点"></a>使用注意点</h4><ul>
+<li>函数体内的this对象，就是定义时所在的对象（函数被调用时），而不是使用时所在的对象。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.s1 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">this</span>.s2 = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// 箭头函数</span></span><br><span class="line">  setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.s1++, <span class="number">1000</span>);</span><br><span class="line">  <span class="comment">// 普通函数</span></span><br><span class="line">  setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.s2++;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> timer = <span class="keyword">new</span> Timer();</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'s1: '</span>, timer.s1), <span class="number">3100</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'s2: '</span>, timer.s2), <span class="number">3100</span>);</span><br><span class="line"><span class="comment">// s1: 3, timer函数内，箭头函数</span></span><br><span class="line"><span class="comment">// s2: 0，普通函数，全局变量，三秒钟后没变</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
+</ul>
+<p>正是因为它没有this，所以也就不能用作构造函数。</p>
+<ul>
+<li>不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</li>
+</ul>
+<p>除了this，以下三个变量在箭头函数之中也是不存在的，指向外层函数的对应变量：arguments、super、new.target。<br>由于箭头函数没有自己的this，所以当然也就不能用call()、apply()、bind()这些方法去改变this的指向。</p>
+<ul>
+<li>不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</li>
+</ul>
+<h4 id="不适用场合"><a href="#不适用场合" class="headerlink" title="不适用场合"></a>不适用场合</h4><p>由于箭头函数使得this从“动态”变成“静态”（this不可变），下面两个场合不应该使用箭头函数。</p>
+<p>第一个场合是定义对象的方法，且该方法内部包括this。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cat = &#123;</span><br><span class="line">  lives: <span class="number">9</span>,</span><br><span class="line">  jumps: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.lives--;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果是普通函数，该方法内部的this指向cat；如果写成上面那样的箭头函数，使得this指向全局对象，因此不会得到预期结果。这是因为对象不构成单独的作用域，导致jumps箭头函数定义时的作用域就是全局作用域。</p>
+<p>第二个场合是需要动态this的时候，也不应使用箭头函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">'press'</span>);</span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.toggle(<span class="string">'on'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>因为button的监听函数是一个箭头函数，导致里面的this就是全局对象。如果改成普通函数，this就会动态指向被点击的按钮对象。</p>
+<h4 id="嵌套的箭头函数"><a href="#嵌套的箭头函数" class="headerlink" title="嵌套的箭头函数"></a>嵌套的箭头函数</h4><h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h4><blockquote>
+<p>尾调用（Tail Call）是函数式编程的一个重要概念，就是指某个函数的最后一步是调用另一个函数。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> g(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>尾调用不一定出现在函数尾部，只要是最后一步操作即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 上面代码中，函数m和n都属于尾调用，因为它们都是函数f的最后一步操作。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> m(x)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们知道，函数调用会在内存形成一个“调用记录”，又称“调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数A的内部调用函数B，那么在A的调用帧上方，还会形成一个B的调用帧。等到B运行结束，将结果返回到A，B的调用帧才会消失。如果函数B内部还调用函数C，那就还有一个C的调用帧，以此类推。所有的调用帧，就形成一个“调用栈”（call stack）。</p>
+<p>尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用帧，因为调用位置、内部变量等信息都不会再用到了，只要直接用内层函数的调用帧，取代外层函数的调用帧就可以了。</p>
+<p>这就叫做“尾调用优化”（Tail call optimization），即只保留内层函数的调用帧。如果所有函数都是尾调用，那么完全可以做到每次执行时，调用帧只有一项，这将大大节省内存。这就是“尾调用优化”的意义。</p>
+<h4 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h4><blockquote>
+<p>函数调用自身，称为递归。如果尾调用自身，就称为尾递归。</p>
+</blockquote>
+<p>递归非常耗费内存，因为需要同时保存成千上百个调用帧，很容易发生“栈溢出”错误（stack overflow）。但对于尾递归来说，由于只存在一个调用帧，所以永远不会发生“栈溢出”错误。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非尾递归的 Fibonacci 数列实现如下。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fibonacci</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> ( n &lt;= <span class="number">1</span> ) &#123;<span class="keyword">return</span> <span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Fibonacci(n - <span class="number">1</span>) + Fibonacci(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fibonacci(<span class="number">10</span>) <span class="comment">// 89</span></span><br><span class="line">Fibonacci(<span class="number">100</span>) <span class="comment">// 超时</span></span><br><span class="line">Fibonacci(<span class="number">500</span>) <span class="comment">// 超时</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 尾递归优化过的 Fibonacci 数列实现如下。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fibonacci2</span> (<span class="params">n , ac1 = <span class="number">1</span> , ac2 = <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>( n &lt;= <span class="number">1</span> ) &#123;<span class="keyword">return</span> ac2&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Fibonacci2 (n - <span class="number">1</span>, ac2, ac1 + ac2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fibonacci2(<span class="number">100</span>) <span class="comment">// 573147844013817200000</span></span><br><span class="line">Fibonacci2(<span class="number">1000</span>) <span class="comment">// 7.0330367711422765e+208</span></span><br><span class="line">Fibonacci2(<span class="number">10000</span>) <span class="comment">// Infinity</span></span><br></pre></td></tr></table></figure>
+<h4 id="递归函数的改写"><a href="#递归函数的改写" class="headerlink" title="递归函数的改写"></a>递归函数的改写</h4><blockquote>
+<p>尾递归的实现，往往需要改写递归函数，确保最后一步只调用自身。做到这一点的方法，就是把所有用到的内部变量改写成函数的参数。</p>
+</blockquote>
+<p>方法一是在尾递归函数之外，再提供一个正常形式的函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tailFactorial</span>(<span class="params">n, total</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> total;</span><br><span class="line">  <span class="keyword">return</span> tailFactorial(n - <span class="number">1</span>, n * total);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> tailFactorial(n, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">factorial(<span class="number">5</span>) <span class="comment">// 120</span></span><br></pre></td></tr></table></figure>
+<p>函数式编程有一个概念，叫做柯里化（currying），意思是将多参数的函数转换成单参数的形式。这里也可以使用柯里化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">currying</span>(<span class="params">fn, n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">m</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fn.call(<span class="keyword">this</span>, m, n);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tailFactorial</span>(<span class="params">n, total</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> total;</span><br><span class="line">  <span class="keyword">return</span> tailFactorial(n - <span class="number">1</span>, n * total);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> factorial = currying(tailFactorial, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">factorial(<span class="number">5</span>) <span class="comment">// 120</span></span><br></pre></td></tr></table></figure>
+<p>第二种方法就简单多了，就是采用 ES6 的函数默认值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n, total = <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> total;</span><br><span class="line">  <span class="keyword">return</span> factorial(n - <span class="number">1</span>, n * total);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">factorial(<span class="number">5</span>) <span class="comment">// 120</span></span><br></pre></td></tr></table></figure>
+<h4 id="严格模式-1"><a href="#严格模式-1" class="headerlink" title="严格模式"></a>严格模式</h4><blockquote>
+<p>ES6 的尾调用优化只在严格模式下开启，正常模式是无效的。</p>
+</blockquote>
+<p>这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。</p>
+<ul>
+<li><p>func.arguments：返回调用时函数的参数。</p>
+</li>
+<li><p>func.caller：返回调用当前函数的那个函数。</p>
+</li>
+</ul>
+<p>尾调用优化发生时，函数的调用栈会改写，因此上面两个变量就会失真。严格模式禁用这两个变量，所以尾调用模式仅在严格模式下生效。</p>
+<h4 id="尾递归优化的实现"><a href="#尾递归优化的实现" class="headerlink" title="尾递归优化的实现"></a>尾递归优化的实现</h4><blockquote>
+<p>正常模式下，自己实现尾递归优化，就是采用“循环”换掉“递归”。</p>
+</blockquote>
+<h3 id="函数参数的尾逗号"><a href="#函数参数的尾逗号" class="headerlink" title="函数参数的尾逗号"></a>函数参数的尾逗号</h3><blockquote>
+<p>ES2017 允许函数的最后一个参数有尾逗号（trailing comma）。新的语法允许定义和调用时，尾部直接有一个逗号。（主要是为了方便，和功能无关）</p>
+</blockquote>
+<h2 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h2><p><img src="http://images.turlingxian.com/blog/2019-06-13-%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95.png" alt="数组的扩展"></p>
+<h2 id="对象的扩展"><a href="#对象的扩展" class="headerlink" title="对象的扩展"></a>对象的扩展</h2><p><img src="http://images.turlingxian.com/blog/2019-06-14-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95.png" alt="对象的扩展"></p>
+<h2 id="对象的新增方法"><a href="#对象的新增方法" class="headerlink" title="对象的新增方法"></a>对象的新增方法</h2><p><img src="http://images.turlingxian.com/blog/2019-06-14-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95.png" alt="对象的新增方法"></p>
+
+              
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+            
+            <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzgzMy8yMDM2OA==">
+  <script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+            
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/nodejs-Typescript环境配置.html">
+        nodejs+Typescript环境配置 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By TurlingXian. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":1,"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/click.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
