@@ -81,9 +81,9 @@
         		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/实践教程/" class="animsition-link">实践教程<small>(3)</small></a></li>
+				    <li><a href="/categories/实践教程/" class="animsition-link">实践教程<small>(4)</small></a></li>
 				    
-				    <li><a href="/categories/阅读笔记/" class="animsition-link">阅读笔记<small>(6)</small></a></li>
+				    <li><a href="/categories/阅读笔记/" class="animsition-link">阅读笔记<small>(8)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -94,13 +94,19 @@
                     <a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
                     <ul class="sb-submenu">
                           
+                        <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+                        
                         <li><a href="/tags/Jasmine/" class="animsition-link">Jasmine<small>(1)</small></a></li>
                         
                         <li><a href="/tags/JavaScript/" class="animsition-link">JavaScript<small>(4)</small></a></li>
                         
                         <li><a href="/tags/Karma/" class="animsition-link">Karma<small>(1)</small></a></li>
                         
-                        <li><a href="/tags/angular/" class="animsition-link">angular<small>(1)</small></a></li>
+                        <li><a href="/tags/RxJS/" class="animsition-link">RxJS<small>(0)</small></a></li>
+                        
+                        <li><a href="/tags/angular/" class="animsition-link">angular<small>(2)</small></a></li>
+                        
+                        <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
                         
                         <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
                         
@@ -240,7 +246,7 @@
 <h3 id="延迟的脚本"><a href="#延迟的脚本" class="headerlink" title="延迟的脚本"></a>延迟的脚本</h3><blockquote>
 <p>不是一个理想的跨浏览器解决方案。带有defer属性的<code>&lt;script&gt;</code>标签可以放置在文档的任何位置。随影的JavaScript文件将在页面解析到<code>&lt;script&gt;</code>标签时开始下载，直到DOM加载完成（onload事件被触发前）才会执行。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"file1.js"</span> defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"file1.js"</span> defer&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h3 id="动态脚本元素"><a href="#动态脚本元素" class="headerlink" title="动态脚本元素"></a>动态脚本元素</h3><blockquote>
 <p>如果需要的话，你可以动态加载尽可能多的JavaScript文件到页面上，但一定要考虑清楚文件的加载顺序。</p>
 </blockquote>
@@ -263,7 +269,7 @@
 <h3 id="推荐的无阻塞模式"><a href="#推荐的无阻塞模式" class="headerlink" title="推荐的无阻塞模式"></a>推荐的无阻塞模式</h3><h4 id="推荐的无阻塞模式-1"><a href="#推荐的无阻塞模式-1" class="headerlink" title="推荐的无阻塞模式"></a>推荐的无阻塞模式</h4><blockquote>
 <p>向页面中添加大量JavaScript的推荐做法只需两步：先添加动态加载所需的代码，然后加载初始化页面所需的剩下的代码。</p>
 </blockquote>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 放在`&lt;/body&gt;`前，不会阻碍页面其他内容的显示</span></span><br><span class="line"><span class="comment">// 也避免了用window.onload来检测页面是否准备好</span></span><br><span class="line">&lt;script src=<span class="string">"loader.js"</span> type=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  loadScript(“the-rest.js”, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    Application.init();</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 放在`&lt;/body&gt;`前，不会阻碍页面其他内容的显示</span></span><br><span class="line"><span class="comment">// 也避免了用window.onload来检测页面是否准备好</span></span><br><span class="line">&lt;script src=<span class="string">"loader.js"</span> type=<span class="string">"text/javascript"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  loadScript(“the-rest.js”, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    Application.init();</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
 <li><code>&lt;/body&gt;</code>闭合标签之前，将所有的<code>&lt;script&gt;</code>标签放到页面底部。</li>
 <li>合并脚本，尽可能少的加载次数。</li>

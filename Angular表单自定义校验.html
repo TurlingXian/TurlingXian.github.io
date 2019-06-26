@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: hexo | TurlingXian Blog</title>
+  <title>Angular表单自定义校验 | TurlingXian Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <!-- 页面点击小红心 -->
 <body id="index" class="lightnav animsition">
@@ -191,69 +191,130 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(http://images.turlingxian.com/blog/2019-05-01-cover1.png) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/hexo-github-io博客搭建.html">hexo+github.io博客搭建</a></h4>
-                            
-                            <p><time datetime="2019-04-19T07:29:09.000Z"><a href="/hexo-github-io博客搭建.html">2019-04-19</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2018-09-16T10:04:11.000Z" itemprop="datePublished">
+          2018-09-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/Angular/'>Angular</a>
+    
+    
+</span>
+                <h1>Angular表单自定义校验</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+              <h3 id="表单内置校验"><a href="#表单内置校验" class="headerlink" title="表单内置校验"></a>表单内置校验</h3><blockquote>
+<p>先简单的看一下表单内置校验</p>
+</blockquote>
+<ul>
+<li>required：判断表单控件值是否为空</li>
+<li>minlength：判断表单控件值的最小长度</li>
+<li>maxlength：判断表单控件值的最大长度</li>
+<li>pattern：判断表单控件值的匹配规则</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// html</span><br><span class="line">&lt;form #simpleForm=&quot;ngForm&quot;&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;姓名：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;name&quot; [(ngModel)]=&quot;person.name&quot; minlength=&quot;3&quot; maxlength=&quot;10&quot; required #name=&quot;ngModel&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;name.invalid&quot;&gt;姓名错误&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;电话：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;tel&quot; [(ngModel)]=&quot;person.tel&quot; #tel=&quot;ngModel&quot; pattern=&quot;1[0-9]&#123;10&#125;&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;tel.invalid&quot;&gt;电话错误&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line"></span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;邮箱：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;email&quot; [(ngModel)]=&quot;person.email&quot; #email=&quot;ngModel&quot; pattern=&quot;[a-z0-9]+@[a-z0-9]+.com&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;email.invalid&quot;&gt;邮箱错误&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">// ts</span><br><span class="line">person = &#123;</span><br><span class="line">    name: &quot;&quot;,</span><br><span class="line">    tel: &quot;&quot;,</span><br><span class="line">    email: &quot;&quot;,</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="表单自定义校验"><a href="#表单自定义校验" class="headerlink" title="表单自定义校验"></a>表单自定义校验</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">// html</span><br><span class="line">&lt;form [formGroup]=&quot;customizeForm&quot;&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;姓名：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;name1&quot; formControlName=&quot;name1&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;customizeForm.controls.name1.invalid&quot;&gt;姓名错误&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line"></span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;电话：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;tel1&quot; formControlName=&quot;tel1&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;customizeForm.controls.tel1.invalid&quot;&gt;&#123;&#123;this.customizeForm.controls.tel1.errors.errorMsg&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line"></span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;邮箱：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;email1&quot; formControlName=&quot;email1&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;customizeForm.controls.email1.invalid&quot;&gt;&#123;&#123;this.customizeForm.controls.email1.errors.errorMsg&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">// ts</span><br><span class="line">customizeForm = new FormGroup(&#123;</span><br><span class="line">    name1: new FormControl(&quot;&quot;, [Validators.minLength(4), Validators.maxLength(10), Validators.required]),</span><br><span class="line">    tel1: new FormControl(&quot;&quot;, validateTel),</span><br><span class="line">    email1: new FormControl(&quot;&quot;, validateEmail),</span><br><span class="line">  &#125;) </span><br><span class="line">  </span><br><span class="line">// validattion.ts</span><br><span class="line">const TEL_REGEXP = new RegExp(&quot;1[0-9]&#123;10&#125;&quot;);</span><br><span class="line">const EMAIL_REGEXP = new RegExp(&quot;[a-z0-9]+@[a-z0-9]+.com&quot;);</span><br><span class="line">export function validateTel(c: FormControl)&#123;</span><br><span class="line">  return TEL_REGEXP.test(c.value) ? null : &#123; errorMsg: &apos;电话错误&apos;, &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export function validateEmail(c: FormControl)&#123;</span><br><span class="line">  return EMAIL_REGEXP.test(c.value) ? null : &#123; errorMsg: &apos;邮箱错误&apos;, &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="表单自定义校验简单封装"><a href="#表单自定义校验简单封装" class="headerlink" title="表单自定义校验简单封装"></a>表单自定义校验简单封装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// .html</span><br><span class="line">&lt;form [formGroup]=&quot;improveForm&quot;&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;姓名：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;name2&quot; formControlName=&quot;name2&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;improveForm.controls.name2.invalid&quot;&gt;姓名错误&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line"></span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;电话：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;tel2&quot; formControlName=&quot;tel2&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;improveForm.controls.tel2.invalid&quot;&gt;&#123;&#123;this.improveForm.controls.tel2.errors.errorMsg&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line"></span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;label&gt;邮箱：&lt;/label&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; name=&quot;email2&quot; formControlName=&quot;email2&quot;&gt;</span><br><span class="line">      &lt;p style=&quot;display: inline;&quot; *ngIf=&quot;improveForm.controls.email2.invalid&quot;&gt;&#123;&#123;this.improveForm.controls.email2.errors.errorMsg&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">// .ts</span><br><span class="line"> improveForm = new FormGroup(&#123;</span><br><span class="line">    name2: new FormControl(&quot;&quot;, [Validators.minLength(4), Validators.maxLength(10), Validators.required]),</span><br><span class="line">    tel2: new FormControl(&quot;&quot;, validation(&quot;tel&quot;) ),</span><br><span class="line">    email2: new FormControl(&quot;&quot;, validation(&quot;email&quot;)),</span><br><span class="line">  &#125;) </span><br><span class="line">  </span><br><span class="line">// validation.ts</span><br><span class="line">export const validation = (key) =&gt; (c: FormControl) =&gt; &#123;</span><br><span class="line">  if(key == &quot;tel&quot;)&#123;</span><br><span class="line">    return TEL_REGEXP.test(c.value) ? null : &#123; errorMsg: &apos;电话错误&apos;, &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  if(key == &quot;email&quot;)&#123;</span><br><span class="line">    return EMAIL_REGEXP.test(c.value) ? null : &#123; errorMsg: &apos;邮箱错误&apos;, &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+              
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+            
+            <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzgzMy8yMDM2OA==">
+  <script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+            
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/hexo-github-io博客搭建.html" style="float: left;">
+        ← hexo+github.io博客搭建
+    </a>
+    
+    
+    <a class="pull-right" href="/关于Angular中的数据绑定.html">
+        关于Angular中的数据绑定 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
