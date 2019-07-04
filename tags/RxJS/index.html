@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Karma+Jasmine单元测试入门实践 | TurlingXian Blog</title>
+  <title>Tag: RxJS | TurlingXian Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <!-- 页面点击小红心 -->
 <body id="index" class="lightnav animsition">
@@ -191,192 +191,69 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2019-05-08T09:24:34.000Z" itemprop="datePublished">
-          2019-05-08
-      </time>
-    
-    
-    | 
-    <a href='/tags/Karma/'>Karma</a>,
-    
-    <a href='/tags/Jasmine/'>Jasmine</a>
-    
-    
-</span>
-                <h1>Karma+Jasmine单元测试入门实践</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(http://images.turlingxian.com/blog/2019-05-01-cover1.png) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-              <blockquote>
-<p>用 Jasmine 做单元测试，用 Karma 自动化完成单元测试。</p>
-</blockquote>
-<h2 id="概念介绍"><a href="#概念介绍" class="headerlink" title="概念介绍"></a>概念介绍</h2><h3 id="Jasmine-测试框架（test-framework）"><a href="#Jasmine-测试框架（test-framework）" class="headerlink" title="Jasmine 测试框架（test framework）"></a>Jasmine 测试框架（test framework）</h3><p><a href="https://jasmine.github.io/" target="_blank" rel="noopener">Jasmine 官网</a></p>
-<blockquote>
-<p>Jasmine是一个用于测试JavaScript代码的行为驱动开发框架。它不依赖于任何其他JavaScript框架。它不需要DOM。它具有干净，明显的语法，因此您可以轻松编写测试。</p>
-</blockquote>
-<h3 id="Karma-测试运行器（test-runner）"><a href="#Karma-测试运行器（test-runner）" class="headerlink" title="Karma 测试运行器（test runner）"></a>Karma 测试运行器（test runner）</h3><p><a href="https://karma-runner.github.io/4.0/index.html" target="_blank" rel="noopener">Karma 官网</a></p>
-<blockquote>
-<p>Karma的主要目标是为开发人员提供高效的测试环境。是开发人员避免大量配置的环境，可以编写代码并从测试中获得即时反馈的地方。</p>
-</blockquote>
-<h2 id="过程记录"><a href="#过程记录" class="headerlink" title="过程记录"></a>过程记录</h2><h3 id="安装Karma-Jasmine"><a href="#安装Karma-Jasmine" class="headerlink" title="安装Karma+Jasmine"></a>安装Karma+Jasmine</h3><ol>
-<li><p>新建文件夹</p>
-</li>
-<li><p>参考官网的Installation<br><a href="https://karma-runner.github.io/4.0/intro/installation.html" target="_blank" rel="noopener">Karma Installation</a></p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Install Karma:</span><br><span class="line">$ npm install karma --save-dev</span><br><span class="line"></span><br><span class="line"># Install plugins that your project needs:</span><br><span class="line">$ npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev</span><br><span class="line"></span><br><span class="line"># Run Karma:</span><br><span class="line">$ ./node_modules/karma/bin/karma start</span><br><span class="line"></span><br><span class="line"># You will need to do this if you want to run Karma on Windows from the command line.</span><br><span class="line">npm install -g karma-cli</span><br></pre></td></tr></table></figure>
-<p>到此为止，打开浏览器 <a href="http://localhost:9876/" target="_blank" rel="noopener">http://localhost:9876/</a> 即可看到安装成功画面。</p>
-<p><img src="http://images.turlingxian.com/blog/2019-05-08-result.jpg" alt="result"></p>
-<ol start="3">
-<li>参考官网的Configuration</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma init my.conf.js</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>问题</p>
-</blockquote>
-<p>报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> readline.js:651</span><br><span class="line">  this.line = this.line.slice(this.cursor);</span><br><span class="line">                        ^</span><br><span class="line"></span><br><span class="line">TypeError: Cannot read property &apos;slice&apos; of undefined</span><br><span class="line">    at Interface._deleteLineLeft (readline.js:651:25)</span><br><span class="line">    at StateMachine.suggestOption (D:\code\company_id_rsa\reg-lib\node_modules\karma\lib\init\state_machine.js:53:14)</span><br><span class="line">    at StateMachine.nextQuestion (D:\code\company_id_rsa\reg-lib\node_modules\karma\lib\init\state_machine.js:127:12)</span><br><span class="line">    at StateMachine.process</span><br></pre></td></tr></table></figure>
-<p>解决方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node node_modules/karma/bin/karma init</span><br></pre></td></tr></table></figure>
-<p>结果<br><img src="http://images.turlingxian.com/blog/2019-05-08-karma_init.jpg" alt="karma_init"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start</span><br></pre></td></tr></table></figure>
-<p>运行成功</p>
-<h3 id="编辑测试文件"><a href="#编辑测试文件" class="headerlink" title="编辑测试文件"></a>编辑测试文件</h3><ol>
-<li>新建目录结构</li>
-</ol>
-<p><img src="http://images.turlingxian.com/blog/2019-05-08-file_structure.jpg" alt="file_structure"></p>
-<ol start="2">
-<li>修改karma.conf.js文件配置</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// list of files / patterns to load in the browser</span><br><span class="line">    files: [</span><br><span class="line">      &apos;src/**/*.js&apos;,</span><br><span class="line">      &apos;test/**/*.js&apos;</span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>编写文件</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// regFun.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(name === <span class="string">'AAA'</span>) <span class="keyword">return</span> <span class="string">'BBB'</span>;</span><br><span class="line">  <span class="keyword">return</span> name.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// regFunTest.js</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">"全部变量，定义测试"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  beforeEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  afterEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">"reverse word"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      expect(<span class="string">"DCBA"</span>).toBe(reverse(<span class="string">"ABCD"</span>));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>运行</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start</span><br></pre></td></tr></table></figure>
-<p>点击debug按钮，并且打开控制台可以看到</p>
-<p><img src="http://images.turlingxian.com/blog/2019-05-08-karma_debug.jpg" alt="karma_debug"></p>
-<h3 id="karma-jasmine-html-reporter"><a href="#karma-jasmine-html-reporter" class="headerlink" title="karma-jasmine-html-reporter"></a>karma-jasmine-html-reporter</h3><p><a href="https://www.npmjs.com/package/karma-jasmine-html-reporter" target="_blank" rel="noopener">karma-jasmine-html-reporter</a></p>
-<ol>
-<li>安装</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install karma-jasmine-html-reporter --save-dev</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>配置</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// karma.conf.js</span><br><span class="line">module.exports = function(config) &#123;</span><br><span class="line">  config.set(&#123;</span><br><span class="line">    reporters: [&apos;kjhtml&apos;]</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>运行</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start --reporters kjhtml</span><br></pre></td></tr></table></figure>
-<p><img src="http://images.turlingxian.com/blog/2019-05-09-result.jpg" alt="reporter-result"></p>
-<ol start="4">
-<li>addition</li>
-</ol>
-<p>如果愿意的话可以在package.json中修改script</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;report&quot;: &quot;karma start --reporters kjhtml&quot;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>这样，运行<code>npm run report</code>就大功告成了。</p>
-
-              
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-            
-            <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80MzgzMy8yMDM2OA==">
-  <script type="text/javascript">
-    (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-
-        if (typeof LivereTower === 'function') { return; }
-
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-
-        e.parentNode.insertBefore(j, e);
-    })(document, 'script');
-  </script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-            
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    <a class="pull-left" href="/nodejs-Typescript环境配置.html" style="float: left;">
-        ← nodejs+Typescript环境配置
-    </a>
-    
-    
-    <a class="pull-right" href="/简单的正则表达式入门.html">
-        简单的正则表达式 →
-    </a>
-    
-</nav>
-
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
-
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/《深入浅出RxJS》阅读笔记.html">《深入浅出RxJS》阅读笔记</a></h4>
+                            
+                            <p><time datetime="2019-06-26T09:30:58.000Z"><a href="/《深入浅出RxJS》阅读笔记.html">2019-06-26</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 

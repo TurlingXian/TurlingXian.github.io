@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>《深入浅出RxJS》阅读笔记 | TurlingXian Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="TurlingXian Blog">
+    <meta name="author" content="TurlingXian">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="TurlingXian Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<!-- 页面点击小红心 -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/实践教程/" class="animsition-link">实践教程<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/阅读笔记/" class="animsition-link">阅读笔记<small>(9)</small></a></li>
+				    
+				</ul>
+        	</li>
+            
+            <!-- <li><a href="/tags" class="animsition-link" title="tag">标签</a></li> -->
+            
+                <li>
+                    <a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+                    <ul class="sb-submenu">
+                          
+                        <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/Jasmine/" class="animsition-link">Jasmine<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/JavaScript/" class="animsition-link">JavaScript<small>(4)</small></a></li>
+                        
+                        <li><a href="/tags/Karma/" class="animsition-link">Karma<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/RxJS/" class="animsition-link">RxJS<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/angular/" class="animsition-link">angular<small>(2)</small></a></li>
+                        
+                        <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/nodejs/" class="animsition-link">nodejs<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/typescript/" class="animsition-link">typescript<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+                        
+                    </ul>
+                </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="https://yuexine.github.io/" class="animsition-link">yuexine&#39;s blog</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/pkq.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">TurlingXian Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-06-26T09:30:58.000Z" itemprop="datePublished">
+          2019-06-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/RxJS/'>RxJS</a>
+    
+    
+</span>
+                <h1>《深入浅出RxJS》阅读笔记</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+              <blockquote>
+<p>这本书看前两章的时候还蛮吸引我的，从操作符开始，可能这种琐碎的东西真的很难讲吧，没什么具体的内容，相比直接看官网来说，并没有什么更总结性或者深层次的见解，也没什么经验之谈的应用举例。看到后半部分的内容，觉得略显拖沓，大量的细致描述其实并不等于讲清楚了。最后的breakout游戏的例子还行。可以看着入门，留下一个大体的印象，但还是要看官网哦。不说什么了，我去看官网了。</p>
+</blockquote>
+<h2 id="第一章-函数响应式编程"><a href="#第一章-函数响应式编程" class="headerlink" title="第一章 函数响应式编程"></a>第一章 函数响应式编程</h2><ul>
+<li>RxJS使用了一种不同于传统的编程模式——函数响应式编程。</li>
+</ul>
+<h3 id="一个简单的RxJS例子"><a href="#一个简单的RxJS例子" class="headerlink" title="一个简单的RxJS例子"></a>一个简单的RxJS例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 记录鼠标按下到放开的时间和1s的差距</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> holdMeButton = <span class="built_in">document</span>.querySelector(<span class="string">'#hold-me'</span>);</span><br><span class="line"><span class="keyword">const</span> mouseDown$ = Rx.Observable.fromEvent(holdMeButton, <span class="string">'mousedown'</span>);</span><br><span class="line"><span class="keyword">const</span> mouseUp$ = Rx.Observable.fromEvent(holdMeButton, <span class="string">'mouseup'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> holdTime$ = mouseUp$.timestamp().withLatestFrom(mouseDown$.timestamp(), (mouseUpEvent, mouseDownEvent) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> mouseUpEvent.timestamp- mouseDownEvent.timestamp;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">holdTime$.subscribe(<span class="function"><span class="params">ms</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">'#hold-time'</span>).innerText = ms;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">holdTime$.flatMap(<span class="function"><span class="params">ms</span> =&gt;</span> Rx.Observable.ajax(<span class="string">'https://timing-sense-score-board.herokuapp.com/score/'</span> + ms))</span><br><span class="line">.map(<span class="function"><span class="params">e</span> =&gt;</span> e.response)</span><br><span class="line">.subscribe(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">'#rank'</span>).innerText = <span class="string">'你超过了'</span> + res.rank + <span class="string">'% 的用户'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>RxJS世界中有一种特殊的对象，称为“流”（stream），也会以“数据流”或者“Observable对象”称呼<br>这种对象实例。</p>
+<p>代表“流”的变量标⽰符，都是以$符号结尾，这是RxJS编程中普遍使用的风格，被称为“芬兰式命名法”（Finnish Notation）。</p>
+<p>在RxJS的代码中，代码是一个个函数，每个函数只是对输入的参数做了响应，然后返回结果。</p>
+<p>RxJS引入了两个重要的编程思想：</p>
+<ul>
+<li>函数式</li>
+<li>响应式</li>
+</ul>
+<h3 id="函数响应式编程"><a href="#函数响应式编程" class="headerlink" title="函数响应式编程"></a>函数响应式编程</h3><p><img src="http://images.turlingxian.com/blog/2019-06-28-%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B.png" alt="函数响应式编程"></p>
+<h2 id="第二章-RxJS入门"><a href="#第二章-RxJS入门" class="headerlink" title="第二章 RxJS入门"></a>第二章 RxJS入门</h2><h3 id="RxJS的版本和运行环境"><a href="#RxJS的版本和运行环境" class="headerlink" title="RxJS的版本和运行环境"></a>RxJS的版本和运行环境</h3><ul>
+<li>如今的JavaScript打包工具，有一个功能叫做Tree-Shaking，指的是在打包过程中发现根本没有用上的函数，最终的打包文件也就不需要包含这些没被使用的函数代码。Tree-Shaking只对import语句导入产生作用,因为Tree-Shaking的工作方式是对代码进行静态分析。但是，Tree-Shaking对RxJS不起作用，因为RxJS中的这部分函数都是要“挂”到Observable这个类上去，在RxJS内部都已经被Observable这个类“引用”了，不会被树摇掉。如果不想使用所有的RxJS功能，最好是按需要去导入模块。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Observable&#125; <span class="keyword">from</span> <span class="string">'rxjs/Observable'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/observable/of'</span>;</span><br></pre></td></tr></table></figure>
+<p>实际项目中，如果每一个代码文件都写这么多import语句，那就实在太麻烦了。更好的方式使用一个代码文件专门导入RxJS相关功能，其他的代码文件在导入导入文件，这样就把RxJS导入的工作集中管理。</p>
+<h3 id="Observable和Observer"><a href="#Observable和Observer" class="headerlink" title="Observable和Observer"></a>Observable和Observer</h3><blockquote>
+<p>Observable——可被观察者，Observer——观察者，连接两者的桥梁就是Observable对象的函数subscribe。</p>
+</blockquote>
+<p>Observable对象实现了下面两种设计模式：</p>
+<ul>
+<li><p>观察者模式</p>
+</li>
+<li><p>迭代器模式</p>
+</li>
+</ul>
+<h4 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h4><blockquote>
+<p>观察者模式要解决的问题，就是在一个持续产生事件的系统中，如何分割功能，让不同模块只需要处理一部分逻辑，这种分而治之的思想是基本的系统设计概念。</p>
+</blockquote>
+<p>将逻辑分为发布者和观察者，发布者只管负责生产事件，观察者只管接收到事件之后就处理。</p>
+<p>在RxJS的世界中，Observable对象就是一个发布者，通过Observable对象的subscribe函数，可以把这个发布者和某个观察者连接起来。</p>
+<p><img src="http://images.turlingxian.com/blog/2019-06-28-observable.jpg" alt="Observable"></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; of &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发布者 发布字符串‘hello world’事件</span></span><br><span class="line"><span class="keyword">const</span> helloWorld$ = of(<span class="string">'hello world'</span>);</span><br><span class="line"><span class="comment">// 观察者扮演console.log事件</span></span><br><span class="line">helloWorld$.subscribe(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+<h4 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h4><p>迭代器的作用就是提供一个通用的接口，让使用者完全不用关心这个数据集合的具体实现方式。</p>
+<p>迭代器另一个容易理解的名字叫游标（cursor），就像是一个移动的指针一样，从集合一个元素移到另一个元素，完成对整个集合的遍历。</p>
+<p>RxJS实现的是“推”式的迭代器实现。</p>
+<p>在RxJS中，作为迭代器的使用者，并不需要主动去从Observable中“拉”数据，而是只要subscribe上Observable对象之后，自然就能够收到消息的推送。</p>
+<h4 id="创造Observable"><a href="#创造Observable" class="headerlink" title="创造Observable"></a>创造Observable</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rxjsNext() &#123;</span><br><span class="line">    <span class="keyword">const</span> next = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">        observer.next(<span class="number">1</span>);</span><br><span class="line">        observer.next(<span class="number">2</span>);</span><br><span class="line">        observer.next(<span class="number">3</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> next$ = <span class="keyword">new</span> Observable(next);</span><br><span class="line">    next$.subscribe(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rxjsNext() &#123;</span><br><span class="line">    <span class="keyword">const</span> next = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">      observer.next(<span class="number">1</span>);</span><br><span class="line">      observer.next(<span class="number">2</span>);</span><br><span class="line">      observer.next(<span class="number">3</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> next$ = <span class="keyword">new</span> Observable(next);</span><br><span class="line">    <span class="keyword">const</span> theObserver = &#123;<span class="attr">next</span>: <span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item)&#125;;</span><br><span class="line">    next$.subscribe(theObserver);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="跨时间的Observable"><a href="#跨时间的Observable" class="headerlink" title="跨时间的Observable"></a>跨时间的Observable</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">rxjsInterval() &#123;</span><br><span class="line">    <span class="keyword">const</span> onSubscribe = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">const</span> handle = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        observer.next(num++);</span><br><span class="line">        <span class="keyword">if</span> (num &gt; <span class="number">3</span>) &#123;</span><br><span class="line">          clearInterval(handle);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> next$ = <span class="keyword">new</span> Observable(onSubscribe);</span><br><span class="line">    <span class="keyword">const</span> theObserver = &#123;next: <span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item)&#125;;</span><br><span class="line">    next$.subscribe(theObserver);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Observable这样的时间特性使得异步操作十分容易，因为对于观察者Observable，只需要被动接受推送数据来处理，而不用关心数据何时产生。</p>
+<h4 id="永无止境的Observable"><a href="#永无止境的Observable" class="headerlink" title="永无止境的Observable"></a>永无止境的Observable</h4><p>Observable对象中吐出来的数据可以是无穷的。如果我们不中断上一个例子中的程序，让他一直运行下去，这个程序也不会消耗更多的内存，这是因为Observable对象每次只吐出一个数据，然后这个数据就被Observer消化处理了，不会存在数据的堆积。</p>
+<p>不过，并不能给予Observer一个终止信号，Observer依然时刻准备着接收Observable的推送数据，相关的资源也不会被释放。所以，还需要一个宣称Observable对象已经完结的方式。</p>
+<h4 id="Observable的完结"><a href="#Observable的完结" class="headerlink" title="Observable的完结"></a>Observable的完结</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Observer的complete函数</span></span><br><span class="line">rxjsComplete() &#123;</span><br><span class="line">    <span class="keyword">const</span> onSubscribe = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">const</span> handle = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        observer.next(num++);</span><br><span class="line">        <span class="keyword">if</span> (num &gt; <span class="number">3</span>) &#123;</span><br><span class="line">          clearInterval(handle);</span><br><span class="line">          observer.complete();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> next$ = <span class="keyword">new</span> Observable(onSubscribe);</span><br><span class="line">    <span class="keyword">const</span> theObserver = &#123;</span><br><span class="line">      next: <span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item),</span><br><span class="line">      complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'No more Data'</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">    next$.subscribe(theObserver);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只有observerable主动调用complete，完结信号才会退给observer</p>
+<h4 id="Observable的出错处理"><a href="#Observable的出错处理" class="headerlink" title="Observable的出错处理"></a>Observable的出错处理</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">rxjsError() &#123;</span><br><span class="line">    <span class="keyword">const</span> onSubscribe = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">      observer.next(<span class="number">1</span>);</span><br><span class="line">      observer.error(<span class="string">'Something Wrong'</span>);</span><br><span class="line">      observer.complete();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> next$ = <span class="keyword">new</span> Observable(onSubscribe);</span><br><span class="line">    <span class="keyword">const</span> theObserver = &#123;</span><br><span class="line">      next: <span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item),</span><br><span class="line">      error: <span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err),</span><br><span class="line">      complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'No more data'</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">    next$.subscribe(theObserver);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在RxJS中，一个Observable对象只有一种终结状态，要么是完结，要么是出错，一旦进入出错状态，这个Observable对象也就终结了，在不会调用对应的Observer的next函数或complete函数；同样，进入完结状态也不能再调用Observer的next和error。</p>
+<p><img src="http://images.turlingxian.com/blog/2019-06-28-observable-status.jpg" alt="observable-status"></p>
+<h4 id="Observer的简单形式。"><a href="#Observer的简单形式。" class="headerlink" title="Observer的简单形式。"></a>Observer的简单形式。</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">rxjsSimple() &#123;</span><br><span class="line">    <span class="keyword">const</span> onSubscribe = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">      observer.next(<span class="number">1</span>);</span><br><span class="line">      observer.error(<span class="string">'Something Wrong'</span>);</span><br><span class="line">      observer.complete();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> next$ = <span class="keyword">new</span> Observable(onSubscribe);</span><br><span class="line">    <span class="comment">// 可以直接接收，而不用去创造一个observer对象</span></span><br><span class="line">    next$.subscribe(</span><br><span class="line">      item =&gt; <span class="built_in">console</span>.log(item),</span><br><span class="line">      err =&gt; <span class="built_in">console</span>.log(err),</span><br><span class="line">      () =&gt; <span class="built_in">console</span>.log(<span class="string">'No More Data'</span>)</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="退订Observable"><a href="#退订Observable" class="headerlink" title="退订Observable"></a>退订Observable</h3><p>例如，Observer只需要监听一个Observable对象三秒钟时间，三秒钟之后就不关心这个Observable对象的任何事件了。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rxjsSimple() &#123;</span><br><span class="line">    <span class="keyword">const</span> onSubscribe = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">const</span> handle = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'in onSubscribe '</span>, num);</span><br><span class="line">        observer.next(num++);</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">      <span class="comment">// 有返回结果，是一个包含退订方法的对象</span></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        unsubscribe: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// clearInterval(handle);</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> next$ = <span class="keyword">new</span> Observable(onSubscribe);</span><br><span class="line">    <span class="keyword">const</span> subscription = next$.subscribe(</span><br><span class="line">      item =&gt; <span class="built_in">console</span>.log(item),</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// unsubscribe调用之后，虽然不再接收到推送的数据，但是source$并没有终结，因为始终没有调用complete，如果继续订阅会接着往下输出</span></span><br><span class="line">      subscription.unsubscribe();</span><br><span class="line">    &#125;, <span class="number">3500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出，在调用unsubscribe函数调用之后，onSubscribe中依然在不断地调用next函数，但是Observer已经不会再做出任何响应了。</p>
+<h3 id="Hot-Observable-和-Cold-Observable"><a href="#Hot-Observable-和-Cold-Observable" class="headerlink" title="Hot Observable 和 Cold Observable"></a>Hot Observable 和 Cold Observable</h3><blockquote>
+<p>Cold Observable - 每一次subscribe都产生一个新的生产者，传输这个生产者产生数据（后一次订阅会从头开始）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const cold$ = new Observable(observer =&gt; &#123;</span><br><span class="line">  const producer = new Producer();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Hot Observable - 每次订阅的时候，已经准备好了一个生产者。在Hot Observable中，Observable明显并不产生数据，只是数据的搬运工。（后一次订阅会接着上一次订阅的结果）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const producer = new Producer();</span><br><span class="line">const hot$ = new Observable( observer =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="操作符简介"><a href="#操作符简介" class="headerlink" title="操作符简介"></a>操作符简介</h3><blockquote>
+<p>对于现实中复杂的问题，并不会创造一个数据流之后就直接通过subscribe接上一个Observer，往往需要对这个数据流做一系列处理，然后才交Observer。<br>在数据管道里流淌的数据就像是水，从上游 流向下游，对一个操作符来说，上有可能是一个数据源，也可能是其他操作符，下游可能是最终的观察者，也可能是另一个操作符，每一个操作符之间都是独立的。</p>
+</blockquote>
+<p><img src="http://images.turlingxian.com/blog/2019-07-01-process.jpg" alt="process"></p>
+<p><img src="http://images.turlingxian.com/blog/2019-07-01-operator.jpg" alt="operator"></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> onSubscribe = <span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">      observer.next(<span class="number">1</span>);</span><br><span class="line">      observer.error(<span class="string">'Something Wrong'</span>);</span><br><span class="line">      observer.complete();</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="comment">// create创造一个新的Observable对象。</span></span><br><span class="line"><span class="keyword">const</span> source$ = Observable.create(onSubscribe);</span><br><span class="line"><span class="comment">// map是对其中每一个数据映射为一个新的值，残生一个新的Observable对象。</span></span><br><span class="line"><span class="keyword">const</span> mapped$ = source$.map(<span class="function"><span class="params">x</span> =&gt;</span> x*x);</span><br><span class="line">mapped$.subscribe(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+<p>操作符就是用来产生全新Observable对象的函数（每一个操作符都是创造一个新的Observable对象，不会对上游的Observable对象做任何修改）。</p>
+<h3 id="弹珠图"><a href="#弹珠图" class="headerlink" title="弹珠图"></a>弹珠图</h3><blockquote>
+<p>弹珠图可以表示一个Observable对象所表示的数据流。<br>每个弹珠之间的间隔，代表的是吐出数据之间的时间间隔；<br>|符号代表数据流的完结，对应调用下游的complete函数；<br>×代表数据流中的异常，对应于调用下游的error函数<br>…</p>
+</blockquote>
+<h4 id="弹珠图工具"><a href="#弹珠图工具" class="headerlink" title="弹珠图工具"></a>弹珠图工具</h4><p><a href="https://rxmarbles.com/" target="_blank" rel="noopener">rxmarbles</a></p>
+<p>为了描述操作符的功能，弹珠图中往往会出现多条时间轴。</p>
+<h2 id="第三章-操作符基础"><a href="#第三章-操作符基础" class="headerlink" title="第三章 操作符基础"></a>第三章 操作符基础</h2><ul>
+<li>创建类操作符</li>
+<li>合并类操作符</li>
+<li>过滤类操作符</li>
+<li>转化类操作符</li>
+<li>异常处理类操作符</li>
+<li>多播类操作符（让一个数据流的数据可以提供给多个观察者）</li>
+</ul>
+<h3 id="为什么要有操作符"><a href="#为什么要有操作符" class="headerlink" title="为什么要有操作符"></a>为什么要有操作符</h3><p>共同特征- 返回一个Observable对象。</p>
+<p><em>对Observable对象能够链式调⽤filter和map，是因为：</em></p>
+<ul>
+<li>filter和map都是Observable对象的成员函数。</li>
+<li>filter和map的返回结果依然是Observable对象。</li>
+<li>filter和map不会改变原本的Observable对象。</li>
+</ul>
+<h3 id="操作符的分类"><a href="#操作符的分类" class="headerlink" title="操作符的分类"></a>操作符的分类</h3><blockquote>
+<p>RxJS v5版本自带60多个操作符。</p>
+</blockquote>
+<h4 id="功能分类"><a href="#功能分类" class="headerlink" title="功能分类"></a>功能分类</h4><p><img src="http://images.turlingxian.com/blog/2019-07-01-classify.png" alt="classify"></p>
+<h4 id="静态和实例分类"><a href="#静态和实例分类" class="headerlink" title="静态和实例分类"></a>静态和实例分类</h4><blockquote>
+<p>不需要Observable实例就可以执行的函数，称为静态操作符；前提是要有一个创建好的Observable对象，称为实例操作符。</p>
+</blockquote>
+<p>类似于：（和JS中的对象类比）<br>在Observable类上加一个静态方法<br>Observable.of<br>在Observable的prototype属性上加一个函数<br>Observable.prototype.map</p>
+<p>如果要导入静态操作符：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/observable/of'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果要导入实例操作符：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/operator/map'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果要调用静态操作符：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> source$ = Observable.of(<span class="comment">/*⼀些参数*/</span>);</span><br></pre></td></tr></table></figure></p>
+<p>如果要调用实例操作符：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result$ = source$.map(<span class="comment">/*⼀些参数*/</span>);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>静态操作符只能出现在首位，实例操作符则可以出现在任何位置，有些功能既可以作为Observable对象的静态方法，也可以作为Observable对象的实例方法。</p>
+</blockquote>
+<h3 id="如何实现操作符"><a href="#如何实现操作符" class="headerlink" title="如何实现操作符"></a>如何实现操作符</h3><blockquote>
+<p>具体的应用项目中，很可能会用上一些可以重复使用的逻辑，这些逻辑可以封装在自定义的操作符中，这时候就需要知道如何定制一个新的操作符。</p>
+</blockquote>
+<h4 id="操作符函数的实现"><a href="#操作符函数的实现" class="headerlink" title="操作符函数的实现"></a>操作符函数的实现</h4><p>每个操作符都是一个函数，不管实现什么功能，都必须考虑下面这些功能要点：</p>
+<ul>
+<li>返回一个全新的Observable对象。</li>
+<li>对上游和下游的订阅及退订处理。</li>
+<li>处理异常情况</li>
+<li>及时释放资源</li>
+</ul>
+<p>例：<br>// map操作符<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">map</span>(<span class="params">project</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 返回一个全新的Observable对象</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Observable(<span class="function"><span class="params">observer</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 对上游的订阅</span></span><br><span class="line">    <span class="keyword">const</span> sub = <span class="keyword">this</span>.subscribe(&#123;</span><br><span class="line">      <span class="comment">// 下游的订阅处理</span></span><br><span class="line">      next: <span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 处理异常</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          observer.next(project(value))</span><br><span class="line">        &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">          observer.error(err);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      error: <span class="function"><span class="params">err</span> =&gt;</span> observer.error(err),</span><br><span class="line">      complete: &#123;&#125; =&gt; observer.complete(),</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// 退订处理(map并不占用什么资源，有的操作符要在退订的时候，及时释放资源)</span></span><br><span class="line">      unsubscrib: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        sub.unsubscribe();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="关联Observable"><a href="#关联Observable" class="headerlink" title="关联Observable"></a>关联Observable</h4><ul>
+<li><p>最简单的方法（不推荐，避免污染全局Observable）<br>Observable.prototype.map = map;<br>注意：这里不能使用箭头函数，箭头函数中的this直接绑定于定义函数环境下的this，而不是执行时指定的this。</p>
+</li>
+<li><p>如果只想给指定的Observable对象使用</p>
+</li>
+</ul>
+<p>使用绑定操作符::，可以链式调用<br>const result$ = source$::map(x =&gt; x*2) :: map(x =&gt; x+1);</p>
+<ul>
+<li>使用lift</li>
+</ul>
+<p>list是Observable的实力函数，它会返回一个新的Observable对象，通过传递给lift的函数参数可以赋予个这个新的Observable对象特殊功能。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果使用lift，那么map的实现代码如下</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">map</span>(<span class="params">project</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.lift(<span class="function"><span class="keyword">function</span>(<span class="params">source$</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> source$.subscribe(&#123;</span><br><span class="line">      next: <span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.next(project(value));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">          <span class="keyword">this</span>.error(err);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      error: <span class="function"><span class="params">err</span> =&gt;</span> <span class="keyword">this</span>.error(err),</span><br><span class="line">      complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.complete(),</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然RxJS v5的操作符都架构在lift上，应用层开发者并不经常使用lift，这个lift更多的是给RxJS库开发者使用。</p>
+<h4 id="改进的操作符定义"><a href="#改进的操作符定义" class="headerlink" title="改进的操作符定义"></a>改进的操作符定义</h4><p>如果函数中需要使用this，那就多了一个改变函数行为的因素，也就算不上真正的纯函数了。</p>
+<h4 id="lettable-pipeable操作符"><a href="#lettable-pipeable操作符" class="headerlink" title="lettable/pipeable操作符"></a>lettable/pipeable操作符</h4><blockquote>
+<p>最理想的方式是使用RxJS v5.5引入的pipeable操作符，这种方式不仅让代码更加简洁，而且可以让Tree Shanking发挥作用。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过pipe串接了filter和map两个lettable操作符</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="keyword">of</span>&#125; <span class="keyword">from</span> <span class="string">'rxjs/observable/of'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;map, filter&#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"><span class="keyword">const</span> source$ = <span class="keyword">of</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="keyword">const</span> result$ = source$.pipe(</span><br><span class="line">filter(<span class="function"><span class="params">x</span> =&gt;</span> x % <span class="number">2</span> === <span class="number">0</span>),</span><br><span class="line">map(<span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span>)</span><br><span class="line">);</span><br><span class="line">result$.subscribe(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+<p>以前导入map的代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/operator/map'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>现在导入pipeable操作符map的代码就是如下这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;map&#125; <span class="keyword">from</span> <span class="string">'rxjs/operators/map'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;map&#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>有的传统的操作符名称和pipeable操作符名称不同</p>
+<h4 id="管道操作符"><a href="#管道操作符" class="headerlink" title="管道操作符"></a>管道操作符</h4><p>管道操作符是一个竖杠和大于号的组合，也就是|&gt;，用来连接两个值，前一个值没有任何要求，后一个值必<br>须是函数，管道操作符的作用就是把前面的值作为参数来调用后面的函数。<br>管道操作符还可以对以一个值连续进行多次函数操作。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">666</span> |&gt; foo |&gt; bar</span><br><span class="line">bar(foo(<span class="number">666</span>))</span><br></pre></td></tr></table></figure></p>
+<p>可以用下面这种形式来使用pipeable操作符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result$ = source$</span><br><span class="line">|&gt; filter (<span class="function"><span class="params">x</span> =&gt;</span> x % <span class="number">2</span> === <span class="number">0</span>)</span><br><span class="line">|&gt; map(<span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="第4章-创建数据流"><a href="#第4章-创建数据流" class="headerlink" title="第4章 创建数据流"></a>第4章 创建数据流</h2><blockquote>
+<p>本章介绍RxJS中用于创造Observable对象的操作符，这些操作符是RxJS中数据流的源头。</p>
+</blockquote>
+<h3 id="4-1-创建类操作符"><a href="#4-1-创建类操作符" class="headerlink" title="4.1 创建类操作符"></a>4.1 创建类操作符</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%B5%81.png" alt="创建类操作符"></p>
+<h3 id="4-2-创建同步数据流"><a href="#4-2-创建同步数据流" class="headerlink" title="4.2 创建同步数据流"></a>4.2 创建同步数据流</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E5%88%9B%E5%BB%BA%E5%90%8C%E6%AD%A5%E6%95%B0%E6%8D%AE%E6%B5%81.png" alt="创建同步数据流"></p>
+<h3 id="4-3-创建异步数据的Observable对象"><a href="#4-3-创建异步数据的Observable对象" class="headerlink" title="4.3 创建异步数据的Observable对象"></a>4.3 创建异步数据的Observable对象</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E5%88%9B%E5%BB%BA%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E7%9A%84Observable%E5%AF%B9%E8%B1%A1.png" alt="创建异步数据的Observable对象"></p>
+<h2 id="第5章-合并数据流"><a href="#第5章-合并数据流" class="headerlink" title="第5章 合并数据流"></a>第5章 合并数据流</h2><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E5%90%88%E5%B9%B6%E6%95%B0%E6%8D%AE%E6%B5%81.png" alt="合并数据流"></p>
+<h3 id="5-1-合作类操作符"><a href="#5-1-合作类操作符" class="headerlink" title="5.1 合作类操作符"></a>5.1 合作类操作符</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E5%90%88%E4%BD%9C%E7%B1%BB%E6%93%8D%E4%BD%9C%E7%AC%A6.png" alt="合作类操作符"></p>
+<h3 id="5-2-高阶Observable"><a href="#5-2-高阶Observable" class="headerlink" title="5.2 高阶Observable"></a>5.2 高阶Observable</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E9%AB%98%E9%98%B6Observable.png" alt="高阶Observable"></p>
+<h2 id="第6章-辅助类操作符"><a href="#第6章-辅助类操作符" class="headerlink" title="第6章 辅助类操作符"></a>第6章 辅助类操作符</h2><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E8%BE%85%E5%8A%A9%E7%B1%BB%E6%93%8D%E4%BD%9C%E7%AC%A6.png" alt="辅助类操作符"></p>
+<h3 id="6-1-数学类操作符"><a href="#6-1-数学类操作符" class="headerlink" title="6.1 数学类操作符"></a>6.1 数学类操作符</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E6%95%B0%E5%AD%A6%E7%B1%BB%E6%93%8D%E4%BD%9C%E7%AC%A6.png" alt="数学类操作符"></p>
+<h3 id="6-2-条件布尔类操作符"><a href="#6-2-条件布尔类操作符" class="headerlink" title="6.2 条件布尔类操作符"></a>6.2 条件布尔类操作符</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E6%9D%A1%E4%BB%B6%E5%B8%83%E5%B0%94%E7%B1%BB%E6%93%8D%E4%BD%9C%E7%AC%A6.png" alt="条件布尔类操作符"></p>
+<h2 id="第7章-过滤数据流"><a href="#第7章-过滤数据流" class="headerlink" title="第7章 过滤数据流"></a>第7章 过滤数据流</h2><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE%E6%B5%81.png" alt="过滤数据流"></p>
+<h3 id="7-1-过滤类操作符的模式"><a href="#7-1-过滤类操作符的模式" class="headerlink" title="7.1 过滤类操作符的模式"></a>7.1 过滤类操作符的模式</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E8%BF%87%E6%BB%A4%E7%B1%BB%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E6%A8%A1%E5%BC%8F.png" alt="过滤类操作符的模式"></p>
+<h3 id="7-2-回压控制"><a href="#7-2-回压控制" class="headerlink" title="7.2 回压控制"></a>7.2 回压控制</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E5%9B%9E%E5%8E%8B%E6%8E%A7%E5%88%B6.png" alt="回压控制"></p>
+<h3 id="7-3-其他过滤方式"><a href="#7-3-其他过滤方式" class="headerlink" title="7.3 其他过滤方式"></a>7.3 其他过滤方式</h3><p><img src="http://images.turlingxian.com/blog/2019-07-03-%E5%85%B6%E4%BB%96%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F.png" alt="其他过滤方式"></p>
+<h2 id="第8章-转化数据流"><a href="#第8章-转化数据流" class="headerlink" title="第8章 转化数据流"></a>第8章 转化数据流</h2><p>概念： 让数据管道中的数据发生变化</p>
+<h3 id="8-1-转化类操作符"><a href="#8-1-转化类操作符" class="headerlink" title="8.1 转化类操作符"></a>8.1 转化类操作符</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E8%BD%AC%E5%8C%96%E7%B1%BB%E6%93%8D%E4%BD%9C%E7%AC%A6.png" alt="转化类操作符"></p>
+<h3 id="8-2-映射数据"><a href="#8-2-映射数据" class="headerlink" title="8.2 映射数据"></a>8.2 映射数据</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE.png" alt="映射数据"></p>
+<h3 id="8-3-缓存窗口：无损回压控制"><a href="#8-3-缓存窗口：无损回压控制" class="headerlink" title="8.3 缓存窗口：无损回压控制"></a>8.3 缓存窗口：无损回压控制</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E7%BC%93%E5%AD%98%E7%AA%97%E5%8F%A3%EF%BC%9A%E6%97%A0%E6%8D%9F%E5%9B%9E%E5%8E%8B%E6%8E%A7%E5%88%B6.png" alt="缓存窗口：无损回压控制"></p>
+<h3 id="8-4-高阶的map"><a href="#8-4-高阶的map" class="headerlink" title="8.4 高阶的map"></a>8.4 高阶的map</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E9%AB%98%E9%98%B6%E7%9A%84map.png" alt="高阶的map"></p>
+<h3 id="8-5-数据分组"><a href="#8-5-数据分组" class="headerlink" title="8.5 数据分组"></a>8.5 数据分组</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84.png" alt="数据分组"></p>
+<h3 id="8-6-累计数据"><a href="#8-6-累计数据" class="headerlink" title="8.6 累计数据"></a>8.6 累计数据</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E7%B4%AF%E8%AE%A1%E6%95%B0%E6%8D%AE.png" alt="累计数据"></p>
+<h2 id="第9章-异常错误处理"><a href="#第9章-异常错误处理" class="headerlink" title="第9章 异常错误处理"></a>第9章 异常错误处理</h2><h3 id="9-1-异常处理不可避免"><a href="#9-1-异常处理不可避免" class="headerlink" title="9.1 异常处理不可避免"></a>9.1 异常处理不可避免</h3><h3 id="9-2-异常处理的难度"><a href="#9-2-异常处理的难度" class="headerlink" title="9.2 异常处理的难度"></a>9.2 异常处理的难度</h3><p><img src="http://images.turlingxian.com/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%9A%84%E9%9A%BE%E7%82%B9.png" alt="异常处理的难度"></p>
+<h3 id="9-3-RxJS的异常处理"><a href="#9-3-RxJS的异常处理" class="headerlink" title="9.3 RxJS的异常处理"></a>9.3 RxJS的异常处理</h3><p><img src="http://images.turlingxian.com/RxJS%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.png" alt="RxJS的异常处理"></p>
+<h3 id="9-4-重试的本质"><a href="#9-4-重试的本质" class="headerlink" title="9.4 重试的本质"></a>9.4 重试的本质</h3><p><img src="http://images.turlingxian.com/%E9%87%8D%E8%AF%95%E7%9A%84%E6%9C%AC%E8%B4%A8.png" alt="重试的本质"></p>
+<h2 id="第10章-多播"><a href="#第10章-多播" class="headerlink" title="第10章 多播"></a>第10章 多播</h2><p>让一个数据流的内容被多个Observer订阅。</p>
+<h3 id="数据流的多播"><a href="#数据流的多播" class="headerlink" title="数据流的多播"></a>数据流的多播</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E5%A4%9A%E6%92%AD.png" alt="数据流的多播"></p>
+<h3 id="Hot和Cold数据流差异"><a href="#Hot和Cold数据流差异" class="headerlink" title="Hot和Cold数据流差异"></a>Hot和Cold数据流差异</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-Hot%E5%92%8CCold%E6%95%B0%E6%8D%AE%E6%B5%81%E5%B7%AE%E5%BC%82.png" alt="Hot和Cold数据流差异"></p>
+<h3 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-Subject.png" alt="Subject"></p>
+<h3 id="支持多播的操作符"><a href="#支持多播的操作符" class="headerlink" title="支持多播的操作符"></a>支持多播的操作符</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E6%94%AF%E6%8C%81%E5%A4%9A%E6%92%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%AC%A6.png" alt="支持多播的操作符"></p>
+<h3 id="高级多播功能"><a href="#高级多播功能" class="headerlink" title="高级多播功能"></a>高级多播功能</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E9%AB%98%E7%BA%A7%E5%A4%9A%E6%92%AD%E5%8A%9F%E8%83%BD.png" alt="高级多播功能"></p>
+<h2 id="第11章-掌握时间的Scheduler"><a href="#第11章-掌握时间的Scheduler" class="headerlink" title="第11章 掌握时间的Scheduler"></a>第11章 掌握时间的Scheduler</h2><p>Scheduler可以作为创造类和合并类操作符的函数使用。此外，RxJS还提供了observeOn和subscribeOn两个操作符，用于在数据管道任何位置插入给定Scheduler。</p>
+<h3 id="Scheduler的调度作用"><a href="#Scheduler的调度作用" class="headerlink" title="Scheduler的调度作用"></a>Scheduler的调度作用</h3><p>在RxJS提供的很多操作符中都带有Scheduler类型的参数，在之前的章节中，为了简化问题，我们有意不提这些参数，不过，现在是时候来研究一下Scheduler参数的作用了。</p>
+<p>因为scheduler不经常使用，所以scheduler总是一个可选参数，如果一个操作符有scheduler参数，那么这个参数也肯定是最后一个参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">range</span>(<span class="params">start, count, scheduler</span>) </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果使用操作符的时候不传递scheduler参数，那么RxJS就会使用默认的Scheduler实现。</p>
+<p>Scheduler的官方定义：</p>
+<ul>
+<li>Scheduler是一种数据结构；（可以根据优先级或者其他某种条件来安排任务执行队列）</li>
+<li>Scheduler是一个执行环境；（可以指定一个任务何时何地执行）</li>
+<li>Scheduler拥有一个虚拟时钟（virtual clock）。</li>
+</ul>
+<p>Scheduler可以改变Observable对象的数据产产方式。</p>
+<h3 id="RxJS提供的Scheduler"><a href="#RxJS提供的Scheduler" class="headerlink" title="RxJS提供的Scheduler"></a>RxJS提供的Scheduler</h3><p>在RxJS中，提供了下列Scheduler实例。</p>
+<ul>
+<li>undefined/null，也就是不指定Scheduler，代表同步执行的Scheduler。</li>
+<li>asap，尽快执行的Scheduler。</li>
+<li>async，利用setInterval实现的Scheduler，用于基于时间吐出数据的场景。</li>
+<li>queue，利用队列实现的Scheduler，用于迭代一个大的集合的场景。</li>
+<li>animationFrame，用于动画场景的Scheduler。</li>
+</ul>
+<p>RxJS默认选择Scheduler的原则是：尽量减少并发运行。</p>
+<h3 id="Scheduler的工作原理"><a href="#Scheduler的工作原理" class="headerlink" title="Scheduler的工作原理"></a>Scheduler的工作原理</h3><p>JavaScript只有一个线程。</p>
+<p>JavaScript的解析和运行环境称为“JavaScript引擎”，JavaScript引擎有诸多实现，Chrome浏览器和Node.js使用的是v8。</p>
+<p>“调⽤栈”——当调用一个函数的时候，就在调用栈上创建这个函数运行的空间，参数的传递、局部变量的创建都是通过调用栈完成；当一个函数执行完毕的时候，对应调用栈上这个函数的本次运行空间就被清除。</p>
+<p>“事件循环”——可以看作一个死循环，重复的工作就是从“事件队列”中拿到需要处理的事件任务，然后把这个任务交给调用栈去执行，当这个任务处理结束之后，再从“事件队列”中拿下一个任务塞给调用栈……</p>
+<p>当调用栈正在执行一个任务的时候，事件循环也只能等着，只有当前一个任务完成之后，才能塞给调用栈下一个任务。这也就是setTimeout不可能百分之百准确的原因。</p>
+<p>“事件队列”中的任务可以细分为Micro Task和Macro Task。</p>
+<p>如果把“事件队列”看作是等待执行而排队的话，那实际上也不只是排一条队（Macro Task）。</p>
+<p>Micro Task只有一个队列，而且这个队列简直就是VIP快速通道。当调用栈处理完一个任务，准备迎接下一个任务的时候，“事件循环”总是会优先看一看Micro Task的队列，只要还有Micro Task存在，就直接把Micro Task交给调用栈，其他Macro Task队列的任务都只能等下次机会。</p>
+<p>利用调用栈实现的Scheduler方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认的Scheduler</span></span><br><span class="line">Observable.range = <span class="function"><span class="keyword">function</span>(<span class="params">start, count</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> Observable.create(<span class="function">(<span class="params">observer</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">let</span> index = start;</span><br><span class="line"><span class="keyword">let</span> end = start + count;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (index &gt;= end) &#123;</span><br><span class="line">observer.complete();</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">observer.next(index++);</span><br><span class="line">&#125; <span class="keyword">while</span> (<span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在RxJS中，每一个Scheduler类都继承形式如下的接口IScheduler：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface IScheduler &#123;</span><br><span class="line">  <span class="comment">// 当前时间</span></span><br><span class="line">now();</span><br><span class="line"><span class="comment">// 交给Scheduler一个工作</span></span><br><span class="line">schedule(work, delay, state);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是asap会尽量使用Micro Task，而async利用的是Macro Task。queue这个Scheduler，如果调用它的schedule函数式参数delay是0，那它就用同步的方式执行，如果delay参数大于0，那queue的表现其实就和async一模一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;asap&#125; <span class="keyword">from</span> <span class="string">'rxjs/scheduler/asap'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;<span class="keyword">async</span>&#125; <span class="keyword">from</span> <span class="string">'rxjs/scheduler/async'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;queue&#125; <span class="keyword">from</span> <span class="string">'rxjs/scheduler/queue'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'before schedule'</span>);</span><br><span class="line"><span class="keyword">async</span>.schedule(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'async'</span>));</span><br><span class="line">asap.schedule(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'asap'</span>));</span><br><span class="line">queue.schedule(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'queue'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'after schedule'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// before schedule</span></span><br><span class="line"><span class="comment">// queue</span></span><br><span class="line"><span class="comment">// after schedule</span></span><br><span class="line"><span class="comment">// async</span></span><br><span class="line"><span class="comment">// asap</span></span><br></pre></td></tr></table></figure>
+<h3 id="支持Scheduler的操作符"><a href="#支持Scheduler的操作符" class="headerlink" title="支持Scheduler的操作符"></a>支持Scheduler的操作符</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-%E6%94%AF%E6%8C%81Scheduler%E7%9A%84%E6%93%8D%E4%BD%9C%E7%AC%A6.png" alt="支持Scheduler的操作符"></p>
+<h2 id="第12章-RxJS的调试和测试"><a href="#第12章-RxJS的调试和测试" class="headerlink" title="第12章 RxJS的调试和测试"></a>第12章 RxJS的调试和测试</h2><h3 id="调试方法"><a href="#调试方法" class="headerlink" title="调试方法"></a>调试方法</h3><p>RxJS代码多会涉及异步操作，所以用不上传统的Debugger。</p>
+<p>最有效的调试工具，依然是仔细考虑过而且位置恰当的打印语句。</p>
+<p>利用do来插入调试代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source$.<span class="keyword">do</span>(</span><br><span class="line">value =&gt; <span class="built_in">console</span>(<span class="string">'source$ data = '</span>, value)</span><br><span class="line">).subscribe(observer);</span><br></pre></td></tr></table></figure>
+<p>改进的日志调试方法，甚至可以更近一步分为debug，info，warn，error</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Observable.prototype.debug = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (global.debug) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">this</span>.do(fn);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>画出数据流依赖图</p>
+<p>单元测试</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'should sum up string value'</span>, () =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> source$ = Rx.Observable.of(<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>);</span><br><span class="line"><span class="keyword">const</span> result$ = source$.pipe(sum);</span><br><span class="line">result$.subscribe(</span><br><span class="line">value =&gt; assert.equal(<span class="number">6</span>, value)</span><br><span class="line">);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>操纵时间的TestScheduler，弹珠测试</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'should work with map operator'</span>, () =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> source = <span class="string">'-a-b|'</span>;</span><br><span class="line"><span class="keyword">const</span> expected = <span class="string">'-a-b|'</span>;</span><br><span class="line"><span class="keyword">const</span> source$ = scheduler.createColdObservable(source, &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">3</span>&#125;);</span><br><span class="line">scheduler.expectObservable(source$.map(<span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span>)).toBe(expected, &#123;</span><br><span class="line">a: <span class="number">2</span>, <span class="attr">b</span>: <span class="number">6</span></span><br><span class="line">&#125;);</span><br><span class="line">scheduler.flush();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="第13章-用RxJS驱动React"><a href="#第13章-用RxJS驱动React" class="headerlink" title="第13章 用RxJS驱动React"></a>第13章 用RxJS驱动React</h2><p>如何把RxJS的数据流和React的状态管理关联起来。利用Subject对象作为连接RxJS和React的纽带。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.counter = <span class="keyword">new</span> Subject();</span><br><span class="line"><span class="keyword">const</span> observer = <span class="function"><span class="params">value</span> =&gt;</span> <span class="keyword">this</span>.setState(&#123;<span class="attr">count</span>: value&#125;);</span><br><span class="line"><span class="keyword">this</span>.counter.scan(<span class="function">(<span class="params">result, inc</span>) =&gt;</span> result + inc, <span class="number">0</span>)</span><br><span class="line">.subscribe(observer);</span><br></pre></td></tr></table></figure>
+<h2 id="第14章-Redux和RxJS结合"><a href="#第14章-Redux和RxJS结合" class="headerlink" title="第14章 Redux和RxJS结合"></a>第14章 Redux和RxJS结合</h2><h3 id="Redux简介"><a href="#Redux简介" class="headerlink" title="Redux简介"></a>Redux简介</h3><p>Redux维持一个全局的Store，这个Store存储的就是应用的状态，因为这个Store是全局可见的，所以，当一个组件A修改Store上的状态的时候，与之相对的组件B依然可以读取到这个变化，这样就实现了组件之间的通信。</p>
+<p>为了完成这样一个功能，一个使用Redux的系统需要如下这些元素：</p>
+<ul>
+<li><p>Store——一个对象，提供一个getState函数，可以获得当前Store上存储的状态</p>
+</li>
+<li><p>action——修改状态，store.dispatch(action);</p>
+</li>
+<li><p>reducer——为了能够处理action，创建Store的时候提供对应的reducer函数，</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span> (<span class="params">state, action</span>) =&gt; </span>&#123;</span><br><span class="line"><span class="comment">//返回⼀个新的state</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>view——视图部分根据Store上的状态来渲染用户界面</li>
+</ul>
+<h3 id="用RxJS实现Redux"><a href="#用RxJS实现Redux" class="headerlink" title="用RxJS实现Redux"></a>用RxJS实现Redux</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">action$.scan(reducer, initialState).subscribe(renderView);</span><br></pre></td></tr></table></figure>
+<h3 id="Redux和RxJS比较"><a href="#Redux和RxJS比较" class="headerlink" title="Redux和RxJS比较"></a>Redux和RxJS比较</h3><p><img src="http://images.turlingxian.com/blog/2019-07-04-Redux-status.jpg" alt="Redux-status"></p>
+<p><img src="http://images.turlingxian.com/blog/2019-07-04-RxJS-status.jpg" alt="RxJS-status"></p>
+<h3 id="Redux-Observable：Redux和RxJS的结合"><a href="#Redux-Observable：Redux和RxJS的结合" class="headerlink" title="Redux-Observable：Redux和RxJS的结合"></a>Redux-Observable：Redux和RxJS的结合</h3><h2 id="第15章-RxJS游戏开发"><a href="#第15章-RxJS游戏开发" class="headerlink" title="第15章 RxJS游戏开发"></a>第15章 RxJS游戏开发</h2>
+              
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+            
+            <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzgzMy8yMDM2OA==">
+  <script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+            
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/《高性能JavaScript》阅读笔记.html">
+        《高性能JavaScript》阅读笔记 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By TurlingXian. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":1,"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/click.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
