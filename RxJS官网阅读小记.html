@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>RxJS官网阅读小记 | TurlingXian Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="TurlingXian Blog">
+    <meta name="author" content="TurlingXian">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="TurlingXian Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<!-- 页面点击小红心 -->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/实践教程/" class="animsition-link">实践教程<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/课程笔记/" class="animsition-link">课程笔记<small>(0)</small></a></li>
+				    
+				    <li><a href="/categories/阅读笔记/" class="animsition-link">阅读笔记<small>(10)</small></a></li>
+				    
+				</ul>
+        	</li>
+            
+            <!-- <li><a href="/tags" class="animsition-link" title="tag">标签</a></li> -->
+            
+                <li>
+                    <a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+                    <ul class="sb-submenu">
+                          
+                        <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/Jasmine/" class="animsition-link">Jasmine<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/JavaScript/" class="animsition-link">JavaScript<small>(4)</small></a></li>
+                        
+                        <li><a href="/tags/Karma/" class="animsition-link">Karma<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/RxJS/" class="animsition-link">RxJS<small>(2)</small></a></li>
+                        
+                        <li><a href="/tags/angular/" class="animsition-link">angular<small>(2)</small></a></li>
+                        
+                        <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/nodejs/" class="animsition-link">nodejs<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/python/" class="animsition-link">python<small>(0)</small></a></li>
+                        
+                        <li><a href="/tags/typescript/" class="animsition-link">typescript<small>(1)</small></a></li>
+                        
+                        <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+                        
+                    </ul>
+                </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="https://yuexine.github.io/" class="animsition-link">yuexine&#39;s blog</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/pkq.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">TurlingXian Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-07-04T10:02:01.000Z" itemprop="datePublished">
+          2019-07-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/RxJS/'>RxJS</a>
+    
+    
+</span>
+                <h1>RxJS官网阅读小记</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+              <blockquote>
+<p>主要阅读OVERVIEW部分，加深一下理解，还有体验一下Operator Decision Tree，感觉说不定很厉害。操作符部分还是等用到了再仔细感悟吧。</p>
+</blockquote>
+<p>RxJS官网：<a href="https://rxjs-dev.firebaseapp.com/guide/overview" target="_blank" rel="noopener">RxJS官网</a></p>
+<h2 id="OVERVIEW"><a href="#OVERVIEW" class="headerlink" title="OVERVIEW"></a>OVERVIEW</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><blockquote>
+<p>Think of RxJS as Lodash for events.</p>
+</blockquote>
+<p>把RxJS看做是事件的数组。</p>
+<p>核心思想：</p>
+<ul>
+<li>Observable: 一个概念，表示一个包含未来值和事件的可调用集合。</li>
+<li>Observer: 一个监听Observable对象提供值的回调函数的集合。</li>
+<li>Subscription: 表示Observable的执行，主要用于取消Observable的执行。</li>
+<li>Operators: 采用函数式编程的纯函数，使用像map、filter、concat、flatMap等这样的操作符来处理集合。</li>
+<li>Subject: 相当于EventEmitter, 将一个值或者事件多播给多个Observer的唯一方式。</li>
+<li>Schedulers: 用来控制并发性的集中调度器，允许我们调整计算的发生时间。e.g. setTimeout or requestAnimationFrame or others.</li>
+</ul>
+<p><em>Purity</em> </p>
+<p>使用纯函数来生产值使得RxJS十分强大，不易出错。使用RxJS将状态分离。</p>
+<p><em>Flow</em></p>
+<p>RxJS有各种各样的操作符来帮助你控制事件如何流经observables。</p>
+<p><em>Values</em></p>
+<p>你可以改变经过你的observables的值。</p>
+<h3 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>SINGLE</th>
+<th>MULTIPLE </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pull</td>
+<td>Function</td>
+<td>Iterator</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>Promise</td>
+<td>Observable</td>
+</tr>
+</tbody>
+</table>
+<p><em>Pull versus Push</em></p>
+<p>拉取和推送是一个数据生产者和一个数据消费者之间通信的两种不同的协议。</p>
+<p>拉取的话，生产者不知道什么时候将数据发送给消费者，消费者决定它从生产者那里接受数据的时机。</p>
+<p>JavaScript中的函数就是一个数据生产者，调用函数的代码从函数的返回值中“拉取”到一个值。<br>generator函数和iterators（function*）就是多个数据的生产者，调用iterator.next()的代码就是消费者，从iterator中“拉取”多个值。</p>
+<p>推送的话，生产者决定发送数据给消费者的时机，消费者不知道什么时候会接收到数据。</p>
+<p>Promise（生产者）发送一个解析过的值给已经注册的回调函数（消费者），Promise决定把数据推送给callbacks的时机。</p>
+<p>Observable生产多个值，推送给Observers（消费者）。</p>
+<p><em>Observables as generalizations of functions</em></p>
+<blockquote>
+<p>Observables 像是没有参数, 但可以泛化为多个值的函数。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">42</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> x = foo.call(); <span class="comment">// same as foo()</span></span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br><span class="line"><span class="keyword">const</span> y = foo.call(); <span class="comment">// same as foo()</span></span><br><span class="line"><span class="built_in">console</span>.log(y);</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> foo = <span class="keyword">new</span> Observable(<span class="function"><span class="params">subscriber</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</span><br><span class="line">  subscriber.next(<span class="number">42</span>);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">foo.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;);</span><br><span class="line">foo.subscribe(<span class="function"><span class="params">y</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// result</span></span><br><span class="line"></span><br><span class="line"><span class="string">"Hello"</span></span><br><span class="line"><span class="number">42</span></span><br><span class="line"><span class="string">"Hello"</span></span><br><span class="line"><span class="number">42</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子你可以看到他们的结果一致，为什么呢？因为functions和Observables都是惰性计算。你只有“调用/subscribe”了这个函数/obervable，<code>console.log(&#39;Hello&#39;)</code>才会执行。此外，call/subscribe是一个独立的操作。（两个函数调用触发两个独立的副作用）</p>
+<p>订阅observable和调用function类似。他们的不同之处在于，observables传递值既可以同步的，也可以异步的（随时间变化传输多个值）。函数return只能返回一次。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">42</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">100</span>; <span class="comment">// dead code. will never happen</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同步</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> foo = <span class="keyword">new</span> Observable(<span class="function"><span class="params">subscriber</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</span><br><span class="line">  subscriber.next(<span class="number">42</span>);</span><br><span class="line">  subscriber.next(<span class="number">100</span>); <span class="comment">// "return" another value</span></span><br><span class="line">  subscriber.next(<span class="number">200</span>); <span class="comment">// "return" yet another</span></span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'before'</span>);</span><br><span class="line">foo.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'after'</span>);</span><br><span class="line"></span><br><span class="line"><span class="string">"before"</span></span><br><span class="line"><span class="string">"Hello"</span></span><br><span class="line"><span class="number">42</span></span><br><span class="line"><span class="number">100</span></span><br><span class="line"><span class="number">200</span></span><br><span class="line"><span class="string">"after"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> foo = <span class="keyword">new</span> Observable(<span class="function"><span class="params">subscriber</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</span><br><span class="line">  subscriber.next(<span class="number">42</span>);</span><br><span class="line">  subscriber.next(<span class="number">100</span>);</span><br><span class="line">  subscriber.next(<span class="number">200</span>);</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    subscriber.next(<span class="number">300</span>); <span class="comment">// happens asynchronously</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'before'</span>);</span><br><span class="line">foo.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'after'</span>);</span><br><span class="line"></span><br><span class="line"><span class="string">"before"</span></span><br><span class="line"><span class="string">"Hello"</span></span><br><span class="line"><span class="number">42</span></span><br><span class="line"><span class="number">100</span></span><br><span class="line"><span class="number">200</span></span><br><span class="line"><span class="string">"after"</span></span><br><span class="line"><span class="number">300</span></span><br></pre></td></tr></table></figure>
+<p>总结</p>
+<ul>
+<li><p><code>func.call()</code> 给我一个同步的值</p>
+</li>
+<li><p><code>observable.subscribe()</code> 给我一堆值，随便你是同步的还是异步的。</p>
+</li>
+</ul>
+<p><em>Anatomy of an Observable</em></p>
+<p>核心的Observable概念：</p>
+<ul>
+<li>创建Observables（new Observable()或者创建操作符）</li>
+<li>订阅Observables（订阅 Observable 像是调用函数, 并提供接收数据的回调函数。）</li>
+<li>执行Observables（next/complete/error）</li>
+<li>销毁Observables（subscription.unsubscribe()）</li>
+</ul>
+<h3 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h3><p><em>What are operators</em></p>
+<p>操作符就是函数。有两种操作符：</p>
+<p>管道操作符使用语法<code>observableInstance.pipe(operator())</code>来输送Observables。（满足纯函数，不改变Observable实例，返回一个新的Observable）</p>
+<p>创建操作符被独立调用来创建一个新的Observable。</p>
+<p><em>Piping</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">obs.pipe(</span><br><span class="line">  op1(),</span><br><span class="line">  op2(),</span><br><span class="line">  op3(),</span><br><span class="line">  op3(),</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 即使是一个，也最好写成：</span></span><br><span class="line">obs.pipe(op())</span><br></pre></td></tr></table></figure>
+<p><em>Creation Operators</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; interval &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> observable = interval(<span class="number">1000</span> <span class="comment">/* number of milliseconds */</span>);</span><br></pre></td></tr></table></figure>
+<p><em>Higher-order Observables</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fileObservable = urlObservable.pipe(</span><br><span class="line">   map(<span class="function"><span class="params">url</span> =&gt;</span> http.get(url)),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>http.get()返回一个Observable，fileObservable就是Observables of Observables，也就是高阶Observable。</p>
+<p>通常用展开（flatten）的方式来处理高阶Observable，转化为普通的Observable。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fileObservable = urlObservable.pipe(</span><br><span class="line">   map(<span class="function"><span class="params">url</span> =&gt;</span> http.get(url)),</span><br><span class="line">   concatAll(),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><em>Marble diagrams</em></p>
+<p>弹珠图是来展示说明操作符如何运行的一个工具。</p>
+<p><em>Categories of operators</em></p>
+<p>略，列举了各种操作符，边用边看。</p>
+<h3 id="Subscription"><a href="#Subscription" class="headerlink" title="Subscription"></a>Subscription</h3><p>Subscription就是一个可以销毁的对象，通常执行一个Observable。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; interval &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> observable = interval(<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">const</span> subscription = observable.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br><span class="line"><span class="comment">// Later:</span></span><br><span class="line"><span class="comment">// This cancels the ongoing Observable execution which</span></span><br><span class="line"><span class="comment">// was started by calling subscribe with an Observer.</span></span><br><span class="line">subscription.unsubscribe();</span><br></pre></td></tr></table></figure>
+<p>Subscription可以合并，所以调用一个unsubscribe()可以取消订阅多个Subscriptions。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; interval &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> observable1 = interval(<span class="number">400</span>);</span><br><span class="line"><span class="keyword">const</span> observable2 = interval(<span class="number">300</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> subscription = observable1.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'first: '</span> + x));</span><br><span class="line"><span class="keyword">const</span> childSubscription = observable2.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'second: '</span> + x));</span><br><span class="line"> </span><br><span class="line">subscription.add(childSubscription);</span><br><span class="line"> </span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Unsubscribes BOTH subscription and childSubscription</span></span><br><span class="line">  subscription.unsubscribe();</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">second: <span class="number">0</span></span><br><span class="line">first: <span class="number">0</span></span><br><span class="line">second: <span class="number">1</span></span><br><span class="line">first: <span class="number">1</span></span><br><span class="line">second: <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>Subscriptions也可以取消一个child Subscription通过<code>remove(otherSubscription)</code>方法。</p>
+<h3 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h3><p>Subject是一种特殊的Observable，允许把值多播给多个Observers。一般的Observable是单播的，Subject是多播。</p>
+<p>Subject就像是EventEmitter一样，存着一张有许多监听者的注册表。</p>
+<p>每个Subject都是一个Observable。你可以提供一个观察者并使用subscribe方法。</p>
+<p>每个Subject都是一个Observer对象，有next(v)，error(e)，complete()方法。调用next(theValue)给这个Subject一个新的值，它会多播到所有被注册的监听这个Subject的Observers。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Subject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Subject&lt;number&gt;();</span><br><span class="line"> </span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Logs:</span></span><br><span class="line"><span class="comment">// observerA: 1</span></span><br><span class="line"><span class="comment">// observerB: 1</span></span><br><span class="line"><span class="comment">// observerA: 2</span></span><br><span class="line"><span class="comment">// observerB: 2</span></span><br></pre></td></tr></table></figure>
+<p>因为Subject是一个Observer，所以你可以提供一个Subject对象作为任意Observable的subscribe方法的参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Subject, <span class="keyword">from</span> &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Subject&lt;number&gt;();</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> observable = <span class="keyword">from</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line">observable.subscribe(subject); <span class="comment">// You can subscribe providing a Subject</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Logs:</span></span><br><span class="line"><span class="comment">// observerA: 1</span></span><br><span class="line"><span class="comment">// observerB: 1</span></span><br><span class="line"><span class="comment">// observerA: 2</span></span><br><span class="line"><span class="comment">// observerB: 2</span></span><br><span class="line"><span class="comment">// observerA: 3</span></span><br><span class="line"><span class="comment">// observerB: 3</span></span><br></pre></td></tr></table></figure>
+<p>通过上面这个方法，我们基本上只需通过Subject就可以把一个单播的Observable转化为多播。</p>
+<p><em>Multicasted Observables</em></p>
+<p>多播Observable在底层是通过使用Subject使得多个观察者可以看见同一个Observable执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">from</span>, Subject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; multicast &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> source = <span class="keyword">from</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Subject();</span><br><span class="line"><span class="keyword">const</span> multicasted = source.pipe(multicast(subject));</span><br><span class="line"> </span><br><span class="line"><span class="comment">// These are, under the hood, `subject.subscribe(&#123;...&#125;)`:</span></span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// This is, under the hood, `source.subscribe(subject)`:</span></span><br><span class="line">multicasted.connect();</span><br></pre></td></tr></table></figure>
+<p>multicast返回一个看上去像普通的Observable，但是实际上被订阅的时候像是一个subject。multicast返回一个ConnectableObservable（有connect()方法的Observable对象）。这个connect()方法决定了何时开始这个被共享的Observable对象的执行。也可以退订这个被共享的Observable对象的执行。</p>
+<p><em>Reference counting</em></p>
+<p>用connect()手动处理Supscription太麻烦。通常我们希望第一个Observer来的时候自动订阅，最后一个Observer退订的时候自动取消。</p>
+<p>比如，举个例子，要实现如下顺序：</p>
+<ol>
+<li>第一个Observer订阅了这个多播的观察者对象</li>
+<li>connect()</li>
+<li>发送0到Observer1</li>
+<li>第二个Observer订阅了这个多播的观察者对象</li>
+<li>发送1到Observer1</li>
+<li>发送1到Observer2</li>
+<li>第一个Observer退订</li>
+<li>发送2到第二个Observer</li>
+<li>第二个Observer退订</li>
+<li>退订Connection</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用connect方法如下</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; interval, Subject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; multicast &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> source = interval(<span class="number">500</span>);</span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Subject();</span><br><span class="line"><span class="keyword">const</span> multicasted = source.pipe(multicast(subject));</span><br><span class="line"><span class="keyword">let</span> subscription1, subscription2, subscriptionConnect;</span><br><span class="line"> </span><br><span class="line">subscription1 = multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// We should call `connect()` here, because the first</span></span><br><span class="line"><span class="comment">// subscriber to `multicasted` is interested in consuming values</span></span><br><span class="line">subscriptionConnect = multicasted.connect();</span><br><span class="line"> </span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  subscription2 = multicasted.subscribe(&#123;</span><br><span class="line">    next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, <span class="number">600</span>);</span><br><span class="line"> </span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  subscription1.unsubscribe();</span><br><span class="line">&#125;, <span class="number">1200</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// We should unsubscribe the shared Observable execution here,</span></span><br><span class="line"><span class="comment">// because `multicasted` would have no more subscribers after this</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  subscription2.unsubscribe();</span><br><span class="line">  subscriptionConnect.unsubscribe(); <span class="comment">// for the shared Observable execution</span></span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>refCount使多播Observable在第一个订阅者来到时自动开始执行，并且当最后一个订阅者离开时自动停止执行。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用refCount的例子</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; interval, Subject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; multicast, refCount &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> source = interval(<span class="number">500</span>);</span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Subject();</span><br><span class="line"><span class="keyword">const</span> refCounted = source.pipe(multicast(subject), refCount());</span><br><span class="line"><span class="keyword">let</span> subscription1, subscription2;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// This calls `connect()`, because</span></span><br><span class="line"><span class="comment">// it is the first subscriber to `refCounted`</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'observerA subscribed'</span>);</span><br><span class="line">subscription1 = refCounted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'observerB subscribed'</span>);</span><br><span class="line">  subscription2 = refCounted.subscribe(&#123;</span><br><span class="line">    next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, <span class="number">600</span>);</span><br><span class="line"> </span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'observerA unsubscribed'</span>);</span><br><span class="line">  subscription1.unsubscribe();</span><br><span class="line">&#125;, <span class="number">1200</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// This is when the shared Observable execution will stop, because</span></span><br><span class="line"><span class="comment">// `refCounted` would have no more subscribers after this</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'observerB unsubscribed'</span>);</span><br><span class="line">  subscription2.unsubscribe();</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Logs</span></span><br><span class="line"><span class="comment">// observerA subscribed</span></span><br><span class="line"><span class="comment">// observerA: 0</span></span><br><span class="line"><span class="comment">// observerB subscribed</span></span><br><span class="line"><span class="comment">// observerA: 1</span></span><br><span class="line"><span class="comment">// observerB: 1</span></span><br><span class="line"><span class="comment">// observerA unsubscribed</span></span><br><span class="line"><span class="comment">// observerB: 2</span></span><br><span class="line"><span class="comment">// observerB unsubscribed</span></span><br></pre></td></tr></table></figure>
+<p>refCount()只存在于ConnectableObservable，并返回一个Observable，而不是另一个ConnectableObservable。</p>
+<p><em>BehaviorSubject</em></p>
+<p>是一种Subject对象的变型，会存储上一个发送给消费者的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BehaviorSubject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> BehaviorSubject(<span class="number">0</span>); <span class="comment">// 0 is the initial value</span></span><br><span class="line"> </span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">subject.next(<span class="number">3</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Logs</span></span><br><span class="line"><span class="comment">// observerA: 0</span></span><br><span class="line"><span class="comment">// observerA: 1</span></span><br><span class="line"><span class="comment">// observerA: 2</span></span><br><span class="line"><span class="comment">// 注意这里接受到了2，这个是上一个发送值</span></span><br><span class="line"><span class="comment">// observerB: 2</span></span><br><span class="line"><span class="comment">// observerA: 3</span></span><br><span class="line"><span class="comment">// observerB: 3</span></span><br></pre></td></tr></table></figure>
+<p><em>ReplaySubject</em></p>
+<p>ReplaySubject可以记录多个Observable执行过的值，然后重现给新的订阅者</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ReplaySubject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> ReplaySubject(<span class="number">3</span>); <span class="comment">// buffer 3 values for new subscribers</span></span><br><span class="line"> </span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br><span class="line">subject.next(<span class="number">3</span>);</span><br><span class="line">subject.next(<span class="number">4</span>);</span><br><span class="line"> </span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">subject.next(<span class="number">5</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Logs:</span></span><br><span class="line"><span class="comment">// observerA: 1</span></span><br><span class="line"><span class="comment">// observerA: 2</span></span><br><span class="line"><span class="comment">// observerA: 3</span></span><br><span class="line"><span class="comment">// observerA: 4</span></span><br><span class="line"><span class="comment">// 这里replay</span></span><br><span class="line"><span class="comment">// observerB: 2</span></span><br><span class="line"><span class="comment">// observerB: 3</span></span><br><span class="line"><span class="comment">// observerB: 4</span></span><br><span class="line"><span class="comment">// observerA: 5</span></span><br><span class="line"><span class="comment">// observerB: 5</span></span><br></pre></td></tr></table></figure>
+<p>除了一个缓冲区大小，也可以制定一个毫秒单位的窗口时间。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ReplaySubject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> ReplaySubject(<span class="number">100</span>, <span class="number">500</span> <span class="comment">/* windowTime */</span>);</span><br><span class="line"> </span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> i = <span class="number">1</span>;</span><br><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> subject.next(i++), <span class="number">200</span>);</span><br><span class="line"> </span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  subject.subscribe(&#123;</span><br><span class="line">    next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Logs</span></span><br><span class="line"><span class="comment">// observerA: 1</span></span><br><span class="line"><span class="comment">// observerA: 2</span></span><br><span class="line"><span class="comment">// observerA: 3</span></span><br><span class="line"><span class="comment">// observerA: 4</span></span><br><span class="line"><span class="comment">// observerA: 5</span></span><br><span class="line"><span class="comment">// observerB: 3</span></span><br><span class="line"><span class="comment">// observerB: 4</span></span><br><span class="line"><span class="comment">// observerB: 5</span></span><br><span class="line"><span class="comment">// observerA: 6</span></span><br><span class="line"><span class="comment">// observerB: 6</span></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure></p>
+<p><em>AsyncSubject</em></p>
+<p>执行结束后才会把最后一个值发送给observers。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; AsyncSubject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> AsyncSubject();</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br><span class="line">subject.next(<span class="number">3</span>);</span><br><span class="line">subject.next(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">5</span>);</span><br><span class="line">subject.complete();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Logs:</span></span><br><span class="line"><span class="comment">// observerA: 5</span></span><br><span class="line"><span class="comment">// observerB: 5</span></span><br></pre></td></tr></table></figure>
+<p>和last() 操作符类似。</p>
+<h3 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h3><p>调度程序控制着一个subscription何时开始以及何时发送通知。由三部分组成：</p>
+<ol>
+<li>是一种数据结构。它按照优先度或者其他标准，知道如何存储和队列任务。</li>
+<li>是一种执行上下文。它表示何时何地任务执行（立刻，或者在另一个回调机制中执行，例如setTimeout or process.nextTick, or the animation frame）。</li>
+<li>是一个（虚拟）时钟。通过scheduler中的一个getter方法now()，它提供了一种时间概念。在特定的scheduler上，调度的任务将只遵循该时钟表示的时间。</li>
+</ol>
+<p><em>Scheduler Types</em></p>
+<table>
+<thead>
+<tr>
+<th>SCHEDULER</th>
+<th>PURPOSE </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>null</td>
+<td>不传任何scheduler，通知将以同步方式递归传递。</td>
+</tr>
+<tr>
+<td>queueScheduler</td>
+<td>当前事件帧中的队列调度(蹦床调度器)。用于迭代操作。 </td>
+</tr>
+<tr>
+<td>asapScheduler</td>
+<td>微任务的队列调度，它使用可用的最快速的传输机制。用于异步转换。</td>
+</tr>
+<tr>
+<td>asyncScheduler</td>
+<td>使用 setInterval 的调度。用于基于时间的操作符。</td>
+</tr>
+<tr>
+<td>animationFrameScheduler</td>
+<td>计划任务将在下一个浏览器内容重绘之前发生。可用于创建流畅的浏览器动画。</td>
+</tr>
+</tbody>
+</table>
+<p><em>使用调度程序</em></p>
+<p>如果您不提供调度程序，RxJS将使用最小并发原则选择默认调度程序。这意味着选择引入满足运算符需求的最少并发性的调度程序。例如，对于返回具有有限和少量消息的observable的运算符，RxJS不使用Scheduler，即null或undefined。对于返回潜在大量或无限数量消息的运算符，使用queueScheduler。对于使用计时器的操作员，使用async。</p>
+<p>要指定特定的调度程序，您可以使用那些采用调度程序的运算符方法，例如from([10, 20, 30], asyncScheduler)。</p>
+<p>以下静态创建运算符采用Scheduler参数：</p>
+<ul>
+<li>bindCallback</li>
+<li>bindNodeCallback</li>
+<li>combineLatest</li>
+<li>concat</li>
+<li>empty</li>
+<li>from</li>
+<li>fromPromise</li>
+<li>interval</li>
+<li>merge</li>
+<li>of</li>
+<li>range</li>
+<li>throw</li>
+<li>timer</li>
+</ul>
+<p>使用 subscribeOn 来调度 subscribe() 调用在什么样的上下文中执行。 默认情况下，Observable 的 subscribe() 调用会立即同步地执行。然而，你可能会延迟或安排在给定的调度器上执行实际的 subscription ，使用实例操作符 subscribeOn(scheduler)，其中 scheduler 是你提供的参数。</p>
+<p>使用 observeOn 来调度发送通知的的上下文。 正如我们在上面的示例中所看到的，实例操作符 observeOn(scheduler) 在源 Observable 和目标观察者之间引入了一个中介观察者，中介负责调度，它使用给定的 scheduler 来调用目标观察者。</p>
+<p>实例操作符可能会接收调度器作为参数。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><blockquote>
+<p>这份指引是关于如何在使用<code>testScheduler.run(callback)</code>时，用宝珠图进行测试。</p>
+</blockquote>
+<p>略</p>
+<h2 id="Operator-Decision-Tree"><a href="#Operator-Decision-Tree" class="headerlink" title="Operator Decision Tree"></a>Operator Decision Tree</h2><p>主要功能是针对你的情况，选择对应的适合的操作符，极大程度上辅助操作符的选择，减小操作符多带来的问题。</p>
+<p>看完官网之后，觉得官网描述的十分清晰，基本只要厘清这些基本概念，发现可以把rxjs当做一个简单又强大的工具即可，并不算十分复杂。</p>
+<p>关键可能还是要多写。</p>
+
+              
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+            
+            <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzgzMy8yMDM2OA==">
+  <script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+            
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/《深入浅出RxJS》阅读笔记.html">
+        《深入浅出RxJS》阅读笔记 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By TurlingXian. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/TurlingXian" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":1,"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/click.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
