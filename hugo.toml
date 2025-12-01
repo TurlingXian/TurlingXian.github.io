@@ -3,5 +3,55 @@ languageCode = 'en-us'
 title = 'My New Blog'
 theme = 'PaperMod'
 
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
 [params]
   defaultTheme = "auto"
+
+  [params.label]
+        text = "TurlingXian"    # 左上角显示的文字
+        icon = "avatar.png"     # 图标路径 (对应 static/avatar.jpg)
+        iconHeight = 35         # 图标大小
+  
+  # 切换为 HomeInfoMode (文章列表模式)
+  [params.homeInfoParams]
+    Title = "Hi, I'm TurlingXian" 
+    Content = "Welcome to my blog" # 静态欢迎语
+  
+# 社交链接
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/litunalison"
+
+  # 启用分享按钮
+  ShowShareButtons = true
+  # 显示阅读时间
+  ShowReadingTime = true
+
+  # 这里的 assets 对应 static 文件夹里的文件
+  [params.assets]
+    favicon = "favicon.ico" 
+
+# 菜单栏配置
+[[menu.main]]
+    identifier = "archives"
+    name = "Archive"
+    url = "archives/"
+    weight = 10
+
+[[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "tags/"
+    weight = 20
+
+[[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "search/"
+    weight = 30

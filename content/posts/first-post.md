@@ -1,7 +1,8 @@
-+++
-date = '2025-12-01T21:17:19+01:00'
-draft = false
-title = 'Hello World'
-+++
+---
+title: "Hello World"
+date: 2023-10-27T10:00:00+08:00
+draft: false
+tags: ["Life", "Coding", "Hugo"]
+---
 
-This is my first post using Hugo!
+This is my first post content.
