@@ -5,7 +5,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches:
-      - main  # 确保这里是你仓库的分支名，可能是 master
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

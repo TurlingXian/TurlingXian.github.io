@@ -1,57 +1,58 @@
-baseURL = 'https://TurlingXian.github.io/'
+baseURL = 'https://turlingxian.github.io/'
 languageCode = 'en-us'
-title = 'My New Blog'
-theme = 'PaperMod'
+title = 'My Knowledge Base'
 
-[outputs]
-    home = ["HTML", "RSS", "JSON"]
+[module]
+  [[module.imports]]
+    path = "github.com/colinwilson/lotusdocs"
+    disable = false
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+    disable = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  codeFences = true
+  guessSyntax = true
+  lineNos = true
+  style = "github-dark"
 
 [params]
-  defaultTheme = "auto"
+  description = "A Notion-style knowledge base built with Hugo and Lotus Docs"
+  logo = "images/logo.jpg"
 
-  [params.label]
-        text = "TurlingXian"    # 左上角显示的文字
-        icon = "avatar.png"     # 图标路径 (对应 static/avatar.jpg)
-        iconHeight = 35         # 图标大小
-  
-  # 切换为 HomeInfoMode (文章列表模式)
-  [params.homeInfoParams]
-    Title = "Hi, I'm TurlingXian" 
-    Content = "Welcome to my blog" # 静态欢迎语
-  
-# 社交链接
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/"
+  github_repo = "https://github.com/TurlingXian/TurlingXian.github.io"
+  github_branch = "main"
 
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/in/litunalison"
+  [params.social]
+    github = "TurlingXian/TurlingXian.github.io"
 
-  # 启用分享按钮
-  ShowShareButtons = true
-  # 显示阅读时间
-  ShowReadingTime = true
+  [params.editPage]
+    enable = true
+    text = "Edit this page on GitHub"
 
-  # 这里的 assets 对应 static 文件夹里的文件
-  [params.assets]
-    favicon = "favicon.ico" 
+  [params.sidebar]
+    generateDynamicSidebar = true
+    collapsed = false
+    title = "Explorer"
+    open = true
 
-# 菜单栏配置
-[[menu.main]]
-    identifier = "archives"
-    name = "Archive"
-    url = "archives/"
-    weight = 10
+  [params.toc]
+    enable = true
+    maxDepth = 3
+
+  [params.search]
+    enable = true
+    placeholder = "Search docs..."
 
 [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "tags/"
-    weight = 20
+  name = "Docs"
+  url = "/docs/"
+  weight = 10
 
 [[menu.main]]
-    identifier = "search"
-    name = "Search"
-    url = "search/"
-    weight = 30
+  name = "About"
+  url = "/about/"
+  weight = 20
