@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Documentation on My Knowledge Base</title>
+    <title>My Knowledge Base</title>
     <link>http://localhost:1313/docs/</link>
-    <description>Recent content in Documentation on My Knowledge Base</description>
+    <description>Recent content on My Knowledge Base</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

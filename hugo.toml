@@ -21,10 +21,16 @@ title = 'My Knowledge Base'
 
 [params]
   description = "A Notion-style knowledge base built with Hugo and Lotus Docs"
-  logo = "images/logo.jpg"
+  logo = "images/avatar.png"
 
   github_repo = "https://github.com/TurlingXian/TurlingXian.github.io"
   github_branch = "main"
+
+  [params.docs]
+    pathName = "docs"
+    darkMode = true
+    prism = true
+    themeColor = "emerald"
 
   [params.social]
     github = "TurlingXian/TurlingXian.github.io"
