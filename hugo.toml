@@ -23,7 +23,7 @@ title = 'My Knowledge Base'
   description = "A Notion-style knowledge base built with Hugo and Lotus Docs"
   logo = "images/avatar.png"
 
-  github_repo = "https://github.com/TurlingXian/TurlingXian.github.io"
+  github_repo = "https://github.com/momoAlison/momoAlison.github.io"
   github_branch = "main"
   custom_css = ["css/custom.css"]
 
