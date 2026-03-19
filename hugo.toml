@@ -1,4 +1,4 @@
-baseURL = 'https://turlingxian.github.io/'
+baseURL = 'https://momoalison.github.io/'
 languageCode = 'en-us'
 title = 'My Knowledge Base'
 
@@ -34,7 +34,7 @@ title = 'My Knowledge Base'
     themeColor = "emerald"
 
   [params.social]
-    github = "TurlingXian/TurlingXian.github.io"
+    github = "momoAlison/momoalison.github.io"
 
   [params.editPage]
     enable = true
