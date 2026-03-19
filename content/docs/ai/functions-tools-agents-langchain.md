@@ -22,7 +22,7 @@ Its purpose is to show how older LangChain agent patterns relate to modern LangG
 ```mermaid
 graph TD
     %% ==========================================
-    %% Style Definitions (样式定义)
+    %% Style Definitions
     %% ==========================================
     classDef core fill:#2d3436,stroke:#74b9ff,stroke-width:2px,color:#fff;
     classDef modern fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff;
@@ -33,7 +33,7 @@ graph TD
     classDef diamond fill:#a29bfe,stroke:#6c5ce7,stroke-width:2px;
 
     %% ==========================================
-    %% Nodes & Subgraphs (节点与子图结构)
+    %% Nodes & Subgraphs
     %% ==========================================
     Start((User Input))
     LLM[LLM / Reasoning Engine]
@@ -75,7 +75,7 @@ graph TD
     end
 
     %% ==========================================
-    %% Safe Links (绝对安全的连线语法)
+    %% Safe Links
     %% ==========================================
     Start --> LLM
     
@@ -106,7 +106,7 @@ graph TD
     PersistenceNode --> ThreadNode
 
     %% ==========================================
-    %% Apply Styles (应用样式)
+    %% Apply Styles
     %% ==========================================
     class LLM core;
     class Tools,NewTool tool;

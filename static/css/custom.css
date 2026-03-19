@@ -1,8 +1,5 @@
-/* 覆盖 Bootstrap 5 默认的 blockquote 字体大小 */
 .docs-content blockquote,
 .docs-content .blockquote {
     font-size: 1rem !important;
-    /* 如果你觉得还是大，可以改为 0.95rem 或 15px */
-    /* 可选：如果你觉得引用的行高也偏大，可以顺手在这里改掉 */
     line-height: 1.6;
 }
