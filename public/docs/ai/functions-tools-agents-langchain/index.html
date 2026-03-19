@@ -16,10 +16,9 @@
 
 <html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8" />
-    <title> | My Knowledge Base</title>
+    <title>Functions Tools Agents Langchain | My Knowledge Base</title>
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Notion-style knowledge base built with Hugo and Lotus Docs">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
     <meta name="author" content="Colin Wilson - Lotus Labs" />
     <meta name="email" content="support@aigis.uk" />
@@ -32,13 +31,21 @@
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="http://localhost:1313/site.webmanifest">
-<meta property="og:title" content="" />
-<meta property="og:description" content="A Notion-style knowledge base built with Hugo and Lotus Docs" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/docs/" /><meta property="og:image" content="http://localhost:1313/opengraph/card-base-2_hu_8af12a146ac8e7b9.png"/><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://localhost:1313/opengraph/card-base-2_hu_8af12a146ac8e7b9.png"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="A Notion-style knowledge base built with Hugo and Lotus Docs"/>
+<meta property="og:title" content="Functions Tools Agents Langchain" />
+<meta property="og:description" content="This course provides a brief introduction to the syntax of AI tools and LangChain, starting from Function Calling and culminating in the implementation of a simple chat agent.
+The code examples from the original course have been updated to reflect the latest LangChain versions, which offer more streamlined methods. Additionally, the examples now use the gpt-4o-mini model, which is more cost-effective than gpt-3.5-turbo.
+Study Resource:
+Functions, Tools and Agents with LangChain" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/docs/ai/functions-tools-agents-langchain/" /><meta property="og:image" content="http://localhost:1313/opengraph/card-base-2_hu_11257e1ef22d83af.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2026-03-18T13:16:36+01:00" />
+<meta property="article:modified_time" content="2026-03-18T13:16:36+01:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/opengraph/card-base-2_hu_11257e1ef22d83af.png"/>
+<meta name="twitter:title" content="Functions Tools Agents Langchain"/>
+<meta name="twitter:description" content="This course provides a brief introduction to the syntax of AI tools and LangChain, starting from Function Calling and culminating in the implementation of a simple chat agent.
+The code examples from the original course have been updated to reflect the latest LangChain versions, which offer more streamlined methods. Additionally, the examples now use the gpt-4o-mini model, which is more cost-effective than gpt-3.5-turbo.
+Study Resource:
+Functions, Tools and Agents with LangChain"/>
 
     
     <link rel="alternate" type="application/atom+xml" title="Atom feed for My Knowledge Base" href="/index.xml" />
@@ -243,16 +250,16 @@
                 
                     
                     
-                        <li class="sidebar-dropdown no-icon ">
+                        <li class="sidebar-dropdown no-icon current active">
                             <button class="btn">
                                 Artificial Intelligence
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
                                         
-                                            <li class=" no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/ai/functions-tools-agents-langchain/">Functions Tools Agents Langchain</a></li>
+                                            <li class="current no-icon"><a class="sidebar-nested-link" href="http://localhost:1313/docs/ai/functions-tools-agents-langchain/">Functions Tools Agents Langchain</a></li>
                                         
                                     
                                 </ul>
@@ -703,10 +710,26 @@
                                         <div class="d-md-flex justify-content-between align-items-center"><nav aria-label="breadcrumb" class="d-inline-block pb-2 mt-1 mt-sm-0">
     <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
         
+            
+                <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/">
+                        <i class="material-icons size-20 align-text-bottom" itemprop="name">Home</i>
+                    </a>
+                    <meta itemprop="position" content='1' />
+                </li>
+            
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/ai/">
+                        <span itemprop="name">Artificial Intelligence</span>
+                    </a>
+                    <meta itemprop="position" content='2' />
+                </li>
+            
         
-            <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <i class="material-icons size-20 align-text-bottom" itemprop="name">Home</i>
-                <meta itemprop="position" content='1' />
+            <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">Functions Tools Agents Langchain</span>
+                <meta itemprop="position" content='3' />
             </li>
         
     </ul>
@@ -714,186 +737,1993 @@
                                     
                                     <div class="row flex-xl-nowrap">
                                         
-                                        <div class="docs-toc col-xl-3 visually-hidden visually-hidden  d-xl-block"><toc>
+                                        <div class="docs-toc col-xl-3    d-xl-block"><toc>
     <div class="fw-bold text-uppercase mb-2">On this page</div>
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#openai-function-calling"><strong>OpenAI Function Calling</strong></a>
+      <ul>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
+        <li><a href="#supplementary-notes">Supplementary Notes</a></li>
+      </ul>
+    </li>
+    <li><a href="#langchain-expression-language-lcel"><strong>LangChain Expression Language (LCEL)</strong></a>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#simple-example">Simple Example</a></li>
+        <li><a href="#rag--runnableparallel-example">RAG / RunnableParallel Example</a></li>
+        <li><a href="#bind">Bind</a></li>
+        <li><a href="#fallbacks">Fallbacks</a></li>
+        <li><a href="#architecture-insights-api-vs-lcel-vs-langgraph">Architecture Insights: API vs. LCEL vs. LangGraph</a></li>
+      </ul>
+    </li>
+    <li><a href="#openai-function-calling-with-langchain--pydantic"><strong>OpenAI Function Calling with LangChain &amp; Pydantic</strong></a>
+      <ul>
+        <li><a href="#code-example">Code Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#tagging-and-extraction-modern-langchain"><strong>Tagging and Extraction (Modern LangChain)</strong></a>
+      <ul>
+        <li><a href="#tagging-and-extraction">Tagging and Extraction</a></li>
+        <li><a href="#text-splitters--map-reduce-handling-long-documents">Text Splitters &amp; Map-Reduce (Handling Long Documents)</a></li>
+      </ul>
+    </li>
+    <li><a href="#tools-and-routing"><strong>Tools and Routing</strong></a>
+      <ul>
+        <li><a href="#create-a-simple-tool">Create a Simple Tool</a></li>
+        <li><a href="#an-api-example">An API Example</a></li>
+        <li><a href="#simple-routing">Simple Routing</a></li>
+      </ul>
+    </li>
+    <li><a href="#conversational-agents-the-langgraph-era"><strong>Conversational Agents (The LangGraph Era)</strong></a>
+      <ul>
+        <li><a href="#a-simple-agent">A Simple Agent</a></li>
+        <li><a href="#chat-history">Chat history</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </toc></div>
                                         
                                         
-                                        <div class="docs-toc-mobile visually-hidden visually-hidden  d-print-none d-xl-none">
+                                        <div class="docs-toc-mobile    d-print-none d-xl-none">
                                             <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
                                                 Table of Contents
                                             </button>
-<nav id="toc-mobile"></nav></div>
-                                        <div class="docs-content col-12  mt-0">
+<nav id="toc-mobile">
+  <ul class="dropdown-menu">
+    <li><a href="#openai-function-calling"><strong>OpenAI Function Calling</strong></a>
+      <ul>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#reference-code">Reference Code</a></li>
+        <li><a href="#supplementary-notes">Supplementary Notes</a></li>
+      </ul>
+    </li>
+    <li><a href="#langchain-expression-language-lcel"><strong>LangChain Expression Language (LCEL)</strong></a>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#simple-example">Simple Example</a></li>
+        <li><a href="#rag--runnableparallel-example">RAG / RunnableParallel Example</a></li>
+        <li><a href="#bind">Bind</a></li>
+        <li><a href="#fallbacks">Fallbacks</a></li>
+        <li><a href="#architecture-insights-api-vs-lcel-vs-langgraph">Architecture Insights: API vs. LCEL vs. LangGraph</a></li>
+      </ul>
+    </li>
+    <li><a href="#openai-function-calling-with-langchain--pydantic"><strong>OpenAI Function Calling with LangChain &amp; Pydantic</strong></a>
+      <ul>
+        <li><a href="#code-example">Code Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#tagging-and-extraction-modern-langchain"><strong>Tagging and Extraction (Modern LangChain)</strong></a>
+      <ul>
+        <li><a href="#tagging-and-extraction">Tagging and Extraction</a></li>
+        <li><a href="#text-splitters--map-reduce-handling-long-documents">Text Splitters &amp; Map-Reduce (Handling Long Documents)</a></li>
+      </ul>
+    </li>
+    <li><a href="#tools-and-routing"><strong>Tools and Routing</strong></a>
+      <ul>
+        <li><a href="#create-a-simple-tool">Create a Simple Tool</a></li>
+        <li><a href="#an-api-example">An API Example</a></li>
+        <li><a href="#simple-routing">Simple Routing</a></li>
+      </ul>
+    </li>
+    <li><a href="#conversational-agents-the-langgraph-era"><strong>Conversational Agents (The LangGraph Era)</strong></a>
+      <ul>
+        <li><a href="#a-simple-agent">A Simple Agent</a></li>
+        <li><a href="#chat-history">Chat history</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                                        <div class="docs-content col-12 col-xl-9 mt-0">
                                             <div class="mb-0 d-flex">
                                                 
                                                 <h1 class="content-title mb-0">
+                                                    Functions Tools Agents Langchain
                                                     
+                                                        <span class="badge bg-default fs-6 mb-1 align-middle">DRAFT</span>
                                                     
                                                 </h1>
                                             </div>
                                             
                                             <div id="content" class="main-content" >
                                                 
-<div class="row flex-xl-nowrap">
-    <div class="col-12 container-fluid">
+    
+    <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
+        <p>This course provides a brief introduction to the syntax of AI tools and LangChain, starting from Function Calling and culminating in the implementation of a simple chat agent.</p>
+<p>The code examples from the original course have been updated to reflect the latest LangChain versions, which offer more streamlined methods. Additionally, the examples now use the <code>gpt-4o-mini</code> model, which is more cost-effective than <code>gpt-3.5-turbo</code>.</p>
+<p><strong>Study Resource:</strong>
+<a href="https://learn.deeplearning.ai/courses/functions-tools-agents-langchain/lesson/rtwb1/introduction" rel="external" target="_blank">Functions, Tools and Agents with LangChain<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+<p>The following diagram is a conceptual roadmap rather than an implementation blueprint.<br>
+Its purpose is to show how older LangChain agent patterns relate to modern LangGraph-based workflows.</p>
+<pre class="mermaid">graph TD
+    %% ==========================================
+    %% Style Definitions (样式定义)
+    %% ==========================================
+    classDef core fill:#2d3436,stroke:#74b9ff,stroke-width:2px,color:#fff;
+    classDef modern fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff;
+    classDef legacy fill:#b2bec3,stroke:#636e72,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef tool fill:#00b894,stroke:#55efc4,stroke-width:2px,color:#fff;
+    classDef Finish fill:#6c5ce7,stroke:#6c5ce7,stroke-width:2px,color:#fff;
+    classDef Action fill:#e17055,stroke:#e17055,stroke-width:2px,color:#fff;
+    classDef diamond fill:#a29bfe,stroke:#6c5ce7,stroke-width:2px;
 
-        <h1 class="display-4 mb-4 mt-4"></h1>
+    %% ==========================================
+    %% Nodes &amp; Subgraphs (节点与子图结构)
+    %% ==========================================
+    Start((User Input))
+    LLM[LLM / Reasoning Engine]
 
-        <div class="content-intro mb-5">
-            <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<div class="container-fluid py-3">
-<div class="row align-items-center">
-<div class="col-md-3 text-center mb-3 mb-md-0">
-<img src="/images/avatar.png" 
-alt="Avatar" 
-class="img-fluid rounded-circle" 
-style="width: 140px; height: 140px; object-fit: cover;">
-</div>
-<div class="col-md-9">
-<h2 class="display-6 fw-bold text-success" 
-style="font-family: 'Press Start 2P', cursive; font-size: 1.8rem; line-height: 1.5;">
-Hello, World! 👋
-</h2>
-<p class="fs-5 mt-3">
-From Frontend to AI.
-</p>
-<div style="display: inline-block;">
-<p class="text-muted" 
-style="
-font-family: monospace; 
-overflow: hidden; 
-border-right: 3px solid #198754; 
-white-space: nowrap; 
-margin: 0; 
-width: 0; 
-animation: typing 3.5s steps(46, end) forwards, blink-caret .75s step-end infinite;
-">
-Documenting my journey from pixels to neurons.
-</p>
-</div>
-</div>
-</div>
-</div>
-<style>
-@keyframes typing {
-from { width: 0 }
-to { width: 100% }
-}
-@keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: #198754 }
-}
-</style>
-        </div>
+    subgraph sg1 [Tools and Equipment]
+        Tools[(Tools Arsenal)]
+        OldAPI[Legacy OpenAPI Specs]
+        NewTool[@tool Decorator]
+    end
 
-        <hr class="my-5">
+    subgraph sg2 [Output Routing]
+        Router{Model Decision}
+        FinishFinish[AgentFinish]
+        ActionAction[AgentAction]
+    end
 
-        <h3 class="mb-3">📚 Topics</h3>
+    AgentArch{Agent Architecture Engine}
+
+    subgraph sg3 [Legacy: LangChain v0.1]
+        Executor[AgentExecutor]
+        Scratchpad(Agent Scratchpad)
+        ConvMem(ConversationBufferMemory)
+    end
+
+    subgraph sg4 [Modern: LangGraph v0.2&#43;]
+        Graph[StateGraph / DAG]
         
-        <div class="row">
-            
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm hover-shadow transition-all">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            
-                            <span class="material-icons align-middle me-2 text-success">calculate</span>
-                            
-                            <a href="/docs/math/" class="text-decoration-none stretched-link">Mathematics</a>
-                        </h5>
-                        <p class="card-text text-muted small">
-                            The engine under the hood.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm hover-shadow transition-all">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            
-                            <span class="material-icons align-middle me-2 text-success">code</span>
-                            
-                            <a href="/docs/coding/" class="text-decoration-none stretched-link">Coding</a>
-                        </h5>
-                        <p class="card-text text-muted small">
-                            Talk is cheap. Show me the code.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm hover-shadow transition-all">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            
-                            <span class="material-icons align-middle me-2 text-success">psychology</span>
-                            
-                            <a href="/docs/ai/" class="text-decoration-none stretched-link">Artificial Intelligence</a>
-                        </h5>
-                        <p class="card-text text-muted small">
-                            From pixels to neurons.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm hover-shadow transition-all">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            
-                            <span class="material-icons align-middle me-2 text-success">rocket_launch</span>
-                            
-                            <a href="/docs/projects/" class="text-decoration-none stretched-link">Projects</a>
-                        </h5>
-                        <p class="card-text text-muted small">
-                            Build things that matter.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm hover-shadow transition-all">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            
-                            <span class="material-icons align-middle me-2 text-success">menu_book</span>
-                            
-                            <a href="/docs/notes/blog-notes/" class="text-decoration-none stretched-link">Lotus Docs Guide</a>
-                        </h5>
-                        <p class="card-text text-muted small">
-                            Quick reference for Lotus Docs: commands, shortcodes, and configuration.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+        subgraph sg4a [State Management]
+            StateNode[State Flow]
+            NodesNode[Nodes: Agent and Tool]
+            EdgesNode[Edges: tools_condition]
+        end
         
+        subgraph sg4b [State Persistence]
+            PersistenceNode[Persistence]
+            MemorySaverNode[MemorySaver]
+            ThreadNode[Thread ID Isolation]
+        end
+    end
+
+    %% ==========================================
+    %% Safe Links (绝对安全的连线语法)
+    %% ==========================================
+    Start --&gt; LLM
+    
+    OldAPI -.-&gt;|Incompatible 500 Tools| Tools
+    NewTool --&gt;|Native JSON Schema| Tools
+    
+    LLM &lt;--&gt;|JSON Tool Calling| Tools
+    
+    Tools --&gt; Router
+    Router --&gt;|Direct Response| FinishFinish
+    Router --&gt;|Parameter Instructions| ActionAction
+    
+    ActionAction --&gt; AgentArch
+    
+    AgentArch -.-&gt;|Deprecated| Executor
+    Executor -.-&gt;|Black-box Loop| Scratchpad
+    Executor -.-&gt;|Fragile| ConvMem
+    
+    AgentArch --&gt;|Modern Standard| Graph
+    
+    Graph --&gt;|State Management| StateNode
+    Graph --&gt;|State Persistence| PersistenceNode
+    
+    StateNode --&gt;|add_messages| NodesNode
+    StateNode --&gt;|Auto Routing| EdgesNode
+    
+    PersistenceNode --&gt; MemorySaverNode
+    PersistenceNode --&gt; ThreadNode
+
+    %% ==========================================
+    %% Apply Styles (应用样式)
+    %% ==========================================
+    class LLM core;
+    class Tools,NewTool tool;
+    class OldAPI legacy;
+    class Router,AgentArch diamond;
+    class Executor,Scratchpad,ConvMem legacy;
+    class Graph,StateNode,PersistenceNode,NodesNode,EdgesNode,MemorySaverNode,ThreadNode modern;
+    class FinishFinish Finish;
+    class ActionAction Action;
+</pre>
+<hr>
+<h2 id="openai-function-calling"><strong>OpenAI Function Calling</strong> <a href="#openai-function-calling" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><blockquote>
+<p><strong>Note:</strong> In OpenAI&rsquo;s latest API and official best practices, <strong><code>functions</code> have been replaced by <code>tools</code></strong>. The underlying logic remains exactly the same; the only differences are slight changes in parameter names and nesting structures. This architectural update is designed to support a wider variety of tools beyond just functions in the future.</p>
+</blockquote>
+<hr>
+<h3 id="principles">Principles <a href="#principles" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>1. When and Why to Use It?</strong>
+Function Calling acts as a bridge, allowing the Large Language Model (LLM) to recognize when it needs to delegate specific tasks to pre-written functions. This function could trigger an API call, process a string, or interact with a database—essentially, anything that traditional programming executes reliably and efficiently.</p>
+<p><strong>2. What is the Essence of Function Calling?</strong></p>
+<p>Function calling isn&rsquo;t a separate reasoning mechanism; it’s an interface pattern. Models like <code>gpt-4o-mini</code> were extensively fine-tuned on datasets containing &ldquo;tool descriptions&rdquo; paired with &ldquo;standard JSON outputs.&rdquo; This training taught the model exactly how to format its response when it detects that tools are available.</p>
+<p>To truly understand how this works under the hood, it helps to contrast the old way with the new:</p>
+<ul>
+<li><strong>The Legacy Way (ReAct Pattern):</strong> In older frameworks, tools were manually injected into the System Prompt as plain text. Developers could simply <code>print(prompt)</code> locally and see the exact instructions (e.g., <em>&ldquo;You have access to the following tools&hellip;&rdquo;</em>) being sent to the model.</li>
+<li><strong>The Modern Way (Native APIs):</strong> Today, libraries send <code>messages</code> and <code>tools</code> (JSON schemas) as two separate, cleanly formatted fields to OpenAI&rsquo;s servers. Milliseconds before inference, OpenAI’s backend uses a proprietary template to invisibly merge your JSON tools and chat history into a single massive string.</li>
+</ul>
+<p>Because this final prompt assembly happens entirely on closed-source servers, <strong>it is now an implementation detail.</strong> We can no longer intercept or print this final &ldquo;plain text string&rdquo; in our local Python environment.</p>
+<p>Here is an example,</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="cf2ef98" class="language-python ">
+  <code>&lt;|im_start|&gt;system
+You are a helpful assistant.
+
+# Tools
+You have access to the following tools:
+[
+  {
+    &#34;type&#34;: &#34;function&#34;,
+    &#34;function&#34;: {
+      &#34;name&#34;: &#34;get_current_weather&#34;,
+      &#34;description&#34;: &#34;Get the current weather in a given location&#34;,
+      ...
+    }
+  }
+]
+
+To use a tool, you must output a JSON block wrapped in special tags like:
+&lt;tool_call&gt;
+{&#34;name&#34;: &#34;get_current_weather&#34;, &#34;arguments&#34;: &#34;{\\&#34;location\\&#34;: \\&#34;Boston\\&#34;}&#34;}
+&lt;/tool_call&gt;
+&lt;|im_end|&gt;
+&lt;|im_start|&gt;user
+What&#39;s the weather like in Boston?&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant</code>
+  </pre>
+  </div>
+<p><strong>3. Why Does it Consume More Tokens?</strong></p>
+<p>Using tools inherently increases your input token count. Every function you define (its JSON Schema, parameter types, enums, etc.) acts as an &ldquo;instruction manual&rdquo; that the model must read on every single request.</p>
+<p>Even though you send these tools via a separate API field, the provider&rsquo;s backend still merges this entire manual into the model&rsquo;s context window. Therefore, the more tools you provide and the more detailed your descriptions are, the more tokens you consume per turn.</p>
+<hr>
+<h3 id="reference-code">Reference Code <a href="#reference-code" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="7f54c9a" class="language-python ">
+  <code>from openai import OpenAI
+import json
+
+client = OpenAI()
+
+# 1. Define the local function
+def get_current_weather(location, unit=&#34;fahrenheit&#34;):
+    &#34;&#34;&#34;Get the current weather in a given location&#34;&#34;&#34;
+    weather_info = {
+        &#34;location&#34;: location,
+        &#34;temperature&#34;: &#34;72&#34;,
+        &#34;unit&#34;: unit,
+        &#34;forecast&#34;: [&#34;sunny&#34;, &#34;windy&#34;],
+    }
+    return json.dumps(weather_info)
+
+# 2. Define the Tools Schema
+tools = [
+    {
+        &#34;type&#34;: &#34;function&#34;,
+        &#34;function&#34;: {
+            &#34;name&#34;: &#34;get_current_weather&#34;,
+            &#34;description&#34;: &#34;Get the current weather in a given location&#34;,
+            &#34;parameters&#34;: {
+                &#34;type&#34;: &#34;object&#34;,
+                &#34;properties&#34;: {
+                    &#34;location&#34;: {&#34;type&#34;: &#34;string&#34;, &#34;description&#34;: &#34;The city and state, e.g. Boston, MA&#34;},
+                    &#34;unit&#34;: {&#34;type&#34;: &#34;string&#34;, &#34;enum&#34;: [&#34;celsius&#34;, &#34;fahrenheit&#34;]},
+                },
+                &#34;required&#34;: [&#34;location&#34;],
+            },
+        }
+    }
+]
+
+# ==================== Process Starts ====================
+
+messages = [
+    {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;What&#39;s the weather like in Boston?&#34;}
+]
+
+print(&#34;\n&#34; &#43; &#34;=&#34;*50)
+print(&#34;🟡 [Before 1st Model Call] Messages sent to the LLM:&#34;)
+print(json.dumps(messages, indent=2))
+print(&#34;=&#34;*50 &#43; &#34;\n&#34;)
+
+# First model call
+response = client.chat.completions.create(
+    model=&#34;gpt-4o-mini&#34;,
+    messages=messages,
+    tools=tools 
+)
+
+response_message = response.choices[0].message
+
+print(&#34;\n🔍 [Debug] Inspecting the actual structure of response_message:&#34;)
+
+# 1. Use .model_dump() to convert the object into a standard Python dictionary
+# exclude_unset=True filters out empty fields (like null) for a cleaner printout
+message_dict = response_message.model_dump(exclude_unset=True)
+
+# 2. Use json.dumps for formatted printing with indentation
+print(json.dumps(message_dict, indent=2, ensure_ascii=False))
+print(&#34;-&#34; * 40 &#43; &#34;\n&#34;)
+
+if response_message.tool_calls:
+    print(&#34;🤖 The LLM decided: I won&#39;t answer directly, I need to call a tool!\n&#34;)
+    
+    # [Crucial Step 1] Append the LLM&#39;s &#39;tool call request&#39; to the message history as-is
+    messages.append(response_message)
+    
+    for tool_call in response_message.tool_calls:
+        function_name = tool_call.function.name
+        args = json.loads(tool_call.function.arguments)
+        
+        # Execute the code locally
+        print(f&#34;⚙️ Python is executing the function locally: {function_name}({args})&#34;)
+        observation = get_current_weather(**args)
+        print(f&#34;✅ Python retrieved the local result: {observation}\n&#34;)
+        
+        # [Crucial Step 2] Wrap the execution result as a role: &#34;tool&#34; message and append to history
+        messages.append(
+            {
+                &#34;tool_call_id&#34;: tool_call.id,
+                &#34;role&#34;: &#34;tool&#34;,
+                &#34;name&#34;: function_name,
+                &#34;content&#34;: observation,
+            }
+        )
+    
+    print(&#34;\n&#34; &#43; &#34;=&#34;*50)
+    print(&#34;🟢 [Before 2nd Model Call] Messages ready to be sent to the LLM:&#34;)
+    # Note: Because response_message is an object, we cast it to a dict for easier printing
+    printable_messages = [
+        msg.model_dump(exclude_unset=True) if hasattr(msg, &#39;model_dump&#39;) else msg 
+        for msg in messages
+    ]
+    print(json.dumps(printable_messages, indent=2))
+    print(&#34;=&#34;*50 &#43; &#34;\n&#34;)
+
+    # Second model call: The model looks at the newly retrieved temperature data and summarizes an answer
+    final_response = client.chat.completions.create(
+        model=&#34;gpt-4o-mini&#34;,
+        messages=messages,
+    )
+    
+    print(&#34;🎉 [Final Result] The LLM answered based on the tool&#39;s returned data:&#34;)
+    print(final_response.choices[0].message.content)
+else:
+    print(&#34;Direct model response:&#34;, response_message.content)</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="7168149" class="language- ">
+  <code>==================================================
+🟡 [Before 1st Model Call] Messages sent to the LLM:
+[
+  {
+    &#34;role&#34;: &#34;user&#34;,
+    &#34;content&#34;: &#34;What&#39;s the weather like in Boston?&#34;
+  }
+]
+==================================================
+
+🔍 [Debug] Inspecting the actual structure of response_message:
+{
+  &#34;content&#34;: null,
+  &#34;refusal&#34;: null,
+  &#34;role&#34;: &#34;assistant&#34;,
+  &#34;annotations&#34;: [],
+  &#34;tool_calls&#34;: [
+    {
+      &#34;id&#34;: &#34;call_1fa0oAa6ZsQPOqXekVBRZ9nE&#34;,
+      &#34;function&#34;: {
+        &#34;arguments&#34;: &#34;{\&#34;location\&#34;:\&#34;Boston, MA\&#34;}&#34;,
+        &#34;name&#34;: &#34;get_current_weather&#34;
+      },
+      &#34;type&#34;: &#34;function&#34;
+    }
+  ]
+}
+----------------------------------------
+
+🤖 The LLM decided: I won&#39;t answer directly, I need to call a tool!
+
+⚙️ Python is executing the function locally: get_current_weather({&#39;location&#39;: &#39;Boston, MA&#39;})
+✅ Python retrieved the local result: {&#34;location&#34;: &#34;Boston, MA&#34;, &#34;temperature&#34;: &#34;72&#34;, &#34;unit&#34;: &#34;fahrenheit&#34;, &#34;forecast&#34;: [&#34;sunny&#34;, &#34;windy&#34;]}
+
+==================================================
+🟢 [Before 2nd Model Call] Messages ready to be sent to the LLM:
+[
+  {
+    &#34;role&#34;: &#34;user&#34;,
+    &#34;content&#34;: &#34;What&#39;s the weather like in Boston?&#34;
+  },
+  {
+    &#34;content&#34;: null,
+    &#34;refusal&#34;: null,
+    &#34;role&#34;: &#34;assistant&#34;,
+    &#34;annotations&#34;: [],
+    &#34;tool_calls&#34;: [
+      {
+        &#34;id&#34;: &#34;call_1fa0oAa6ZsQPOqXekVBRZ9nE&#34;,
+        &#34;function&#34;: {
+          &#34;arguments&#34;: &#34;{\&#34;location\&#34;:\&#34;Boston, MA\&#34;}&#34;,
+          &#34;name&#34;: &#34;get_current_weather&#34;
+        },
+        &#34;type&#34;: &#34;function&#34;
+      }
+    ]
+  },
+  {
+    &#34;tool_call_id&#34;: &#34;call_1fa0oAa6ZsQPOqXekVBRZ9nE&#34;,
+    &#34;role&#34;: &#34;tool&#34;,
+    &#34;name&#34;: &#34;get_current_weather&#34;,
+    &#34;content&#34;: &#34;{\&#34;location\&#34;: \&#34;Boston, MA\&#34;, \&#34;temperature\&#34;: \&#34;72\&#34;, \&#34;unit\&#34;: \&#34;fahrenheit\&#34;, \&#34;forecast\&#34;: [\&#34;sunny\&#34;, \&#34;windy\&#34;]}&#34;
+  }
+]
+==================================================
+
+🎉 [Final Result] The LLM answered based on the tool&#39;s returned data:
+The current weather in Boston, MA is 72°F, and it&#39;s sunny and windy.</code>
+  </pre>
+  </div>
+<hr>
+<h3 id="supplementary-notes">Supplementary Notes <a href="#supplementary-notes" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>Regular Conversations (No Tools Required)</strong></p>
+<p>When a user simply greets the model without triggering a tool:</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d8ad670" class="language-python ">
+  <code>messages = [
+    {
+        &#34;role&#34;: &#34;user&#34;,
+        &#34;content&#34;: &#34;hi!&#34;,
+    }
+]</code>
+  </pre>
+  </div>
+<p><strong>Result</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d87459c" class="language-python ">
+  <code>{
+  &#34;content&#34;: &#34;Hello! How can I assist you today?&#34;,
+  &#34;refusal&#34;: null,
+  &#34;role&#34;: &#34;assistant&#34;,
+  &#34;annotations&#34;: []
+}</code>
+  </pre>
+  </div>
+<p><strong>Key Observations from the Comparison:</strong></p>
+<ul>
+<li>
+<p>The <code>content</code> field is no longer <code>null</code>; it contains a standard text greeting.</p>
+</li>
+<li>
+<p>The <code>tool_calls</code> field is completely absent from the structure (or evaluates to <code>None</code>).</p>
+</li>
+</ul>
+<p>This demonstrates why, in production code, we must always use an <code>if response_message.tool_calls</code>: conditional statement to determine which path the model chose to take.</p>
+<p><strong>The <code>tool_choice</code> Parameter</strong>
+This parameter gives you control over how the model interacts with the provided tools. It supports the following arguments: <code>&quot;auto&quot;</code><strong>(Default)</strong>, <code>&quot;none&quot;</code>, <code>&quot;required&quot;</code>, and specific Tool.</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="78a2cc9" class="language-python ">
+  <code>response = client.chat.completions.create(
+    model=&#34;gpt-4o-mini&#34;,
+    messages=message_weather,
+    tools=tools,
+    # tool_choice=&#34;auto&#34;
+    # tool_choice={&#34;type&#34;: &#34;function&#34;, &#34;function&#34;: {&#34;name&#34;: &#34;get_current_weather&#34;}}
+)</code>
+  </pre>
+  </div>
+<h2 id="langchain-expression-language-lcel"><strong>LangChain Expression Language (LCEL)</strong> <a href="#langchain-expression-language-lcel" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><hr>
+<h3 id="overview">Overview <a href="#overview" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>LCEL is a declarative language designed for composing LangChain components into chains using the Unix pipe operator <code>|</code>.</p>
+<p><strong>1. What is LangChain and LCEL?</strong></p>
+<ul>
+<li><strong>LangChain</strong> is a framework for building LLM-powered applications.</li>
+<li><strong>LCEL</strong> is the declarative syntax for chaining these components (Prompts, Models, Output Parsers, etc.) together. Conceptually, this syntax is highly analogous to <strong>function composition (<code>compose</code>)</strong> in functional programming.</li>
+</ul>
+<p><strong>2. The Unified Interface (Runnable Interface)</strong></p>
+<p>To ensure seamless chaining, core LangChain components implement the <strong><code>Runnable Interface</code></strong>. This standardizes invocation methods across different components:</p>
+<ul>
+<li><code>invoke()</code>: Single input to single output.</li>
+<li><code>stream()</code>: Stream back chunks of the response.</li>
+<li><code>batch()</code>: List of inputs to list of outputs (handled in parallel).</li>
+<li><strong>Async</strong> versions also exist (<code>ainvoke</code>, <code>astream</code>, <code>abatch</code>).</li>
+</ul>
+<p><strong>3. Why Use LCEL? (Key Benefits)</strong></p>
+<ul>
+<li><strong>Streaming Support:</strong> Get the first token out as soon as possible.</li>
+<li><strong>Automatic Batching/Parallelism:</strong> Branches in your chain execute in parallel, reducing latency.</li>
+<li><strong>Asynchronous:</strong> Seamlessly use async methods.</li>
+<li><strong>Optimized Execution:</strong> Optimized steps (like retry logic) can be added easily.</li>
+</ul>
+<hr>
+<h3 id="simple-example">Simple Example <a href="#simple-example" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>This demonstrates the most basic LCEL pipeline: <code>Prompt | Model | Output Parser</code>.</p>
+<p><strong>Code Example:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="cbea047" class="language-python ">
+  <code>from langchain_core.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.output_parsers import StrOutputParser
+
+# Configure Prompt, Model (using gpt-4o-mini), and Parser
+prompt = ChatPromptTemplate.from_template(&#34;tell me a short joke about {topic}&#34;)
+model = ChatOpenAI(model=&#34;gpt-4o-mini&#34;)
+output_parser = StrOutputParser()
+
+# Compose the chain using pipe &#39;|&#39;
+chain = prompt | model | output_parser
+
+# Invoke the chain
+result = chain.invoke({&#34;topic&#34;: &#34;bears&#34;})
+print(&#34;Joke:&#34;, result)</code>
+  </pre>
+  </div>
+<p><strong>Result:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="8e63b1e" class="language- ">
+  <code>Joke: Why don&#39;t bears like fast food?  
+Because they can&#39;t catch it!</code>
+  </pre>
+  </div>
+<hr>
+<h3 id="rag--runnableparallel-example">RAG / RunnableParallel Example <a href="#rag--runnableparallel-example" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>This example uses RAG (Retrieval-Augmented Generation) to demonstrate complex input handling. It utilizes <code>RunnableParallel</code> to concurrently prepare the <code>context</code> and <code>question</code> inputs required by the prompt.</p>
+<blockquote>
+<p>Note: The course originally used <code>RunnableMap</code>. <code>RunnableParallel</code> is the modern, conceptually clearer replacement.</p>
+</blockquote>
+<p>We use <code>RunnablePassthrough</code> to pass user input directly through the parallel branches without modification.</p>
+<p><strong>Analogies:</strong></p>
+<ul>
+<li>
+<p><strong>Functional Programming:</strong> Similar to parallel branch execution.</p>
+</li>
+<li>
+<p><strong>JavaScript:</strong> Very similar to Promise.all, where multiple asynchronous branches execute simultaneously, and the chain waits for all results to be resolved before moving to the prompt.</p>
+</li>
+</ul>
+<p><strong>Code Example:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="b742c9f" class="language-python ">
+  <code>from langchain_community.vectorstores import DocArrayInMemorySearch
+from langchain_openai import OpenAIEmbeddings
+from langchain_core.runnables import RunnableParallel, RunnablePassthrough
+
+# 1. Setup Retrieval (Vector Database in memory)
+# Requires &#39;docarray&#39; and &#39;tiktoken&#39; packages
+vectorstore = DocArrayInMemorySearch.from_texts(
+    [&#34;harrison worked at kensho&#34;, &#34;bears like to eat honey&#34;],
+    embedding=OpenAIEmbeddings()
+)
+retriever = vectorstore.as_retriever()
+
+# 2. Setup Prompt
+template = &#34;&#34;&#34;Answer the question based only on the following context:
+{context}
+
+Question: {question}
+&#34;&#34;&#34;
+prompt_rag = ChatPromptTemplate.from_template(template)
+
+# 3. Compose RAG Chain
+# RunnableParallel executes the dictionary branches concurrently.
+# input_dict[&#34;question&#34;] -&gt; goes to context branch (retriever)
+# input_dict[&#34;question&#34;] -&gt; goes to question branch (passthrough)
+chain_rag = RunnableParallel({
+    &#34;context&#34;: lambda x: retriever.invoke(x[&#34;question&#34;]), # Updates to standard invoke
+    &#34;question&#34;: RunnablePassthrough() # Passes through input untouched
+}) | prompt_rag | model | output_parser
+
+# Invoke
+print(&#34;RAG Result:&#34;, chain_rag.invoke({&#34;question&#34;: &#34;where did harrison work?&#34;}))</code>
+  </pre>
+  </div>
+<p><strong>Result:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="3da0e84" class="language- ">
+  <code>RAG Result: Harrison worked at Kensho.</code>
+  </pre>
+  </div>
+<p>Here is the result of RunnableParallel</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="67c6e84" class="language- ">
+  <code>context: [Document(metadata={}, page_content=&#39;harrison worked at kensho&#39;), Document(metadata={}, page_content=&#39;bears like to eat honey&#39;)]
+question: {&#39;question&#39;: &#39;where did harrison work?&#39;}</code>
+  </pre>
+  </div>
+<p>In modern LCEL, passing a direct string (<code>chain.invoke(&quot;...&quot;)</code>) combined with <code>RunnablePassthrough()</code> is generally preferred for simple queries. However, if multiple variables are required, passing a dictionary and extracting values using <code>itemgetter</code> is the standard approach.</p>
+<hr>
+<h3 id="bind">Bind <a href="#bind" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>We can bind arguments (like functions/tools) to a model before execution. This is conceptually similar to <code>JS.prototype.bind</code> or creating a partially applied function.</p>
+<p>While the modern standard uses <code>.bind_tools(tools)</code>, this demonstrates binding a traditional function schema for legacy compatibility.</p>
+<p><strong>Code Example:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="302faf3" class="language-python ">
+  <code>from langchain_core.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
+
+tools_schema = [
+    {
+      &#34;type&#34;: &#34;function&#34;,
+      &#34;function&#34;: {
+          &#34;name&#34;: &#34;weather_search&#34;,
+          &#34;description&#34;: &#34;Search for weather given an airport code&#34;,
+          &#34;parameters&#34;: {
+            &#34;type&#34;: &#34;object&#34;,
+            &#34;properties&#34;: {
+              &#34;airport_code&#34;: {&#34;type&#34;: &#34;string&#34;, &#34;description&#34;: &#34;The airport code&#34;}
+            },
+            &#34;required&#34;: [&#34;airport_code&#34;]
+          }
+      }
+    }
+]
+  
+prompt_bind = ChatPromptTemplate.from_messages([(&#34;human&#34;, &#34;{input}&#34;)])
+
+model_bound = ChatOpenAI(model=&#34;gpt-4o-mini&#34;, temperature=0).bind_tools(tools_schema)
+
+runnable = prompt_bind | model_bound
+
+response = runnable.invoke({&#34;input&#34;: &#34;what is the weather in sf&#34;})
+
+print(json.dumps(response.tool_calls, indent=2, ensure_ascii=False))</code>
+  </pre>
+  </div>
+<p><strong>Result:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5b961fc" class="language- ">
+  <code>[
+  {
+    &#34;name&#34;: &#34;weather_search&#34;,
+    &#34;args&#34;: {
+      &#34;airport_code&#34;: &#34;SFO&#34;
+    },
+    &#34;id&#34;: &#34;call_UpcweQ7M6L8fW1Wp9iFIV7Fr&#34;,
+    &#34;type&#34;: &#34;tool_call&#34;
+  }
+]</code>
+  </pre>
+  </div>
+<hr>
+<h3 id="fallbacks">Fallbacks <a href="#fallbacks" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>LCEL provides a graceful degradation mechanism via fallbacks. If the primary chain fails, it sequentially attempts the backup chains provided in <code>with_fallbacks</code>.</p>
+<p><strong>Code Snippet Logic:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="99f47bb" class="language-Python ">
+  <code># Syntax: primary_chain.with_fallbacks([backup_chain1, backup_chain2])
+final_chain = simple_chain.with_fallbacks([chain])</code>
+  </pre>
+  </div>
+<p>It first attempts <code>simple_chain</code>. If that fails (e.g., API is down, model rate limit), it proceeds to execute <code>chain</code>.</p>
+<hr>
+<h3 id="architecture-insights-api-vs-lcel-vs-langgraph">Architecture Insights: API vs. LCEL vs. LangGraph <a href="#architecture-insights-api-vs-lcel-vs-langgraph" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>1. Native API vs. LangChain</strong></p>
+<ul>
+<li><strong>Use Native API when:</strong> You are building simple scripts, require absolute control over prompts, or need maximum performance and the lowest latency without framework overhead.</li>
+<li><strong>Use LangChain when:</strong> You are building complex workflows (like RAG), utilizing various third-party integrations, or need seamless model swapping (e.g., switching from OpenAI to DeepSeek without rewriting the core pipeline).</li>
+</ul>
+<p><strong>2. LangChain (LCEL) vs. LangGraph</strong></p>
+<ul>
+<li><strong>LangChain (LCEL):</strong> Operates as a <strong>Pipeline (Directed Acyclic Graph - DAG)</strong>. Data flows sequentially in one direction. It is perfect for linear execution but inherently lacks the ability to loop.</li>
+<li><strong>LangGraph:</strong> Operates as a <strong>State Machine</strong>. It was designed specifically to build true autonomous Agents. Unlike LCEL, LangGraph natively supports <code>while</code> loops, conditional routing, and cyclic execution (Think → Act → Observe → Repeat), completely replacing the rigid, black-box <code>AgentExecutor</code> of the past.</li>
+</ul>
+<h2 id="openai-function-calling-with-langchain--pydantic"><strong>OpenAI Function Calling with LangChain &amp; Pydantic</strong> <a href="#openai-function-calling-with-langchain--pydantic" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><hr>
+<p><strong>Overview</strong></p>
+<p>The primary evolution in this section is replacing cumbersome, manual JSON schemas with <strong>Pydantic</strong>. As the standard data validation library in the Python ecosystem <em>(if you&rsquo;ve used FastAPI, you already know its power)</em>, using Pydantic&rsquo;s <code>BaseModel</code> brings several key benefits to LLM development:</p>
+<ul>
+<li><strong>Zero Manual Schemas:</strong> Auto-generates JSON schemas directly from your Python classes.</li>
+<li><strong>Pythonic &amp; Type-Safe:</strong> Minimizes human error and provides rich IDE auto-completion.</li>
+<li><strong>Multi-Tool Binding:</strong> Streamlines the process of passing multiple tools to the model simultaneously.</li>
+</ul>
+<p>The example below demonstrates this modern, streamlined approach in action.</p>
+<hr>
+<h3 id="code-example">Code Example <a href="#code-example" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="131cf8b" class="language-python ">
+  <code>import json
+from pydantic import BaseModel, Field
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+
+# 1. Define tools using Pydantic BaseModel
+class WeatherSearch(BaseModel):
+    &#34;&#34;&#34;Call this with an airport code to get the weather at that airport&#34;&#34;&#34;
+    airport_code: str = Field(description=&#34;airport code to get weather for&#34;)
+
+class ArtistSearch(BaseModel):
+    &#34;&#34;&#34;Call this to search for an artist&#34;&#34;&#34;
+    artist_name: str = Field(description=&#34;name of the artist&#34;)
+
+# 2. Initialize the model
+model = ChatOpenAI(model=&#34;gpt-4o-mini&#34;)
+
+# 3. Modern Binding: Pass the Pydantic classes directly to bind_tools
+model_with_tools = model.bind_tools([WeatherSearch, ArtistSearch])
+
+bound_tools_list = model_with_tools.kwargs[&#34;tools&#34;]
+print(json.dumps(bound_tools_list, indent=2, ensure_ascii=False))
+
+# 4. Compose the LCEL Chain
+prompt = ChatPromptTemplate.from_messages([
+    (&#34;system&#34;, &#34;You are a helpful assistant&#34;),
+    (&#34;user&#34;, &#34;{input}&#34;)
+])
+
+chain = prompt | model_with_tools
+
+# --- Test Case 1: Model decides to use a tool ---
+response_tool = chain.invoke({&#34;input&#34;: &#34;what is the weather in sf?&#34;})
+print(&#34;🤖 Test 1 - Model decided to call a tool:&#34;)
+print(json.dumps(response_tool.tool_calls, indent=2, ensure_ascii=False))
+
+# --- Test Case 2: Model decides to answer directly (tool_choice=&#34;auto&#34;) ---
+response_chat = chain.invoke({&#34;input&#34;: &#34;what are three songs by taylor swift?&#34;})
+print(&#34;\n💬 Test 2 - Model bypassed tools and answered directly:&#34;)
+print(response_chat.content)</code>
+  </pre>
+  </div>
+<p><strong>Execution Logs</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="cac66fc" class="language- ">
+  <code>[
+  {
+    &#34;type&#34;: &#34;function&#34;,
+    &#34;function&#34;: {
+      &#34;name&#34;: &#34;WeatherSearch&#34;,
+      &#34;description&#34;: &#34;Call this with an airport code to get the weather at that airport&#34;,
+      &#34;parameters&#34;: {
+        &#34;properties&#34;: {
+          &#34;airport_code&#34;: {
+            &#34;description&#34;: &#34;airport code to get weather for&#34;,
+            &#34;type&#34;: &#34;string&#34;
+          }
+        },
+        &#34;required&#34;: [
+          &#34;airport_code&#34;
+        ],
+        &#34;type&#34;: &#34;object&#34;
+      }
+    }
+  },
+  {
+    &#34;type&#34;: &#34;function&#34;,
+    &#34;function&#34;: {
+      &#34;name&#34;: &#34;ArtistSearch&#34;,
+      &#34;description&#34;: &#34;Call this to search for an artist&#34;,
+      &#34;parameters&#34;: {
+        &#34;properties&#34;: {
+          &#34;artist_name&#34;: {
+            &#34;description&#34;: &#34;name of the artist&#34;,
+            &#34;type&#34;: &#34;string&#34;
+          }
+        },
+        &#34;required&#34;: [
+          &#34;artist_name&#34;
+        ],
+        &#34;type&#34;: &#34;object&#34;
+      }
+    }
+  }
+]
+🤖 Test 1 - Model decided to call a tool:
+[
+  {
+    &#34;name&#34;: &#34;WeatherSearch&#34;,
+    &#34;args&#34;: {
+      &#34;airport_code&#34;: &#34;SFO&#34;
+    },
+    &#34;id&#34;: &#34;call_lg44XcNcFrw81IpwMizmJodr&#34;,
+    &#34;type&#34;: &#34;tool_call&#34;
+  }
+]
+
+💬 Test 2 - Model bypassed tools and answered directly:</code>
+  </pre>
+  </div>
+<h2 id="tagging-and-extraction-modern-langchain"><strong>Tagging and Extraction (Modern LangChain)</strong> <a href="#tagging-and-extraction-modern-langchain" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>We can leverage Large Language Models (LLMs) to automatically comprehend natural language, apply specific tags, extract targeted information, and guarantee the output strictly adheres to our desired formatting.</p>
+<p><strong>1. The Revolution of <code>.with_structured_output()</code></strong>
+In this section, we utilize the modern <code>.with_structured_output()</code> method, which drastically improves the developer experience:</p>
+<ul>
+<li><strong>Zero Boilerplate:</strong> You no longer need to worry about manually configuring <code>tool_choice</code> under the hood or stitching together complex parsers (like <code>JsonOutputFunctionsParser</code>). It handles the wiring for you.</li>
+<li><strong>Direct Type Safety:</strong> Legacy approaches often squeezed out standard Python dictionaries (<code>dict</code>). The modern approach returns <strong>instantiated Pydantic objects</strong> directly! In large-scale engineering, this means you can write <code>result.people[0].name</code> and instantly enjoy IDE auto-completion and static type checking. It is an absolute lifesaver for backend developers.</li>
+</ul>
+<p><strong>2. Tagging vs. Extraction: What&rsquo;s the Difference?</strong>
+Structurally, Tagging and Extraction look identical (both use Pydantic classes), but their business logic differs:</p>
+<ul>
+<li><strong>Tagging (Classification):</strong> Focuses on semantic understanding. The classes define abstract attributes (e.g., <code>sentiment</code>, <code>language</code>, <code>tone</code>), asking the LLM to make a subjective or categorical judgment about the text.</li>
+<li><strong>Extraction (Entity Recognition):</strong> Focuses on pulling explicit facts. The classes use concrete keys (e.g., <code>name</code>, <code>age</code>, <code>location</code>). Here, the LLM acts as a high-powered regex, pulling out specific data without adding subjective interpretation.</li>
+</ul>
+<hr>
+<h3 id="tagging-and-extraction">Tagging and Extraction <a href="#tagging-and-extraction" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="9ebfe58" class="language-python ">
+  <code>from typing import List, Optional
+from pydantic import BaseModel, Field
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnableLambda
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+model = ChatOpenAI(model=&#34;gpt-4o-mini&#34;, temperature=0)
+
+# ==========================================
+# 1. Tagging
+# ==========================================
+class Tagging(BaseModel):
+    &#34;&#34;&#34;Tag the piece of text with particular info.&#34;&#34;&#34;
+    sentiment: str = Field(description=&#34;sentiment of text, should be `pos`, `neg`, or `neutral`&#34;)
+    language: str = Field(description=&#34;language of text (should be ISO 639-1 code)&#34;)
+
+tagging_chain = model.with_structured_output(Tagging)
+
+print(&#34;🏷️ Tagging Testing:&#34;)
+result = tagging_chain.invoke(&#34;non mi piace questo cibo&#34;)
+print(result) 
+
+# ==========================================
+# 2. Extraction
+# ==========================================
+class Person(BaseModel):
+    name: str = Field(description=&#34;person&#39;s name&#34;)
+    age: Optional[int] = Field(description=&#34;person&#39;s age&#34;)
+ 
+class Information(BaseModel):
+    people: List[Person] = Field(description=&#34;List of info about people&#34;)
+
+prompt_extract = ChatPromptTemplate.from_messages([
+    (&#34;system&#34;, &#34;Extract the relevant information, if not explicitly provided do not guess.&#34;),
+    (&#34;human&#34;, &#34;{input}&#34;)
+])
+
+extraction_model = model.with_structured_output(Information)
+extraction_chain = prompt_extract | extraction_model
+
+print(&#34;\n🔍 Extraction Testing:&#34;)
+result2 = extraction_chain.invoke({&#34;input&#34;: &#34;Joe is 30, his mom is Martha&#34;})
+print(result2)</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="47b7573" class="language- ">
+  <code>🏷️ Tagging Testing:
+sentiment=&#39;neg&#39; language=&#39;it&#39;
+
+🔍 Extraction Testing:
+people=[Person(name=&#39;Joe&#39;, age=30), Person(name=&#39;Martha&#39;, age=None)]</code>
+  </pre>
+  </div>
+<hr>
+<h3 id="text-splitters--map-reduce-handling-long-documents">Text Splitters &amp; Map-Reduce (Handling Long Documents) <a href="#text-splitters--map-reduce-handling-long-documents" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>The Problem:</strong> Feeding a massive document directly into an LLM can exceed the context window limit and significantly degrade the accuracy of the extraction (often leading to hallucinations or missed data).</p>
+<p><strong>The Solution:</strong> We use tools like <code>RecursiveCharacterTextSplitter</code> to break the document into smaller, digestible chunks.</p>
+<p><strong>The Magic of LCEL Concurrency:</strong>
+Using <code>extraction_chain.map()</code> is one of the most stunning features of LangChain Expression Language (LCEL). If you pass a list of 10 text chunks to it, LCEL doesn&rsquo;t process them one by one. Under the hood, it <strong>automatically fires off 10 concurrent network requests</strong> to process all chunks in parallel, drastically slashing the total execution time.</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="09277f4" class="language-python ">
+  <code># ==========================================
+# 3. Map Reduce
+# ==========================================
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=20, chunk_overlap=0)
+sample_text = &#34;Joe is 30. Martha is 50. Alice is 25.&#34;
+
+def flatten(matrix):
+    # flatten: [[Person1], [Person2]] -&gt; [Person1, Person2]
+    return [item for row in matrix for item in row.people] 
+
+prep = RunnableLambda(
+    lambda text: [{&#34;input&#34;: chunk} for chunk in text_splitter.split_text(text)]
+)
+
+map_chain = prep | extraction_chain.map() | flatten
+
+print(&#34;\n🗺️ Map Extraction:&#34;)
+result3 = map_chain.invoke(sample_text)
+print(result3)</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5e7f200" class="language- ">
+  <code>
+🗺️ Map Extraction:
+[Person(name=&#39;Joe&#39;, age=30), Person(name=&#39;Martha&#39;, age=None), Person(name=&#39;Alice&#39;, age=25)]</code>
+  </pre>
+  </div>
+<h2 id="tools-and-routing"><strong>Tools and Routing</strong> <a href="#tools-and-routing" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>The core objective of this chapter is understanding how to wrap existing code or APIs into tools that Large Language Models (LLMs) can utilize, and how to implement basic routing based on the model&rsquo;s decisions.</p>
+<hr>
+<h3 id="create-a-simple-tool">Create a Simple Tool <a href="#create-a-simple-tool" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>The Essence of <code>@tool</code>: Model vs. Developer Perspective</strong></p>
+<p>There is a fundamental difference between how the LLM views a tool and how your local code (the Agent) handles it:</p>
+<ul>
+<li><strong>The LLM’s Perspective (Identical):</strong> To the LLM, a LangChain Tool and a raw function look exactly the same. The framework just sends a JSON Schema, and the model simply returns a structured command (e.g., <code>{&quot;name&quot;: &quot;get_temp&quot;, &quot;args&quot;: {&quot;location&quot;: &quot;SF&quot;}}</code>).</li>
+<li><strong>The Developer’s Perspective (Transformative):</strong> * <em>Without <code>@tool</code>:</em> You only define the schema. You must write manual routing logic (like verbose <code>if/else</code> chains or dictionaries) to map the model&rsquo;s output to the correct local function.
+<ul>
+<li><em>With <code>@tool</code>:</em> The decorator tightly binds the &ldquo;Schema&rdquo; (<code>.name</code>, <code>.description</code>) and the &ldquo;Execution Action&rdquo; (<code>.invoke()</code>) into a single object.</li>
+</ul>
+</li>
+<li><strong>Why this matters for Agents:</strong> This encapsulation is the foundation of autonomous Agents. Instead of writing 100 <code>if/else</code> conditions for 100 tools, the Agent’s engine can dynamically retrieve the tool object by name and call <code>.invoke()</code>.</li>
+</ul>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="97ea6a8" class="language-python ">
+  <code>import requests
+import datetime
+from pydantic import BaseModel, Field
+from langchain_core.tools import tool
+
+# 1. Define the input schema using Pydantic
+class OpenMeteoInput(BaseModel):
+    latitude: float = Field(..., description=&#34;Latitude of the location to fetch weather data for&#34;)
+    longitude: float = Field(..., description=&#34;Longitude of the location to fetch weather data for&#34;)
+
+# 2. Use @tool to register it as a LangChain Tool
+@tool(args_schema=OpenMeteoInput)
+def get_current_temperature(latitude: float, longitude: float) -&gt; str:
+    &#34;&#34;&#34;Fetch current temperature for given coordinates.&#34;&#34;&#34;
+    BASE_URL = &#34;https://api.open-meteo.com/v1/forecast&#34;
+    params = {
+        &#39;latitude&#39;: latitude,
+        &#39;longitude&#39;: longitude,
+        &#39;hourly&#39;: &#39;temperature_2m&#39;,
+        &#39;forecast_days&#39;: 1,
+    }
+
+    response = requests.get(BASE_URL, params=params)
+    if response.status_code != 200:
+        raise Exception(f&#34;API Request failed with status code: {response.status_code}&#34;)
+
+    results = response.json()
+    current_utc_time = datetime.datetime.utcnow()
+    time_list = [datetime.datetime.fromisoformat(time_str.replace(&#39;Z&#39;, &#39;&#43;00:00&#39;)) for time_str in results[&#39;hourly&#39;][&#39;time&#39;]]
+    temperature_list = results[&#39;hourly&#39;][&#39;temperature_2m&#39;]
+    
+    closest_time_index = min(range(len(time_list)), key=lambda i: abs(time_list[i] - current_utc_time))
+    current_temperature = temperature_list[closest_time_index]
+    
+    return f&#39;The current temperature is {current_temperature}°C&#39;
+
+# You can directly invoke the tool locally to test it:
+print(&#34;Local Tool Test:&#34;, get_current_temperature.invoke({&#34;latitude&#34;: 13, &#34;longitude&#34;: 14}))</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="4366e29" class="language- ">
+  <code>Local Tool Test: The current temperature is 36.5°C</code>
+  </pre>
+  </div>
+<hr>
+<h3 id="an-api-example">An API Example <a href="#an-api-example" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>The API Dilemma: Why converting APIs to Tools doesn&rsquo;t scale</strong></p>
+<p>Converting APIs into tools works perfectly for 2-3 functions. However, this approach hits a catastrophic bottleneck in real-world scenarios (e.g., an OpenAPI spec with 500+ endpoints).</p>
+<blockquote>
+<p><strong>Note:</strong> The original course used <code>openapi_spec_to_openai_fn</code> to blindly convert every single API endpoint into a distinct OpenAI Tool. We have completely abandoned this approach in favor of <code>create_openapi_agent</code>. Here is why:</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>The Legacy Approach (Static Full Binding):</strong> Forces 500 endpoints into 500 dedicated JSON schemas and binds them all to the LLM at once.</p>
+<ul>
+<li><strong>Token Explosion:</strong> Injects 500 schemas into the system prompt on <em>every turn</em>, instantly overflowing the context window and skyrocketing costs.</li>
+<li><strong>Choice Paralysis:</strong> Faced with 500 highly similar tools, the model&rsquo;s attention mechanism degrades, leading to severe hallucinations and incorrect arguments.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Modern Approach (Agentic Dynamic Retrieval):</strong> Instead of generating 500 distinct tools, the modern <code>create_openapi_agent</code> compresses the API spec into text and provides the model with only a few generic tools (e.g., <code>requests_get</code>, <code>requests_post</code>).</p>
+<ul>
+<li><strong>How it works:</strong> The model acts as a smart engineer. It reads the compressed spec as a document to find the correct endpoint and parameters, and then uses a generic HTTP tool to execute the request.</li>
+</ul>
+</li>
+</ul>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="0be7c59" class="language-python ">
+  <code>from langchain_community.utilities.openapi import OpenAPISpec
+from langchain_community.agent_toolkits.openapi.spec import reduce_openapi_spec
+from langchain_community.utilities.requests import TextRequestsWrapper
+from langchain_community.agent_toolkits.openapi.planner import create_openapi_agent
+from langchain_openai import ChatOpenAI
+import json
+
+text = &#34;&#34;&#34;
+{
+  &#34;openapi&#34;: &#34;3.0.0&#34;,
+  &#34;info&#34;: {
+    &#34;version&#34;: &#34;1.0.0&#34;,
+    &#34;title&#34;: &#34;Swagger Petstore&#34;,
+    &#34;license&#34;: {
+      &#34;name&#34;: &#34;MIT&#34;
+    }
+  },
+  &#34;servers&#34;: [
+    {
+      &#34;url&#34;: &#34;http://petstore.swagger.io/v1&#34;
+    }
+  ],
+  &#34;paths&#34;: {
+    &#34;/pets&#34;: {
+      &#34;get&#34;: {
+        &#34;summary&#34;: &#34;List all pets&#34;,
+        &#34;operationId&#34;: &#34;listPets&#34;,
+        &#34;tags&#34;: [
+          &#34;pets&#34;
+        ],
+        &#34;parameters&#34;: [
+          {
+            &#34;name&#34;: &#34;limit&#34;,
+            &#34;in&#34;: &#34;query&#34;,
+            &#34;description&#34;: &#34;How many items to return at one time (max 100)&#34;,
+            &#34;required&#34;: false,
+            &#34;schema&#34;: {
+              &#34;type&#34;: &#34;integer&#34;,
+              &#34;maximum&#34;: 100,
+              &#34;format&#34;: &#34;int32&#34;
+            }
+          }
+        ],
+        &#34;responses&#34;: {
+          &#34;200&#34;: {
+            &#34;description&#34;: &#34;A paged array of pets&#34;,
+            &#34;headers&#34;: {
+              &#34;x-next&#34;: {
+                &#34;description&#34;: &#34;A link to the next page of responses&#34;,
+                &#34;schema&#34;: {
+                  &#34;type&#34;: &#34;string&#34;
+                }
+              }
+            },
+            &#34;content&#34;: {
+              &#34;application/json&#34;: {
+                &#34;schema&#34;: {
+                  &#34;$ref&#34;: &#34;#/components/schemas/Pets&#34;
+                }
+              }
+            }
+          },
+          &#34;default&#34;: {
+            &#34;description&#34;: &#34;unexpected error&#34;,
+            &#34;content&#34;: {
+              &#34;application/json&#34;: {
+                &#34;schema&#34;: {
+                  &#34;$ref&#34;: &#34;#/components/schemas/Error&#34;
+                }
+              }
+            }
+          }
+        }
+      },
+      &#34;post&#34;: {
+        &#34;summary&#34;: &#34;Create a pet&#34;,
+        &#34;operationId&#34;: &#34;createPets&#34;,
+        &#34;tags&#34;: [
+          &#34;pets&#34;
+        ],
+        &#34;responses&#34;: {
+          &#34;201&#34;: {
+            &#34;description&#34;: &#34;Null response&#34;
+          },
+          &#34;default&#34;: {
+            &#34;description&#34;: &#34;unexpected error&#34;,
+            &#34;content&#34;: {
+              &#34;application/json&#34;: {
+                &#34;schema&#34;: {
+                  &#34;$ref&#34;: &#34;#/components/schemas/Error&#34;
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    &#34;/pets/{petId}&#34;: {
+      &#34;get&#34;: {
+        &#34;summary&#34;: &#34;Info for a specific pet&#34;,
+        &#34;operationId&#34;: &#34;showPetById&#34;,
+        &#34;tags&#34;: [
+          &#34;pets&#34;
+        ],
+        &#34;parameters&#34;: [
+          {
+            &#34;name&#34;: &#34;petId&#34;,
+            &#34;in&#34;: &#34;path&#34;,
+            &#34;required&#34;: true,
+            &#34;description&#34;: &#34;The id of the pet to retrieve&#34;,
+            &#34;schema&#34;: {
+              &#34;type&#34;: &#34;string&#34;
+            }
+          }
+        ],
+        &#34;responses&#34;: {
+          &#34;200&#34;: {
+            &#34;description&#34;: &#34;Expected response to a valid request&#34;,
+            &#34;content&#34;: {
+              &#34;application/json&#34;: {
+                &#34;schema&#34;: {
+                  &#34;$ref&#34;: &#34;#/components/schemas/Pet&#34;
+                }
+              }
+            }
+          },
+          &#34;default&#34;: {
+            &#34;description&#34;: &#34;unexpected error&#34;,
+            &#34;content&#34;: {
+              &#34;application/json&#34;: {
+                &#34;schema&#34;: {
+                  &#34;$ref&#34;: &#34;#/components/schemas/Error&#34;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  &#34;components&#34;: {
+    &#34;schemas&#34;: {
+      &#34;Pet&#34;: {
+        &#34;type&#34;: &#34;object&#34;,
+        &#34;required&#34;: [
+          &#34;id&#34;,
+          &#34;name&#34;
+        ],
+        &#34;properties&#34;: {
+          &#34;id&#34;: {
+            &#34;type&#34;: &#34;integer&#34;,
+            &#34;format&#34;: &#34;int64&#34;
+          },
+          &#34;name&#34;: {
+            &#34;type&#34;: &#34;string&#34;
+          },
+          &#34;tag&#34;: {
+            &#34;type&#34;: &#34;string&#34;
+          }
+        }
+      },
+      &#34;Pets&#34;: {
+        &#34;type&#34;: &#34;array&#34;,
+        &#34;maxItems&#34;: 100,
+        &#34;items&#34;: {
+          &#34;$ref&#34;: &#34;#/components/schemas/Pet&#34;
+        }
+      },
+      &#34;Error&#34;: {
+        &#34;type&#34;: &#34;object&#34;,
+        &#34;required&#34;: [
+          &#34;code&#34;,
+          &#34;message&#34;
+        ],
+        &#34;properties&#34;: {
+          &#34;code&#34;: {
+            &#34;type&#34;: &#34;integer&#34;,
+            &#34;format&#34;: &#34;int32&#34;
+          },
+          &#34;message&#34;: {
+            &#34;type&#34;: &#34;string&#34;
+          }
+        }
+      }
+    }
+  }
+}
+&#34;&#34;&#34;
+
+# 1. 【Core Fix】Use Python&#39;s native json library to convert the string into a regular dictionary
+raw_spec_dict = json.loads(text)
+
+# 2. Compress the dictionary (the new version of the reduce function only needs the native dictionary)
+reduced_spec = reduce_openapi_spec(raw_spec_dict)
+
+# 3. Create the network request wrapper
+requests_wrapper = TextRequestsWrapper(headers={})
+llm = ChatOpenAI(temperature=0, model=&#34;gpt-4o-mini&#34;)
+
+# 4. Create and run the OpenAPI Agent
+agent_executor = create_openapi_agent(
+    api_spec=reduced_spec,
+    requests_wrapper=requests_wrapper,
+    llm=llm,
+    allow_dangerous_requests=True  # Authorize the Agent to send real network requests
+)
+
+print(&#34;🤖 Modern Agent is starting execution:&#34;)
+# At this point, the LLM will read the API documentation by itself, 
+# decide which endpoint to call, and make the actual request!
+agent_executor.invoke(&#34;what are three pets names&#34;)</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="fd0f301" class="language-bash ">
+  <code>🤖 Modern Agent is starting execution:
+
+
+[1m&gt; Entering new AgentExecutor chain...[0m
+[32;1m[1;3mAction: api_planner  
+Action Input: I need to find the right API calls to retrieve the names of three pets.  [0m
+Observation: [36;1m[1;3m1) The user query can be solved by the API documented below, as it involves retrieving information about pets.
+
+2) Plan:
+   1. GET /pets to retrieve a list of all pets.
+   2. From the response, extract the names of the first three pets.
+
+(Note: The API does not specify a limit on the number of pets returned, so we assume it will return enough data to extract three names.)[0m
+Thought:[32;1m[1;3mI am ready to execute the API calls.  
+Action: api_controller  
+Action Input: 1) GET /pets to retrieve a list of all pets.  [0m
+
+[1m&gt; Entering new AgentExecutor chain...[0m
+[32;1m[1;3mAction: requests_get  
+Action Input: {&#34;url&#34;:&#34;http://petstore.swagger.io/v1/pets&#34;,&#34;params&#34;:{},&#34;output_instructions&#34;:&#34;Extract the id(s) and name(s) of the pets.&#34;}  [0m
+Observation: [36;1m[1;3mThe API response indicates a &#34;404 Not Found&#34; error. This means that the requested resource could not be found. 
+
+Summary of the error: 
+- Error Code: 404
+- Error Message: Not Found
+- Server: nginx[0m
+Thought:[32;1m[1;3mI encountered a &#34;404 Not Found&#34; error when trying to access the `/pets` endpoint. This suggests that the endpoint may not exist or there may be an issue with the API URL. 
+
+To troubleshoot, I will double-check the base URL and the endpoint path. The base URL is `http://petstore.swagger.io/v1`, and the endpoint for retrieving pets is `/pets`. 
+
+Since the endpoint appears to be correct, I will attempt to access the base URL directly to see if the server is reachable and if there are any available endpoints.
+
+Plan: 1) GET the base URL to check if the server is reachable and to see available endpoints.
+Thought:
+Action: requests_get  
+Action Input: {&#34;url&#34;:&#34;http://petstore.swagger.io/v1&#34;,&#34;params&#34;:{},&#34;output_instructions&#34;:&#34;Check if the server is reachable and list available endpoints.&#34;}  [0m
+Observation: [36;1m[1;3mThe API response indicates an error with a &#34;404 Not Found&#34; status. This means that the requested resource or endpoint is not available on the server. 
+
+Summary of the error:
+- **Error Code**: 404
+- **Error Message**: Not Found
+- **Server**: nginx
+
+Since the server is not reachable for the requested endpoint, there are no available endpoints to list.[0m
+Thought:[32;1m[1;3mI encountered a &#34;404 Not Found&#34; error when trying to access both the `/pets` endpoint and the base URL. This indicates that the server is not responding correctly to the requests, and the endpoints I am trying to access may not exist or the server may be down.
+
+Given that I cannot retrieve any information from the API due to these errors, I cannot proceed with any further API calls or actions.
+
+Final Answer: I am unable to complete the API calls due to a &#34;404 Not Found&#34; error for both the `/pets` endpoint and the base URL. The server may be down or the endpoints may not exist.[0m
+
+[1m&gt; Finished chain.[0m
+
+Observation: [33;1m[1;3mI am unable to complete the API calls due to a &#34;404 Not Found&#34; error for both the `/pets` endpoint and the base URL. The server may be down or the endpoints may not exist.[0m
+Thought:[32;1m[1;3mI need to reassess the situation since the initial API call to retrieve pet names resulted in a &#34;404 Not Found&#34; error. This could mean that the endpoint is incorrect or that there are no pets available. I should check if there are alternative endpoints or methods to retrieve pet names.
+
+Action: api_planner  
+Action Input: I need to explore the available API endpoints to find a valid way to retrieve pet names.  [0m
+Observation: [36;1m[1;3mSorry, this API&#39;s domain is focused on pets, but it does not provide a specific endpoint to retrieve a list of pet names. The available endpoints are for getting all pets, posting new pets, and getting details of a specific pet by ID.[0m
+Thought:[32;1m[1;3mI need to find a specific pet by ID to retrieve its name, as the general endpoint for retrieving all pets is not functioning. I will plan to get the details of a specific pet instead. 
+
+Action: api_planner  
+Action Input: I need to find the right API calls to retrieve the names of specific pets by their IDs.  [0m
+Observation: [36;1m[1;3m1) Yes, the user query can be solved by the API. The user wants to retrieve the names of specific pets by their IDs, which can be done using the GET /pets/{petId} endpoint.
+
+2) Plan:
+   1. The user needs to provide the specific pet IDs they want to retrieve names for.
+   2. For each pet ID provided, make a GET request to /pets/{petId} to retrieve the details of each pet, which will include their names.
+
+Note: Since the user did not specify the pet IDs, you will need to ask them to provide those IDs first.[0m
+Thought:[32;1m[1;3mI need to ask the user for the specific pet IDs to proceed with retrieving their names.  
+Action: api_controller  
+Action Input: I need to ask the user for the specific pet IDs they want to retrieve names for.  [0m
+
+[1m&gt; Entering new AgentExecutor chain...[0m
+[32;1m[1;3mI need to gather specific pet IDs from the user to proceed with retrieving their names. 
+
+Action: None (waiting for user input)
+
+Final Answer: Please provide the specific pet IDs you would like to retrieve names for.[0m
+
+[1m&gt; Finished chain.[0m
+
+Observation: [33;1m[1;3mPlease provide the specific pet IDs you would like to retrieve names for.[0m
+Thought:[32;1m[1;3mI have asked the user for the specific pet IDs needed to retrieve their names. I will wait for their response to proceed with the API calls.  
+Final Answer: Please provide the specific pet IDs you would like to retrieve names for.[0m
+
+[1m&gt; Finished chain.[0m</code>
+  </pre>
+  </div>
+<hr>
+<h3 id="simple-routing">Simple Routing <a href="#simple-routing" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>In modern LCEL pipelines, routing the model&rsquo;s output has become incredibly straightforward. We simply inspect the <code>AIMessage</code> returned by the LLM. If the model decides to converse, it returns standard text. If it decides to use a tool, it populates the <code>tool_calls</code> attribute.</p>
+<blockquote>
+<p><strong>Note:</strong> In older LangChain versions (and the original course), developers had to rely on complex output parsers to convert the model&rsquo;s text into specific <code>AgentAction</code> (tool requests) or <code>AgentFinish</code> (final responses) objects. With modern native tool calling, these heavy abstractions are obsolete. We now simply use standard Python <code>if/else</code> logic to check <code>ai_message.tool_calls</code>.</p>
+</blockquote>
+<p><strong>Code Example:</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="8fc897a" class="language-Python ">
+  <code>from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+
+# Simulate another tool
+@tool
+def search_wikipedia(query: str) -&gt; str:
+    &#34;&#34;&#34;Search wikipedia for information.&#34;&#34;&#34;
+    return f&#34;Wikipedia result for {query}&#34;
+
+tools = [search_wikipedia, get_current_temperature]
+
+# Modern bind_tools approach
+model = ChatOpenAI(temperature=0).bind_tools(tools)
+
+prompt = ChatPromptTemplate.from_messages([
+    (&#34;system&#34;, &#34;You are helpful but sassy assistant&#34;),
+    (&#34;user&#34;, &#34;{input}&#34;),
+])
+
+chain = prompt | model
+
+result = chain.invoke({&#34;input&#34;: &#34;What is the weather in san francisco right now?&#34;})
+
+# Simple route(manually)
+def simple_route(ai_message):
+    if not ai_message.tool_calls:
+        # AgentFinish: No tool called, return normal chat
+        return ai_message.content
+    else:
+        # AgentAction: Tool called, execute it manually
+        tool_call = ai_message.tool_calls[0]
+        tool_name = tool_call[&#34;name&#34;]
+        tool_args = tool_call[&#34;args&#34;]
+        
+        available_tools = {
+            &#34;search_wikipedia&#34;: search_wikipedia, 
+            &#34;get_current_temperature&#34;: get_current_temperature,
+        }
+        
+        print(f&#34;Routing to tool: {tool_name} with args {tool_args}&#34;)
+        # Execute the tool
+        return available_tools[tool_name].invoke(tool_args)
+
+print(&#34;Routed Result:&#34;, simple_route(result))</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="8e4ba90" class="language- ">
+  <code>Routing to tool: get_current_temperature with args {&#39;latitude&#39;: 37.7749, &#39;longitude&#39;: -122.4194}
+Routed Result: The current temperature is 13.0°C</code>
+  </pre>
+  </div>
+<h2 id="conversational-agents-the-langgraph-era"><strong>Conversational Agents (The LangGraph Era)</strong> <a href="#conversational-agents-the-langgraph-era" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p><strong>The Architectural Shift:</strong> The legacy <code>AgentExecutor</code> was a rigid, black-box <code>while</code> loop that often broke due to strict message sequencing errors. The modern solution is <strong>LangGraph</strong>. LangGraph models the agent as an explicit stateful graph, which is much closer to a state machine than a simple linear chain.</p>
+<hr>
+<h3 id="a-simple-agent">A Simple Agent <a href="#a-simple-agent" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>Core Concepts of LangGraph</strong></p>
+<ul>
+<li><strong>Nodes:</strong> The workstations that execute specific actions (e.g., LLM inference, Tool execution).</li>
+<li><strong>Edges:</strong> The logic paths (conditional or fixed) that determine where data flows next.</li>
+<li><strong>State:</strong> A shared dictionary (usually maintaining the <code>messages</code> list) that persists and updates as it flows across all nodes.</li>
+<li><strong>Persistence:</strong> The ability to save the graph&rsquo;s state for long-term session management.</li>
+</ul>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="b4c302c" class="language-python ">
+  <code>import json
+from typing import Annotated, TypedDict
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import BaseMessage, HumanMessage
+from langchain_core.tools import tool
+from langgraph.graph import StateGraph, END, add_messages
+from langgraph.prebuilt import ToolNode, tools_condition
+
+
+# 1. Define the state: Use add_messages to tell the graph that new messages 
+#    should be appended to the existing ones instead of overwriting them.
+class State(TypedDict):
+    messages: Annotated[list[BaseMessage], add_messages]
+
+
+# 2. Define tools
+@tool
+def get_weather(location: str):
+    &#34;&#34;&#34;Fetch the current weather for a location.&#34;&#34;&#34;
+    return f&#34;It&#39;s sunny and 22°C in {location}&#34;
+
+
+tools = [get_weather]
+
+
+# 3. Key step: Bind tools to the model
+model = ChatOpenAI(model=&#34;gpt-4o-mini&#34;, temperature=0).bind_tools(tools)
+
+
+# 4. Define node logic
+def call_model(state: State):
+    # Invoke the model and return its response
+    response = model.invoke(state[&#34;messages&#34;])
+    return {&#34;messages&#34;: [response]}
+
+
+# 5. Build the graph
+workflow = StateGraph(State)
+
+# Add the agent node
+workflow.add_node(&#34;agent&#34;, call_model)
+# Add the prebuilt tool execution node (it automatically handles message handling)
+workflow.add_node(&#34;tools&#34;, ToolNode(tools))
+
+workflow.set_entry_point(&#34;agent&#34;)
+
+# 🌟 The magic: tools_condition is LangGraph&#39;s official helper
+# It automatically checks if the model generated tool_calls.
+# If yes → go to &#34;tools&#34; node; if no → END.
+workflow.add_conditional_edges(&#34;agent&#34;, tools_condition)
+
+# After tools finish executing, route back to the agent so it can
+# generate a final response based on the tool results.
+workflow.add_edge(&#34;tools&#34;, &#34;agent&#34;)
+
+app = workflow.compile()
+
+
+# 6. Run the test
+print(&#34;🚀 LangGraph Agent is starting...&#34;)
+inputs = {&#34;messages&#34;: [HumanMessage(content=&#34;What is the weather in SF?&#34;)]}
+for output in app.stream(inputs, stream_mode=&#34;values&#34;):
+    last_message = output[&#34;messages&#34;][-1]
+    print(f&#34;\nRole: {last_message.type}&#34;)
+    if last_message.content:
+        print(f&#34;Content: {last_message.content}&#34;)
+    if hasattr(last_message, &#39;tool_calls&#39;) and last_message.tool_calls:
+        print(f&#34;Tool Calls: {last_message.tool_calls}&#34;)</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5d3dbe2" class="language- ">
+  <code>🚀 LangGraph Agent is starting...
+
+Role: human
+Content: What is the weather in SF?
+
+Role: ai
+Tool Calls: [{&#39;name&#39;: &#39;get_weather&#39;, &#39;args&#39;: {&#39;location&#39;: &#39;San Francisco&#39;}, &#39;id&#39;: &#39;call_cvQTiL0pv9sG5nMaGQlmOCCj&#39;, &#39;type&#39;: &#39;tool_call&#39;}]
+
+Role: tool
+Content: It&#39;s sunny and 22°C in San Francisco
+
+Role: ai
+Content: The weather in San Francisco is sunny with a temperature of 22°C.</code>
+  </pre>
+  </div>
+<hr>
+<h3 id="chat-history">Chat history <a href="#chat-history" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>Memory Evolution: Chat Memory vs. State Persistence</strong>
+There is a massive paradigm shift in how &ldquo;Memory&rdquo; is handled in modern Agentic workflows.</p>
+<ul>
+<li>The Legacy Way (e.g., <code>ConversationBufferMemory</code>):</li>
+</ul>
+<ul>
+<li><em>How it works:</em> Automatically stores the last <em>N</em> messages and appends them to the prompt.</li>
+<li><em>Pros:</em> Simple, one-liner, great for quick demos.</li>
+<li><em>Cons:</em> It&rsquo;s a black box. It lacks control, doesn&rsquo;t support multiple concurrent users, cannot resume interrupted workflows, and fails to track complex tool-calling sequences.</li>
+</ul>
+<ul>
+<li>The Modern LangGraph Way (<code>MemorySaver</code>):
+In LangGraph, we no longer just save &ldquo;Chat History&rdquo;; we save the <strong>Entire Agent State</strong>. This is achieved through two core mechanisms:</li>
+</ul>
+<ol>
+<li><strong>Checkpointer:</strong> An object that saves a snapshot of the entire graph&rsquo;s state at every single node transition.</li>
+<li><strong>Thread ID:</strong> A unique session identifier (e.g., <code>user_bob_123</code>).</li>
+</ol>
+<p><strong>The Advantages of State Persistence:</strong></p>
+<ul>
+<li><strong>Multi-User Support:</strong> The Thread ID ensures complete isolation between different users&rsquo; states.</li>
+<li><strong>Tool State Tracking:</strong> It remembers not just what the user said, but the exact tools the Agent used and the intermediate observations it gathered.</li>
+<li><strong>Interruption &amp; Resumption:</strong> Because the entire state is checkpointed, you can pause an Agent mid-thought, wait for human approval, and resume execution perfectly from where it left off.</li>
+</ul>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="3a3c5b0" class="language-python ">
+  <code>from langgraph.checkpoint.memory import MemorySaver
+
+
+# 1. Initialize persistent storage 
+#    (Using in-memory storage here. In production, you can replace it with Redis or Postgres)
+memory = MemorySaver()
+
+
+# 2. Compile the graph with the checkpointer
+#    This gives the Agent the ability to automatically save and resume state
+app_with_memory = workflow.compile(checkpointer=memory)
+
+
+# 3. Run conversation - Session 1: Introduce yourself
+#    In LangGraph, you must specify a thread_id via config to enable persistence
+config_bob = {&#34;configurable&#34;: {&#34;thread_id&#34;: &#34;user_bob_123&#34;}}
+
+print(&#34;--- Session 1: Identifying Bob ---&#34;)
+input_1 = {&#34;messages&#34;: [HumanMessage(content=&#34;Hi! I&#39;m Bob.&#34;)]}
+for output in app_with_memory.stream(input_1, config=config_bob, stream_mode=&#34;values&#34;):
+    last_msg = output[&#34;messages&#34;][-1]
+    if last_msg.type == &#34;ai&#34;:
+        print(f&#34;AI: {last_msg.content}&#34;)
+
+
+# 4. Run conversation - Session 2: Ask about the weather
+print(&#34;\n--- Session 2: Asking Weather ---&#34;)
+input_2 = {&#34;messages&#34;: [HumanMessage(content=&#34;What&#39;s the weather like in SF?&#34;)]}
+for output in app_with_memory.stream(input_2, config=config_bob, stream_mode=&#34;values&#34;):
+    last_msg = output[&#34;messages&#34;][-1]
+    if last_msg.type == &#34;ai&#34; and last_msg.content:
+        print(f&#34;AI: {last_msg.content}&#34;)
+
+
+# 5. Run conversation - Session 3: Verify memory
+print(&#34;\n--- Session 3: Memory Verification ---&#34;)
+input_3 = {&#34;messages&#34;: [HumanMessage(content=&#34;Do you remember what my name is?&#34;)]}
+for output in app_with_memory.stream(input_3, config=config_bob, stream_mode=&#34;values&#34;):
+    last_msg = output[&#34;messages&#34;][-1]
+    if last_msg.type == &#34;ai&#34;:
+        print(f&#34;AI: {last_msg.content}&#34;)</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="2c251e9" class="language- ">
+  <code>--- Session 1: Identifying Bob ---
+AI: Hello Bob! How can I assist you today?
+
+--- Session 2: Asking Weather ---
+AI: The weather in San Francisco is sunny with a temperature of 22°C. Enjoy your day!
+
+--- Session 3: Memory Verification ---
+AI: Yes, your name is Bob! How can I assist you further?</code>
+  </pre>
+  </div>
 
     </div>
-</div>
 
-<style>
-    .hover-shadow:hover {
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-        transform: translateY(-2px);
-    }
+    
+    
+    
+    <script src="/docs/js/mermaid.min.js" ></script>
+    <script>
+        const config = {
+            startOnLoad:true,
+            logLevel: "error",
+            align: "center",
+            theme:"null"
+        };
+        mermaid.initialize(config);
+    </script>
+    
 
-    .transition-all {
-        transition: all 0.3s ease;
-    }
-</style>
-
+    
                                             </div>
                                             <div><hr class="doc-hr">
 <div id="doc-nav" class="d-print-none">
+
+	<div class="row flex-xl-nowrap flex-row-reverse">
+	<div class="col-sm-6 pt-2 doc-prev">
+		<a class="ms-auto" href="/docs/notes/blog-notes/">
+			<div class="card h-100 my-1 text-end">
+				<div class="card-body py-2">
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">Lotus Docs Guide <i class="material-icons align-middle">navigate_next</i></p>
+					
+				</div>
+			</div>
+		</a>
+        </div>
+	</div>
 </div></div>
                                         </div>
                                     </div>

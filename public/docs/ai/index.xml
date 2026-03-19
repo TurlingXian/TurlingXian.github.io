@@ -2,10 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Artificial Intelligence on My Knowledge Base</title>
-    <link>http://localhost:59229/docs/ai/</link>
+    <link>http://localhost:1313/docs/ai/</link>
     <description>Recent content in Artificial Intelligence on My Knowledge Base</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:59229/docs/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Mar 2026 13:16:36 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Functions Tools Agents Langchain</title>
+      <link>http://localhost:1313/docs/ai/functions-tools-agents-langchain/</link>
+      <pubDate>Wed, 18 Mar 2026 13:16:36 +0100</pubDate>
+      <guid>http://localhost:1313/docs/ai/functions-tools-agents-langchain/</guid>
+      <description>&lt;p&gt;This course provides a brief introduction to the syntax of AI tools and LangChain, starting from Function Calling and culminating in the implementation of a simple chat agent.&lt;/p&gt;&#xA;&lt;p&gt;The code examples from the original course have been updated to reflect the latest LangChain versions, which offer more streamlined methods. Additionally, the examples now use the &lt;code&gt;gpt-4o-mini&lt;/code&gt; model, which is more cost-effective than &lt;code&gt;gpt-3.5-turbo&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Study Resource:&lt;/strong&gt;&#xA;&lt;a href=&#34;https://learn.deeplearning.ai/courses/functions-tools-agents-langchain/lesson/rtwb1/introduction&#34; rel=&#34;external&#34; target=&#34;_blank&#34;&gt;Functions, Tools and Agents with LangChain&lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z&#34;/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

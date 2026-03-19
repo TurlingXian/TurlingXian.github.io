@@ -5,7 +5,7 @@ description: "Quick reference for Lotus Docs: commands, shortcodes, and configur
 icon: "menu_book"
 date: "2026-02-10T20:32:05+01:00"
 lastmod: "2026-02-10T20:32:05+01:00"
-draft: false
+draft: true
 toc: true
 ---
 
@@ -28,6 +28,8 @@ Start a local server to see your changes in real-time at `http://localhost:1313`
 
 ```bash
 hugo server
+# preview draft
+hugo server -D
 ```
 
 ### 2. New Content 📄

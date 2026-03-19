@@ -25,6 +25,7 @@ title = 'My Knowledge Base'
 
   github_repo = "https://github.com/TurlingXian/TurlingXian.github.io"
   github_branch = "main"
+  custom_css = ["css/custom.css"]
 
   [params.docs]
     pathName = "docs"
