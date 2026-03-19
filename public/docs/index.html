@@ -261,6 +261,16 @@
                         </li>
                     
                 
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="http://localhost:1313/docs/notes/blog-notes/">
+                                
+                                Lotus Docs Guide
+                            </a>
+                        </li>
+                    
+                
             
         </ul>
         
@@ -839,6 +849,22 @@ from, to { border-color: transparent }
                 </div>
             </div>
             
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm hover-shadow transition-all">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            
+                            <span class="material-icons align-middle me-2 text-success">menu_book</span>
+                            
+                            <a href="/docs/notes/blog-notes/" class="text-decoration-none stretched-link">Lotus Docs Guide</a>
+                        </h5>
+                        <p class="card-text text-muted small">
+                            Quick reference for Lotus Docs: commands, shortcodes, and configuration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         
 
@@ -1051,6 +1077,13 @@ from, to { border-color: transparent }
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -1100,6 +1133,15 @@ from, to { border-color: transparent }
                 title: "Projects",
                 description: "Build things that matter.",
                 content: ""
+            }
+        );
+    index.add(
+            {
+                id:  5 ,
+                href: "\/docs\/notes\/blog-notes\/",
+                title: "Lotus Docs Guide",
+                description: "Quick reference for Lotus Docs: commands, shortcodes, and configuration.",
+                content: "🔗 Official Resources linkWhen in doubt, check the official documentation:\nOfficial Docs: lotusdocs.dev GitHub Repo: colinwilson/lotusdocs Icons: Google Material Symbols (Use these names for the icon field in Front Matter) ⚡️ Common Commands linkOpen your terminal in the project root:\n1. Local Preview 👀 linkStart a local server to see your changes in real-time at http://localhost:1313.\nhugo server # preview draft hugo server -D 2. New Content 📄 linkCreate a new markdown file with pre-filled Front Matter.\n# Create a new note inside the coding folder hugo new coding/vue-notes.md "
             }
         );
     search.addEventListener('input', show_results, true);
